@@ -1,0 +1,42 @@
+/* The problem: I needed a way to subdomain cities for a job board that I was building, like Craigslist.			  */
+/* The solution: I decided to create a database table that holds a set of city names like "ann_arbor" or "chicago".	  */
+/*               URL's are then set to correspond with those DB records, so that the city param is pulled from		  */
+/*               the URL and then used to look up all jobs for that city.											  */
+/* The real beauty of this solution is a separate DB table that stores "last_visited_city_domain_id" that tracks	  */
+/* each users' last city without the need for cookies. If no record is stored, the user is redirected to "ann_arbor." */
+/* Any subsequent search will set the last visited param.															  */
+/* On line 28, you can see the controller dynamically pulling the inserting the last visited domain into the URL      */
+/* prior to a redirect. If no such record is found, the user is sent to the Ann Arbor jobs page.                      */
+
+class JobsController < ApplicationController
+
+  before_filter :restrict_access, :only => [:edit]
+  before_filter :authenticate_user!, :only => [:apply, :new, :revise_post]
+  before_filter :ensure_profile_exists, :only => [:apply]
+
+  # GET /jobs
+  # GET /jobs.xml
+  def index
+    @stylesheet = "jobs"
+    @categories = Category.all
+    @title = "ServiceBullet"
+    if params[:city_domain]
+      @city_domain = CityDomain.where(:city_name => params[:city_domain]).last
+      @viewable_jobs = @city_domain.jobs.viewable_jobs
+      if current_user
+        current_user.update_attributes(:last_visited_city_domain_id => @city_domain.id)
+      end
+    else
+      if current_user
+        if current_user.last_visited_city_domain_id
+          redirect_to "/#{CityDomain.find(current_user.last_visited_city_domain_id).city_name}/jobs"
+        else
+          redirect_to "/ann_arbor/jobs"
+        end
+      else
+        redirect_to "/ann_arbor/jobs"
+      end
+    end
+  end
+
+end
