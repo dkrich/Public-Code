@@ -1,0 +1,45 @@
+<div id="locations_container">
+	<div class="add_drop_off_location_header">
+		Add a Drop-Off Location
+	</div>
+	<% @drop_off_locations = DropOffLocation.find :all %>
+	<% @drop_off_locations.each_with_index do |location, index| %>
+		<hr class="location_separator">
+		<table class="location_table">
+			<tr>
+				<td valign="top"  width="40%">
+					<div class="drop_off_location_name">
+						<%= location.name %>
+					</div>
+					<div class="drop_off_location_address">
+						<%= location.street_address %>
+					</div>
+					<div class="drop_off_location_address">
+						<%= "#{location.city}, #{location.state}" %>
+					</div>
+					<div class="drop_off_location_type">
+						Location Type: <%= location.location_type %>
+					</div>
+				</td>
+				<td width="10%">
+					<div class="google_map">
+						<%= image_tag(location.map_url) %>
+					</div>
+				</td>
+				<td width="40%" valign="top" align="right">
+					<% @existing_drop_off = UserDropOffLocation.find_by_user_id_and_drop_off_location_id(current_user.id, location.id) %>
+					<% if !@existing_drop_off.blank? %>
+						<div class="existing_drop_off_text">
+							You've added this location.
+						</div>
+					<% else %>
+						<div class="add_location_button">
+							<%= link_to image_tag("add_this_location.png"), { :controller => "drop_off_locations", :action => "add_user_drop_off_location", :id => location.id } %>
+						</div>
+					<% end %>
+				</td>
+			</tr>
+		</table>
+	<% end %>
+</div>
+<div class="location_table_spacer"></div>

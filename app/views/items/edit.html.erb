@@ -1,0 +1,53 @@
+<div id="item_container">
+	<div class="item_title">
+		Editing <font color="#d35511"><%= @item.name %></font>
+	</div>
+	
+	<%= form_for(@item, :html => { :multipart => true }) do |f| %>
+	  	<%= f.error_messages %>
+	
+		<table class="edit_item_table">
+			<tr>
+				<td>
+					<div class="editing_item_name">
+					    Name:
+					</div>
+					<%= f.text_field :name, :class => "item_name" %>
+				</td>
+			</tr>
+				<td>
+					<div class="editing_item_name">
+					    Item Type:
+					</div>
+					<%= f.text_field :item_type, :class => "item_name" %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="editing_item_name">
+					    Description:
+					</div>
+					<%= f.text_area :description, :class => "item_description" %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="editing_item_name">
+					    Calories:
+					</div>
+					<%= f.text_field :calories, :class => "item_name" %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<%= f.file_field :photo %>
+				</td>
+			</tr>	
+			<tr>
+				<td>
+					<%= f.submit 'Update' %>
+				</td>
+			</tr>
+		</table>
+	<% end %>
+</div>

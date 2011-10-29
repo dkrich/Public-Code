@@ -1,0 +1,70 @@
+<div class="view_orders_date">
+	Orders for <%= Date.parse(@date).strftime("%A, %B %e, %Y") %>
+</div>
+<div class="orders_note">
+	Please note that orders are subject to change until 8am the day of delivery.
+</div>
+<% @drop_off_locations = DropOffLocation.find :all %>
+<% @drop_off_locations.each do |location| %>
+	<% @recipients = LocationRecipient.find_all_by_drop_off_location_id(location.id) %>
+	<% if !@recipients.blank? %>
+		<div class="order_location_header">
+			Current Orders for <%= location.name %>
+		</div>
+		<div class="delivery_schedule_recipient_name">
+			<% form_for :recipient_temporary_schedule, :url => {:action => 'update_delivery_statuses', :date => @date} do -%>
+				<div id="delivery_statuses">
+					<table class="recipient_order_table">
+						<tr>
+							<td>
+								<div class="recipient_order_table_header">
+									Recipient Name
+								</div>
+							</td>
+							<td>
+								<div class="recipient_order_table_header">
+									Current Delivery Status
+								</div>
+							</td>
+							<td>
+								<div class="recipient_order_table_header">
+									Set Status
+								</div>
+							</td>
+						</tr>
+						<% @recipients.each do |recipient| %>
+							<% @this_weeks_schedule = RecipientTemporarySchedule.find_by_location_recipient_id(recipient.id) %>
+							<% @appended_string = Date.parse(@date).strftime("%A").downcase %>
+							<% @todays_delivery_status = get_delivery_status(Date.parse(@date), recipient.id) %>
+							<% if @this_weeks_schedule.send("#{@appended_string}") != 0 %>
+								<tr>
+									<td>
+										<%= recipient.recipient_first_name %>
+										<%= recipient.recipient_last_name %>
+									</td>
+									<td>
+										<% if @todays_delivery_status == true %>
+											<div class="delivery_schedule_delivered">
+												Delivered
+											</div>
+										<% else %>
+											<div class="delivery_schedule_not_delivered">
+												Not Delivered
+											</div>
+										<% end %>
+									</td>
+									<td>
+										<% fields_for "recipient_temporary_schedule[]", @this_weeks_schedule do |status| %>
+											<%= status.check_box @appended_string %> Delivered
+										<% end %>
+									</td>
+								</tr>
+							<% end %>
+						<% end %>
+					</table>
+				</div>
+				<%= submit_tag 'Update' %>
+			<% end %>
+		</div>
+	<% end %>
+<% end %>

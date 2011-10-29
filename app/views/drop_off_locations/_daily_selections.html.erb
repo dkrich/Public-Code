@@ -1,0 +1,57 @@
+<% @times = DropOffLocationTime.where(:drop_off_location_id => @drop_off_location.id).all %>
+<% @times.each_with_index do |time, index| %>
+    <% @time = time %>
+    <% @create_new = true %>
+    <% @location_selections = LocationSelection.find_all_by_delivery_date_time_and_drop_off_location_time_id(@menu_date, time.id) %>
+    <div class="admin_schedule_delivery_time">
+        <%= time.delivery_time.strftime("%I:%M %p") %>
+    </div>
+    <% if @location_selections.blank? %>
+          <!--<div class="set_menu">
+               <%= link_to_function "Set Menu", "$('#menus_#{@menu_date}_#{index}').toggle()" %>
+          </div>
+          <div id=<%= "menus_#{@menu_date}_#{index}" %> style="display:none">
+              <% @menus = Menu.find :all %>
+              <% @menus.each do |menu| %>
+                  <hr class="green_line"/>
+                  <div class="schedule_menu_name">
+                       <%= link_to menu.name, { :controller => "menus", :action => "set_location_selections", :id => menu.id, :drop_off_location_time_id => time.id, :create_new => @create_new, :date => @menu_date }, :remote => true %>
+                  </div>
+              <% end %>
+          </div>-->
+     <% else %>
+          <% @location_selections.each do |location_selection| %>
+              <% @menu = Menu.find(location_selection.menu_id) %>
+              <div class="calendar_menu_name">
+                  <%= link_to @menu.name, { :controller => "menus", :action => "show", :id => @menu.id, :date => @date_unconverted } %>
+              </div>
+              <div class="set_menu">
+                  <%= link_to_function "Update", "$('#menus_update_#{@menu_date}_#{index}').toggle()" %>
+              </div>
+              <div id=<%= "menus_update_#{@menu_date}_#{index}" %> style="display:none">
+                  <% @menus = Menu.find :all %>
+                  <% @menus.each do |menu| %>
+                          <hr class="green_line"/>
+                          <div class="schedule_menu_name">
+                                  <%= link_to menu.name, { :controller => "menus", :action => "update_location_selections", :id => menu.id, :location_selection_id => location_selection.id, :date => @menu_date }, :remote => true %>
+                          </div>
+                  <% end %>
+              </div>
+           <% end %>
+     <% end %>
+      <div class="set_menu">
+           <%= link_to_function "Add Menu", "$('#menus_#{@menu_date}_#{index}').toggle()" %>
+      </div>
+      <div id=<%= "menus_#{@menu_date}_#{index}" %> style="display:none">
+          <% @menus = Menu.find :all %>
+          <% @menus.each do |menu| %>
+              <hr class="green_line"/>
+              <div class="schedule_menu_name">
+                   <%= link_to menu.name, { :controller => "menus", :action => "set_location_selections", :id => menu.id, :drop_off_location_time_id => time.id, :create_new => @create_new, :date => @menu_date }, :remote => true %>
+              </div>
+          <% end %>
+      </div>
+     <div class="set_menu">
+	<%= link_to "View Orders", { :controller => "users", :action => "outstanding_orders", :date => @date_unconverted, :id => params[:id] } %>
+     </div>
+<% end %>

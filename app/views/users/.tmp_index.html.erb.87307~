@@ -1,0 +1,23 @@
+<div id="session_container">
+	<div class="we_text_header">
+		You're Busy.
+		<div class="we_text_body">
+			Let us take the time to prepare your lunch so you don't have to.<br>Now all you have to remember is where you left your keys.
+		</div>
+	</div>	
+	<div class="clearboth"></div>
+	<div class="steps">
+		<%= image_tag("step_one_front_page.png", :class => "steps_image") %>
+		<%= image_tag("arrow.png", :class => "arrow") %>
+		<%= image_tag("step_two_front_page.png", :class => "steps_image") %>
+		<%= image_tag("arrow.png", :class => "arrow") %>
+		<%= image_tag("step_three_front_page.png", :class => "steps_image") %>
+	</div>
+	<div class="sign_up">
+		<%= link_to image_tag("littlejaw_sign_up.png"), new_user_service_plan_path %>
+	</div>
+</div>
+
+<% if current_user %>
+	<%= link_to "logout", logout_path %>
+<% end %>

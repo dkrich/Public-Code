@@ -1,0 +1,115 @@
+<% @next_five_days = get_weekdays %>
+<% @selected_date = Time.zone.now %>
+<% if @selected_date.wday == 0 or @selected_date.wday == 1 or @selected_date.wday == 6 %>
+	<% @next_five_days_index = 0 %>
+<% elsif @selected_date.wday == 2 %>
+	<% @next_five_days_index = 1 %>
+<% elsif @selected_date.wday == 3 %>
+	<% @next_five_days_index = 2 %>
+<% elsif @selected_date.wday == 4 %>
+	<% @next_five_days_index = 3 %>
+<% elsif @selected_date.wday == 5 %>
+	<% @next_five_days_index = 4 %>
+<% end %>
+<% @at_least_one_pending_order = false %>
+<% @total_outstanding_orders = MealOrder.where(:user_id => current_user.id, :delivery_date => Date.parse(@delivery_date.to_s), :drop_off_location_id => @user_drop_off_location_id).count %>
+<% @user_drop_off_location_times = DropOffLocationTime.where(:drop_off_location_id => @user_drop_off_location.drop_off_location_id).all %>
+<% @user_drop_off_location_times.each do |time| %>
+    <% @location_selections = LocationSelection.find_all_by_drop_off_location_time_id_and_delivery_date_time(time.id, @next_five_days[@next_five_days_index].strftime("%d%m%Y")) %>
+    <% @order_confirmation = UserOrderConfirmation.where(:user_id => current_user.id, :drop_off_location_time_id => time.id, :delivery_date => Date.parse(@delivery_date.to_s)).first %>
+    <% if !@location_selections.blank? %>
+        <% if !@order_confirmation.blank? %>
+            <% @location_selections.each do |location_selection| %>
+                <% @outstanding_orders = MealOrder.where(:user_id => current_user.id, :delivery_date => Date.parse(@delivery_date.to_s), :location_selection_id => location_selection.id).all %>
+                <% if @outstanding_orders.count > 0 %>
+                    <% @at_least_one_pending_order = true %>
+                <% end %>
+                <% @outstanding_orders_count = @outstanding_orders.count %>
+                <% if @outstanding_orders_count > 0 %>
+                    <div id="meal_three_<%= location_selection.id %>">
+                        <table class="selections_summary_table">
+                                <tr>
+                                        <td width="1%">
+                                                <div class="meal_summary_selection_blue">
+                                                        <%= image_tag("purple_square.png") %>
+                                                </div>
+                                        </td>
+                                        <td>
+                                                <% @menu = Menu.find(LocationSelection.find(location_selection.id).menu_id) %>
+                                                <% @vendor = Vendor.find(@menu.vendor_id) %>
+                                                <div class="order_summary_image">
+                                                        <span class="selections_class_name">Coming at <%= time.delivery_time.strftime("%I:%M%p").downcase %></span>
+                                                </div>
+                                        </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" class="selections_vendor_name">
+                                        From <%= @vendor.name %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                        <% @menu_items = MenuItem.where(:menu_id => location_selection.menu_id).all %>
+                                        <% @menu_items.each do |menu_item| %>
+                                                <% @item = Item.find(menu_item.item_id) %>
+                                                <% if @item.item_type.upcase == "ENTREE" %>
+                                                        <td valign="top" colspan="2">
+                                                                <div class="selections_menu_item_header">
+                                                                        <%= @item.name %>
+                                                                </div>
+                                                        </td>
+                                                <% end %>
+                                        <% end %>
+                                </tr>
+                                <tr>
+                                        <% @menu_items.each do |menu_item| %>
+                                                <% @item = Item.find(menu_item.item_id) %>
+                                                <% if @item.item_type.upcase == "SIDE" %>
+                                                        <td valign="top" colspan="2">
+                                                                <div class="selections_menu_item_header">
+                                                                        <%= @item.name %>
+                                                                </div>
+                                                        </td>
+                                                <% end %>
+                                        <% end %>
+                                </tr>
+                                <tr>
+                                        <td colspan="2" valign="middle">
+                                                <div class="meal_summary_quantity">
+                                                        Quantity: <%= @outstanding_orders_count %>
+                                                </div>
+                                                <% if !@order_confirmation.confirmed %>
+                                                        <div class="remove_button">
+                                                                <%= link_to "Remove One", { :controller => "users", :action => "remove_from_order", :id => location_selection.id }, :remote => true %>
+                                                        </div>
+                                                <% end %>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td colspan="2">
+                                            <div class="status">
+                                                Status:
+                                                <% if @order_confirmation.confirmed %>
+                                                    <span class="received">Received</span>
+                                                <% else %>
+                                                    <span class="pending">Pending</span>
+                                                <% end %>
+                                            </div>
+                                        </td>
+                                </tr>
+                        </table>
+                    </div>
+                 <% end %>
+             <% end %>
+        <% end %>
+    <% end %>
+    <% if @at_least_one_pending_order %>
+        <div id="send_order_button">
+            <%= render :partial => "send_order_button" %>
+        </div>
+    <% end %>
+<% end %>
+<% unless @at_least_one_pending_order %>
+    <div class="meal_summary_text">
+        There's nothing in your basket.
+    </div>
+<% end %>

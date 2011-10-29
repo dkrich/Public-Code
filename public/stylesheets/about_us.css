@@ -1,0 +1,112 @@
+body {
+	background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0.22, rgb(209,240,255)),
+	    color-stop(1, rgb(64,166,255))
+	);
+        background-image: -moz-linear-gradient(
+            center bottom,
+            rgb(209,240,255) 22%,
+            rgb(64,166,255) 100%
+        );
+        margin-top: -10px;
+}
+
+html {
+
+}
+
+#about_us_container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;	
+	padding-bottom: 30px;
+}
+
+.about_us_major_header {
+	font: 40px Josefin Sans, Georgia;
+	text-align: center;
+	padding-top: 10px;
+        color: #FFF;
+}
+
+.about_us_minor_header {
+	font: 24px Josefin Sans, Georgia;
+	text-align: center;
+	padding-top: 15px;
+        color: #54ff00;
+}
+
+.about_us_header {
+	font: 40px Josefin Sans, Georgia;
+	color: #99BBDD;
+	color: #FFF;
+	text-align: center;
+	padding-bottom: 10px;
+	padding-top: 20px;
+}
+
+.about_us_body {
+	font: 24px Bentham, Josefin Sans, Bookman Old Style, Garamond, Georgia;
+	color: #626262;
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+}
+
+.charges {
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.add_on_link {
+	padding-top: 0px;
+}
+
+.add_on_link a {
+	text-decoration: none;
+	color: #b4ff8f;
+	font: 28px Josefin Sans, Georgia;
+}
+
+.about_us_subtitle {
+	font: 20px Rock Salt, Georgia;
+	color: #CC0000;
+        color: #BB0000;
+	padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+}
+
+.about_us_faq {
+	font: 18px Myriad Pro, Georgia;
+	padding-top: 10px;
+	color: #008844;
+}
+
+.principles_table {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -20px;
+}
+
+.lessons_container {
+    width: 1000px;
+    background: #FFF;
+    -webkit-border-radius: 10px;
+    -border-radius: 10px;
+    -webkit-box-shadow: 5px 5px 5px #888;
+    -moz-box-shadow: 5px 5px 5px #888;
+    margin-top: 20px;
+}

@@ -1,0 +1,63 @@
+<% if !@menu_items.blank? %>
+	<div class="editing_subtitle">
+		Items currently on this menu:
+	</div>
+	<table class="editing_table">
+		<tr>
+			<td>
+				<div class="editing_item_header">
+					Item Name
+				</div>
+			</td>
+			<td>
+				<div class="editing_item_header">
+					Item Description
+				</div>
+			</td>
+			<td>
+				<div class="editing_item_header">
+					Category
+				</div>
+			</td>
+			<td>
+				<div class="editing_item_header">
+					Calories
+				</div>
+			</td>
+		</tr>
+		<% @menu_items.each do |menu_item| %>
+			<% @temp_item = Item.find(menu_item.item_id) %>
+			<tr>
+				<td>
+					<div class="editing_item_name">
+						<%= @temp_item.name %>
+					</div>
+				</td>
+				<td>
+					<div class="editing_item_name">
+						<%= @temp_item.description %>
+					</div>
+				</td>
+				<td>
+					<div class="editing_item_name">
+						<%= @temp_item.category %>
+					</div>
+				</td>
+				<td>
+					<div class="editing_item_name">
+						<%= @temp_item.calories %>
+					</div>
+				</td>
+				<td width="20%">
+					<div class="add_item_link">
+						<%= link_to_remote "Remove From Menu", :url => { :controller => "menus", :action => "remove_item_from_menu", :id => menu_item.menu_id, :item_id => @temp_item.id } %>
+					</div>
+				</td>
+			</tr>
+		<% end %>
+	</table>		
+<% else %>
+	<div class="editing_subtitle">
+		There aren't any items on this menu right now.
+	</div>
+<% end %>

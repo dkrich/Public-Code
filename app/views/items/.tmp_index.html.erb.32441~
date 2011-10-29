@@ -1,0 +1,65 @@
+<div id="item_container">	
+	<div class="item_title">
+		All Items:
+	</div>
+	<table class="editing_table">
+		<tr>
+			<td>
+				<div class="editing_item_header">
+					Item Name
+				</div>
+			</td>
+			<td>
+				<div class="editing_item_header">
+					Item Description
+				</div>
+			</td>
+			<td>
+				<div class="editing_item_header">
+					Item Type
+				</div>
+			</td>
+			<td>
+				<div class="editing_item_header">
+					Calories
+				</div>
+			</td>
+		</tr>
+		<% @items.each do |item| %>
+			<tr>
+				<td>
+					<div class="item_name">
+						<b><%= item.name %></b>
+					</div>
+				</td>
+				<td>
+					<div class="item_name">
+						<%= item.description %>
+					</div>
+				</td>
+				<td>
+					<div class="item_name">
+						<% @item_type = item.item_type %>
+						<% if @item_type.upcase == "ENTREE" %>
+							<font color="#d35511">
+						<% elsif @item_type.upcase == "DESSERT" %>
+							<font color="#4711d3">
+						<% end %>
+								<%= item.item_type %>
+							</font>
+					</div>
+				</td>
+				<td>
+					<div class="item_name">
+						<%= item.calories %>
+					</div>
+				</td>
+				<td>
+					<div class="edit_item_link">
+						<%= link_to "Edit", edit_item_path(item) %>
+					</div>
+				</td>
+			</tr>
+		<% end %>
+	</table>
+</div>

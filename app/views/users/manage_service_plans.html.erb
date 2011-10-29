@@ -1,0 +1,19 @@
+<div class="recipient_service_plan_header">
+	Manage your meal plan for <%= @recipient.recipient_first_name %> right here.
+</div>
+<div class="current_plan_header">
+	Current Plan
+</div>
+<hr class="current_plan_line">
+<div class="add_current_plan_text">
+	<% if @recipient_service_plan.blank? %>
+		<%= @recipient.recipient_first_name %> does not currently have an active meal plan.
+	<% end %>
+</div>
+<div class="current_plan_header">
+	You can add any of the following plans:
+</div>
+<div class="service_plan_image">
+	<%= image_tag("basic.png", :mouseover => image_path("basic_illuminated.png")) %>
+	<%= image_tag("deluxe.png", :mouseover => image_path("deluxe_illuminated.png")) %>
+</div>

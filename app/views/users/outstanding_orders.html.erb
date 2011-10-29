@@ -1,0 +1,122 @@
+<div class="view_orders_date">
+	Orders for <%= Date.parse(@date).strftime("%A, %B %e, %Y") %>
+</div>
+<% @location = DropOffLocation.find(@location_id) %>
+<% @drop_off_location_times = DropOffLocationTime.where(:drop_off_location_id => @location_id).all %>
+<% @drop_off_location_times.each do |time| %>
+    <% @location_selection = LocationSelection.find_by_drop_off_location_time_id_and_delivery_date_time(time.id, @next_five_days[@next_five_days_index].strftime("%d%m%Y")) %>
+    <% if !@location_selection.blank? %>
+        <% @selection_items = MenuItem.find_all_by_menu_id(@location_selection.menu_id) %>
+        <% @outstanding_order_total = 0 %>
+        <div class="schedule_form_container">
+            <%= form_for :meal_order, :url => {:action => 'update_delivery_statuses', :date => @date} do -%>
+                <% @outstanding_order_count = 0 %>
+                <div class="order_location_header">
+                    Current Orders for <%= @location.name %> at <%= time.delivery_time.strftime("%I:%M") %>
+                </div
+                <% @outstanding_orders = Array.new %>
+                <% @order_confirmations = UserOrderConfirmation.find(:all, :conditions => { :location_selection_id => @location_selection.id, :confirmed => true }, :joins => :user) %>
+                <% @menu = Menu.find(@location_selection.menu_id) %>
+                <div class="orders_standard_count">
+                    Menu: <%= @menu.name %><br/>
+                    Menu Items:
+                    <% @menu_items = MenuItem.where(:menu_id => @menu.id) %>
+                    <% @menu_items.each do |menu_item| %>
+                        <% @item = Item.find(menu_item.item_id) %>
+                        <div class="menu_meal_selection_text">
+                            <%= @item.name %>
+                        </div>
+                    <% end %>
+                    Orders: <%= @order_confirmations.count %>
+                </div>
+                <table class="recipient_order_table">
+                    <tr>
+                        <td>
+                            <div class="recipient_order_table_header">
+                                Recipient Name
+                            </div>
+                        </td>
+                        <td>
+                            <div class="recipient_order_table_header">
+                                Selected Meals
+                            </div>
+                        </td>
+                        <td>
+                            <div class="recipient_order_table_header">
+                                Current Delivery Status
+                            </div>
+                        </td>
+                        <td>
+                            <div class="recipient_order_table_header">
+                                Set Status
+                            </div>
+                        </td>
+                    </tr>
+                    <% @order_confirmations.each do |confirmation| %>
+                        <% @outstanding_orders = MealOrder.where(:user_order_confirmation_id => confirmation.id) %>
+                        <% @outstanding_order_count = @outstanding_orders.count %>
+                        <% @outstanding_orders.each do |meal_order| %>
+                            <div class="delivery_schedule_recipient_name">
+                                <div id="delivery_statuses">
+                                    <tr>
+                                        <td class="recipient_name_cell">
+                                            <% @user = User.find(meal_order.user_id) %>
+                                            <%= @user.first_name %>
+                                            <%= @user.last_name %>
+                                        </td>
+                                        <td class="recipient_name_cell">
+                                            <% if meal_order.meal_one_quantity > 0 %>
+                                                <div>
+                                                    <%= @menu.name %>: <%= MealOrder.where(:user_id => @user.id).count %>
+                                                </div>
+                                            <% end %>
+                                         </td>
+                                         <td class="recipient_name_cell">
+                                              <% if meal_order.delivered != true %>
+                                                  <div class="status_pending">
+                                                      Pending
+                                                  </div>
+                                              <% else %>
+                                                  <div class="status_delivered">
+                                                      Delivered
+                                                  </div>
+                                              <% end %>
+                                         </td>
+                                         <td class="recipient_name_cell">
+                                              <%= fields_for "meal_order[]", meal_order do |status| %>
+                                                  <%= status.check_box "delivered" %> Delivered
+                                              <% end %>
+                                         </td>
+                                    </tr>
+                                </div>
+                             </div>
+                        <% end %>
+                    <% end %>
+                </table>
+                <%= submit_tag 'Update', :class => "schedule_form_container" %>
+             <% end %>
+        </div>
+    <% end %>
+<% end %>
+<table class="meal_orders_summary_table" cellpadding="5">
+	<tr>
+		<td class="meal_orders_summary_title">
+			Summary of Orders
+		</td>
+	</tr>
+	<tr>
+		<td class="meal_orders_summary_title">
+			Total Orders: <%= @order_confirmations.count %>
+		</td>
+	</tr>
+	<tr>
+		<td class="meal_orders_summary_header">
+			<%= @meal_type_one_name %> Count
+		</td>
+	</tr>
+	<tr>
+		<td class="meal_orders_standard_header">
+			<%= @outstanding_order_meal_one_total %>
+		</td>
+	</tr>
+</table>

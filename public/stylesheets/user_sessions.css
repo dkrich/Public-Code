@@ -1,0 +1,187 @@
+html {
+}
+
+body {
+        background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(255,255,255)),
+        color-stop(1, rgb(64,166,255))
+    );
+    background-image: -moz-linear-gradient(
+        center bottom,
+        rgb(255,255,255) 0%,
+        rgb(64,166,255) 69%
+    );
+    background-repeat: repeat-x;
+    height: 100%;
+    margin-top: -10px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+#session_loading {
+	width: 45px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+#footer {
+    position: relative;
+    top: 20px;
+}
+
+#page_container {
+    position: relative;
+    top: 30px;
+}
+
+#session_container {
+	width: 1000px;
+	/*background-image: url("../images/wood.png");
+	background: #313131;*/
+	margin-left: auto;
+	margin-right: auto;
+	/*border: 6px solid #000;*/
+}
+
+#header_error_messages_container {
+	position: relative;
+	margin-top: 10px;
+	margin-bottom: 0px;
+	background: #9f4848;
+}
+
+.user_session_logo {
+	width: 250px;
+	padding-left: 15px;
+	padding-top: 10px;
+}
+
+.login_text {
+	font: 20px 'Josefin Slab', Didot, Georgia;
+	color: #666;
+        text-align: right;
+}
+
+.front_page_header_login_table {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.remember_me_text {
+	font: 17px 'Josefin Slab', Didot, Georgia;
+	color: #444;
+	text-align: center;
+}
+
+.credentials_text {
+	width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.login_box {
+	width: 500px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	background: #FFF;
+	-webkit-box-shadow: 5px 5px 5px #888;
+	-moz-box-shadow: 5px 5px 5px #888;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.member_sign_in {
+	font: 40px 'Josefin Slab', Didot, Georgia;
+        margin-top: 10px;
+	color: #257495;
+	padding-bottom: 0px;
+	text-align: center;
+}
+
+.member_sign_in_subtext {
+	font: 20px 'Josefin Slab', Didot, Georgia;
+	color: #2588FF;
+	color: #666;
+	padding-bottom: 0px;
+	text-align: center;
+}
+
+.login_image, .login_image_illuminated {
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.sign_in_button {
+	width: 200px;
+}
+
+.error_message_header {
+	font: 24px 'Josefin Slab', Didot, Georgia;
+	color: #b51414;
+	color: #FFF;
+	text-align: center;
+	padding-bottom: 5px;
+	padding-top: 10px;
+}
+
+.error_message_body {
+	font: 18px 'Josefin Slab', Didot, Georgia, Helvetica, American Typewriter, Georgia;
+	color: #b51414;
+	color: #FFF;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+input.email_text_box {
+	width: 300px;
+	height: 35px;
+	font: 24px Arvo, 'Josefin Slab', Didot, Georgia, Helvetica, MS Sans Serif, Garamond, Helvetica;
+	color: #2588FF;
+	color: #257495;
+        color: #0072ff;
+	border: 2px solid #87d343;
+}
+
+.forgotten_password {
+	font: 18px Didot;
+	color: #444;
+	text-align: center;
+	padding-bottom: 15px;
+}
+
+.forgotten_password a {
+	text-decoration: none;
+	color: #177fff;
+}
+
+.flash {
+	background: #59e203;
+	color: #FFF;
+	font: 20px Didot, Georgia;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#flash_alert {
+     background: #c2705e;
+     color: #FFF;
+     font: 30px 'Josefin Slab', Didot, Georgia;
+     text-align: center;
+     padding-top: 20px;
+     padding-bottom: 15px;
+     margin-top: -30px;
+     margin-bottom: 30px;
+}
+
+.devise_links_container {
+   text-align: center;
+   padding-top: 10px;
+   padding-bottom: 15px;
+}

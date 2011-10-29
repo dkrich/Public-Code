@@ -1,0 +1,24 @@
+<h1>Listing Menus</h1>
+
+<table>
+  <tr>
+  </tr>
+
+<% @menus.each do |menu| %>
+  <tr>
+  	<td><%= menu.name %></td>
+    <td><%= link_to 'Show', menu %></td>
+    <td><%= link_to 'Edit', edit_menu_path(menu) %></td>
+    <td><%= link_to 'Destroy', menu, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+  <tr>
+  	<td>
+  		<%= link_to "Edit Items for This Menu", :controller => "menus", :action => "edit_menu_items", :id => menu.id %>
+  	</td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Menu', new_menu_path %>

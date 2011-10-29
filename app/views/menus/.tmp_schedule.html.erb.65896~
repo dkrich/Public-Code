@@ -1,0 +1,143 @@
+<% @num_rows = 6 %>
+<% @num_cols = 7 %>
+<% @next_month = Date.new(Integer(Time.now.strftime("%Y")), Integer((Time.now + 1.month).strftime("%m")), 1) %>
+<% @last_day_of_month_date = @next_month - 1 %>
+<% @days_in_month = Integer(@last_day_of_month_date.strftime("%d")) %>
+<% @first_day_of_month = Date.new(Integer(Time.now.strftime("%Y")), Integer((Time.now).strftime("%m")), 1) %>
+<% @begun = false %>
+<% @day_number = 1 %>
+<% @i = 1 %>
+<div class="calendar_month_header">
+	<%= Time.now.strftime("%B %Y") %>
+</div>
+<table class="schedule_table" cellspacing=0>
+	<tr>
+		<td class="schedule_weekday" align="center">
+			Sunday
+		</td>
+		<td class="schedule_weekday" align="center">
+			Monday
+		</td>
+		<td class="schedule_weekday" align="center">
+			Tuesday
+		</td>
+		<td class="schedule_weekday" align="center">
+			Wednesday
+		</td>
+		<td class="schedule_weekday" align="center">
+			Thursday
+		</td>
+		<td class="schedule_weekday" align="center">
+			Friday
+		</td>
+		<td class="schedule_weekday" align="center">
+			Saturday
+		</td>
+	</tr>
+	<% until (@i > @num_rows) or (@day_number > @days_in_month) %>
+		<% @j = 1 %>
+		<tr height="16%">
+			<% until @j > @num_cols %>
+				<% if @j > @first_day_of_month.wday or @begun and @day_number <= @days_in_month %>
+					<td class="calendar_box" valign="top" width="14%">
+						<table>
+							<tr>
+								<td>
+									<div class="calendar_date">
+										<%= @day_number %>
+									</div>
+								</td>
+							</tr>
+						</table>
+						<% if @j != 1 and @j != 7 %>
+							<% @menu_date = (@first_day_of_month + @day_number.days - 1).strftime("%d%m%Y") %>
+							<% @date_unconverted = @first_day_of_month + @day_number.days - 1 %>
+							<div id=<%= "calendar_menu_#{@menu_date}" %> >
+								<%= render :partial => 'daily_menu' %>
+							</div>
+						<% end %>
+						<% @begun = true %>
+						<% @day_number = @day_number + 1 %>
+					</td>
+				<% else %>
+					<td class="calendar_box">
+						
+					</td>
+				<% end %>
+				<% @j = @j + 1 %>
+			<% end %>
+		</tr>
+		<% @i = @i + 1 %>
+	<% end %>
+</table>
+<% @next_month = Date.new(Integer((Time.now + 1.month).strftime("%Y")), Integer((Time.now + 2.months).strftime("%m")), 1) %>
+<% @last_day_of_month_date = @next_month - 1 %>
+<% @days_in_month = Integer(@last_day_of_month_date.strftime("%d")) %>
+<% @first_day_of_month = Date.new(Integer((Time.now + 1.month).strftime("%Y")), Integer((Time.now + 1.month).strftime("%m")), 1) %>
+<% @begun = false %>
+<% @day_number = 1 %>
+<% @i = 1 %>
+<div class="calendar_month_header">
+	<%= (Time.now + 1.month).strftime("%B %Y") %>
+</div>
+<table class="schedule_table" cellspacing=0>
+	<tr>
+		<td class="schedule_weekday" align="center">
+			Sunday
+		</td>
+		<td class="schedule_weekday" align="center">
+			Monday
+		</td>
+		<td class="schedule_weekday" align="center">
+			Tuesday
+		</td>
+		<td class="schedule_weekday" align="center">
+			Wednesday
+		</td>
+		<td class="schedule_weekday" align="center">
+			Thursday
+		</td>
+		<td class="schedule_weekday" align="center">
+			Friday
+		</td>
+		<td class="schedule_weekday" align="center">
+			Saturday
+		</td>
+	</tr>
+	<% until @i > @num_rows or (@day_number > @days_in_month) %>
+		<% @j = 1 %>
+		<tr height="16%">
+			<% until @j > @num_cols %>
+				<% if @j > @first_day_of_month.wday or @begun and @day_number <= @days_in_month %>
+					<td class="calendar_box" valign="top" width="14%">
+						<table>
+							<tr>
+								<td>
+									<div class="calendar_date">
+										<%= @day_number %>
+									</div>
+								</td>
+							</tr>
+						</table>
+						<% if @j != 1 and @j != 7 %>
+							<% @menu_date = (@first_day_of_month + @day_number.days - 1).strftime("%d%m%Y") %>
+							<% @date_unconverted = @first_day_of_month + @day_number.days - 1 %>
+							<div id=<%= "calendar_menu_#{@menu_date}" %> >
+								<%= render :partial => 'daily_menu' %>
+							</div>
+						<% end %>
+						<% @begun = true %>
+						<% @day_number = @day_number + 1 %>
+					</td>
+				<% else %>
+					<td class="calendar_box">
+						
+					</td>
+				<% end %>
+				<% @j = @j + 1 %>
+			<% end %>
+		</tr>
+		<% @i = @i + 1 %>
+	<% end %>
+</table>
+

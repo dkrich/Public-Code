@@ -1,0 +1,2399 @@
+body {
+   background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(255,255,255)),
+        color-stop(1, rgb(64,166,255))
+    );
+    background-image: -moz-linear-gradient(
+        center bottom,
+        rgb(255,255,255) 0%,
+        rgb(64,166,255) 69%
+    );
+    background-repeat: repeat-x;
+    /*background: url('/images/tiles.png');
+    background-attachment:fixed;*/
+    height: 100%;
+    margin-top: -10px;
+}
+
+html {
+    
+}
+
+#page {
+    min-height: 100%;
+}
+
+#session_container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	background: #FFF;
+}
+
+#admin_home_container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#create_recipient_container {
+	padding-top: 5px;
+}
+
+#error_messages_container {
+	background: #9f4848;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#account_container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#flash_notice {
+   background: #94dc5f;
+   background: #59e203;
+   font: 24px Josefin Slab;
+   color: #FFF;
+   text-align: center;
+   margin-bottom: 30px;
+   padding-top: 15px;
+   padding-bottom: 15px;
+   width: 1000px;
+   -webkit-border-radius: 10px;
+   -border-radius: 10px;
+   -webkit-box-shadow: 5px 5px 5px #888;
+   -moz-border-radius: 10px;
+   -moz-box-shadow: 5px 5px 5px #888;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.close_out {
+   margin-right: 10px;
+   margin-top: 3px;
+}
+
+.close_out img {
+   float: right;
+   width: 20px;
+}
+
+.account_container {
+	margin-bottom: 20px;
+}
+
+#loading {
+	width: 45px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 35px;
+	padding-bottom: 35px;
+}
+
+#place_order_loading {
+	width: 45px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 35px;
+	padding-bottom: 35px;
+}
+
+#user_container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -10px;
+	margin-bottom: 20px;
+	background: #FFF;
+        background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0.2, rgb(59,170,255)),
+	    color-stop(0.6, rgb(44,106,199))
+	);
+        background-image: -moz-linear-gradient(
+	    center bottom,
+            rgb(59,170,255) 20%,
+            rgb(44,106,199) 60%
+	);
+	-webkit-border-radius: 10px;
+        -border-radius: 10px;
+	-webkit-box-shadow: 5px 5px 5px #888;
+        -moz-border-radius: 10px;
+        -moz-box-shadow: 5px 5px 5px #888;
+}
+
+#page_heading {
+	float: right;
+	-webkit-border-radius: 0px 10px 10px 0px;
+        -moz-border-radius: 0px 10px 10px 0px;
+        height: inherit;
+	text-decoration: none;
+}
+
+#menu_buttons img {
+	width: 220px;
+}
+
+.menu_button_table {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 3px;
+	margin-bottom: 20px;
+}
+
+#menu_background_blank {
+	height: 400px;
+}
+
+#menu_background_blue {
+	background-color: #5e6c81;
+        background-color: #8d1c1c;
+	width: 630px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+	border: 5px solid #DDD;
+}
+
+#menu_background_green {
+	background-color: #5e8165;
+        background-color: #50a200;
+	width: 630px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+	border: 5px solid #DDD;
+}
+
+#menu_background_purple {
+	background-color: #8e679d;
+        background-color: #7d35c7;
+        background: #313131;
+	width: 630px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+	border: 5px solid #DDD;
+}
+
+.standard_fare {
+	font: 34px Georgia;
+	text-align: center;
+	color: #5e6c81;
+}
+
+.standard_fare_line {
+	width: 250px;
+	color: #5e6c81;
+	border: 2px solid;
+	margin-top: 0px;
+}
+
+#credits_remaining {
+   margin-right: 5px;
+}
+
+.credits_remaining {
+	font: 30px Josefin Slab, Garamond, Georgia;
+	color: #dbeeff;
+	color: #FFF;
+	text-align: center;
+	padding-right: 10px;
+	padding-left: 10px;
+	padding-top: 0px;
+}
+
+.credits_remaining_number {
+	font: 36px Arvo, Josefin Slab, Garamond, Georgia;
+	color: #FFF;
+        padding-top: 5px;
+}
+
+.credits_table {
+	height: 113px;
+}
+
+.purchase_credits_button img {
+	width: 230px;
+}
+
+#greeting_container {
+   float: left;
+   background: #FFF;
+   -moz-border-radius: 10px 0px 0px 10px;
+   -webkit-border-radius: 10px 0px 0px 10px;
+   width: 50%;
+   min-height: 115px;
+}
+
+#page_header_nav_text {
+	font: 40px Georgia;
+	color: #dbeeff;
+	color: #FFF;
+	text-align: center;
+	padding-right: 50px;
+	padding-left: 50px;
+	padding-top: 30px;
+	text-decoration: none;
+}
+
+.page_header_nav_text a {
+	text-decoration: none;
+}
+
+#whole_container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#menu_container {
+	width: 690px;
+	margin-top: 0px;
+	margin-bottom: 30px;
+	background: #FFF;
+	-webkit-border-radius: 10px;
+	-webkit-box-shadow: 5px 5px 5px #888;
+        -moz-border-radius: 10px;
+        -moz-box-shadow: 5px 5px 5px #888;
+	float: left;
+}
+
+#menu_today {
+	width: 690px;
+	float: left;
+	background: #FFF;
+	-webkit-border-radius: 10px;
+	-webkit-box-shadow: 5px 5px 5px #888;
+        -moz-border-radius: 10px;
+        -moz-box-shadow: 5px 5px 5px #888;
+}
+
+#meal_summary {
+	margin-bottom: 0px;
+	width: 300px;
+	float: right;
+	background: #313131;
+	-webkit-border-radius: 10px;
+	-webkit-box-shadow: 5px 5px 5px #888;
+        -moz-border-radius: 10px;
+        -moz-box-shadow: 5px 5px 5px #888;
+	/*text-align: center;*/
+}
+
+#meal_selections {
+   margin-right: 5px;
+}
+
+#meal_one {
+    background-color: #313131;
+}
+
+#meal_two {
+    background-color: #313131;
+}
+
+#meal_three {
+    background-color: #313131;
+}
+
+div[id*='meal_three_'] {
+   background-color: #313131;
+}
+
+#schedule_container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	margin-bottom: 30px;
+	background: #FFF;
+	-webkit-border-radius: 10px;
+	-webkit-box-shadow: 5px 5px 5px #888;
+        -moz-border-radius: 10px;
+        -moz-box-shadow: 5px 5px 5px #888;
+}
+
+#location_fact_container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#location_container {
+	width: 300px;
+	float: right;
+	background: #FFF;
+	-webkit-border-radius: 10px;
+	-webkit-box-shadow: 5px 5px 5px #888;
+        -moz-border-radius: 10px;
+        -moz-box-shadow: 5px 5px 5px #888;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.featured_item_title {
+	font: 28px Garamond;
+	padding-bottom: 15px;
+	padding-top: 15px;
+	color: #356595;
+	color: #FFF;
+	margin-bottom: 10px;
+	padding-left: 20px;
+	background: #000;
+	background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0, rgb(0,107,12)),
+	    color-stop(1, rgb(174,255,0))
+	);
+	-webkit-border-radius: 10px 0px 0px 0px;
+        -moz-border-radius: 10px 0px 0px 0px;
+	width: 50%;
+}
+
+.update_meal_order_location_header {
+	font: 28px Garamond;
+	padding-bottom: 15px;
+	padding-top: 15px;
+	color: #356595;
+	color: #FFF;
+	margin-bottom: 10px;
+	padding-left: 20px;
+	background: #000;
+	background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0.2, rgb(59,170,255)),
+	    color-stop(0.6, rgb(44,106,199))
+	);
+	-webkit-border-radius: 10px 10px 0px 0px;
+        -moz-border-radius: 10px 10px 0px 0px;
+}
+
+.drop_off_location_name {
+	font: 24px Goudy Old Style, Georgia;
+	color: #222;
+	color: #66aec5;
+	padding-top: 5px;
+}
+
+.drop_off_location_address {
+	font: 19px Goudy Old Style, Georgia;
+	color: #444;
+}
+
+.drop_off_location_type {
+	font: 19px Goudy Old Style, Georgia;
+	color: #307b2e;
+}
+
+.user_google_map img {
+	border: 4px solid #5a7fd1;
+	margin-top: 5px;
+        width: 220px;
+}
+
+.daily_theme {
+	float: right;
+	padding-top: 10px;
+	padding-right: 20px;
+}
+
+.daily_theme img {
+	width: 400px;
+}
+
+.selections_line {
+	border: 1px solid #AAA;
+	width: 500px;
+}
+
+.standard_fare_heading {
+	margin-left: 20px;
+	padding-top: 15px;
+}
+
+.menu_item_header {
+	font: 30px Josefin Slab, Garamond;
+	padding-left: 10px;
+	color: #FFF;
+}
+
+.selections_menu_item_header {
+	font: 20px Josefin Slab, Garamond;
+	/*padding-left: 10px;*/
+	color: #DDD;
+	text-align: left;
+	padding-right: 5px;
+}
+
+.menu_item_description {
+	font: 20px Josefin Slab, Garamond;
+	padding-left: 10px;
+	color: #DDD;
+	padding-right: 20px;
+}
+
+.selections_menu_item_description {
+	font: 12px Garamond;
+	padding-left: 10px;
+	color: #DDD;
+	padding-right: 20px;
+}
+
+.menu_image img {
+	width: 180px;
+	border: 3px solid #DDD;
+	margin-left: 10px;
+}
+
+.selections_menu_image img {
+	width: 90px;
+	border: 3px solid #DDD;
+	/*margin-left: 10px;*/
+}
+
+.selections_table {
+	padding-bottom: 10px;
+}
+
+.selections_summary_table {
+	padding-left: 17px;
+}
+
+.your_status {
+	font: 26px Garamond;
+	text-align: center;
+}
+
+.delivery_set {
+	margin-left: auto;
+	margin-right: auto;
+	width: 220px; 
+}
+
+.your_status_line {
+	width: 150px;
+	border: 1px solid #666;
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+
+.delivery_set img {
+	width: 220px;
+}
+
+.user_logo_container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+}
+
+.location_name_header {
+	font: 26px Goudy Old Style, Myriad Pro, Georgia;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.no_menu {
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+.no_menu img {
+	width: 400px;
+}
+
+.delivery_time_header {
+	font: 22px Goudy Old Style, Myriad Pro, Georgia;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.delivery_time_text {
+	font: 28px Goudy Old Style, Myriad Pro, Georgia;
+	color: #398e28;
+}
+
+.delivery_spot_text {
+	font: 28px Goudy Old Style, Myriad Pro, Georgia;
+	color: #398e28;
+	padding-bottom: 10px;
+}
+
+.twitter_header {
+	font: 22px Goudy Old Style, Myriad Pro, Georgia;
+	text-align: center;
+	padding-bottom: 0px;
+}
+
+.incomplete_message {
+	background: #7bc100;
+	font: 30px Goudy Old Style;
+	text-align: center;
+	margin-top: 20px;
+	padding: 15px;
+	color: #FFF;
+	border-top: 5px solid #FFF;
+	border-bottom: 5px solid #FFF;
+}
+
+.incomplete_body {
+	font: 26px Goudy Old Style;
+	text-align: center;
+	padding-top: 8px;
+}
+
+.name_container {
+	font: 32px Arvo, Josefin Slab, Goudy Old Style;
+	padding-top: 10px;
+	padding-left: 20px;
+	padding-bottom: 0px;
+        -webkit-border-radius: 10px 0px 0px 0px;
+        -border-radius: 10px 0px 0px 0px;
+        -moz-border-radius: 10px 0px 0px 0px;
+        color: #000;
+}
+
+.day_container {
+	font: 24px Muli, Josefin Slab, Goudy Old Style;
+	color: #99C;
+	padding-left: 20px;
+	padding-bottom: 3px;
+}
+
+.finished_updating {
+   float: right;
+   padding-right: 20px;
+   padding-top: 5px;
+}
+
+.finished_updating a {
+   font: 20px Muli, Arvo, Josefin Slab;
+   color: #f8ff90;
+   text-decoration: none;
+}
+
+.settings {
+   padding-left: 20px;
+   margin-bottom: 5px;
+   padding-top: 5px;
+}
+
+.settings a {
+   font: 17px Muli, Arvo, Georgia, Arial, Helvetica, Goudy Old Style;
+   text-decoration: none;
+   color: #0098e7;
+}
+
+.location_name {
+	color: #ff4e00;
+	/*color: #daeefc;*/
+	color: #aa2828;
+	font: 20px Goudy Old Style, Myriad Pro, Georgia;
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.location_address {
+	font: 16px Goudy Old Style, Myriad Pro, Georgia;
+	color: #555;
+	padding-bottom: 5px;
+}
+
+.meal_summary_price {
+	color: #ff4e00;
+	color: #daeefc;
+	color: #71ff5a;
+	font: 30px Goudy Old Style, Myriad Pro, Georgia;
+	text-align: left;
+	padding-left: 20px;
+	padding-right: 10px;
+}
+
+.meal_summary_selection_blue img {
+	width: 30px;
+}
+
+.meal_summary_location_name {
+	color: #ff4e00;
+	color: #daeefc;
+	color: #71ff5a;
+	font: 20px Josefin Slab, Goudy Old Style, Myriad Pro, Georgia;
+	text-align: left;
+	padding-left: 20px;
+	padding-right: 10px;
+}
+
+.meal_summary_location_address {
+	font: 16px Josefin Slab, Goudy Old Style, Myriad Pro, Georgia;
+	color: #AAA;
+	padding-bottom: 0px;
+	text-align: left;
+	padding-left: 20px;
+}
+
+.schedule_header {
+	font: 30px Goudy Old Style, Myriad Pro;
+	color: #444;
+	text-align: center;
+	padding-top: 15px;
+}
+
+.schedule_line {
+	border: 1px solid #888;
+	width: 280px;
+	margin-bottom: 10px;
+	margin-top: 0px;
+}
+
+.location_line {
+	border: 1px solid #888;
+	width: 210px;
+	margin-bottom: 5px;
+	margin-top: 0px;
+}
+
+.summary_line {
+	border: 1px solid #888;
+	width: 400px;
+	margin-bottom: 5px;
+	margin-top: 0px;
+}
+
+.user_schedule_table {
+	width: 950px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 10px;
+}
+
+.no_meals {
+	font: 18px Myriad Pro;
+	color: #B00;
+	text-align: center;
+}
+
+.account_summary {
+	font: 20px Goudy Old Style, Myriad Pro, Lucida Grande, Tahoma, Georgia;
+	color: #000;
+	padding-left: 20px;
+}
+
+.account_summary_large {
+	font: 24px Garamond, Goudy Old Style;
+	color: #FFF;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 0px;
+}
+
+#basic_info_container {
+	width: 492px;
+	float: right;
+	padding-top: 0px;
+}
+
+.meals_remaining_container {
+	float: left;
+	width: 200px;
+        background-image: -webkit-gradient(
+            linear,
+            left bottom,
+            left top,
+            color-stop(0, rgb(0,107,12)),
+            color-stop(1, rgb(174,255,0))
+        );
+        height: 110px;
+}
+
+.next_delivery_container {
+	float: right;
+	width: 290px;
+        background-image: -webkit-gradient(
+            linear,
+            left bottom,
+            left top,
+            color-stop(0, rgb(0,107,12)),
+            color-stop(1, rgb(174,255,0))
+        );
+        -webkit-border-radius: 0px 10px 10px 0px;
+        -webkit-border-radius: 10px;
+        height: 110px;
+}
+
+.next_delivery {
+	font: 30px Garamond, Goudy Old Style;
+	color: #FFF;
+	text-align: center;
+	padding-bottom: 10px;
+	padding-top: 5px;
+}
+
+.meals_remaining {
+	font: 30px Garamond, Goudy Old Style;
+	color: #FFF;
+	text-align: center;
+	padding-bottom: 10px;
+	padding-top: 5px;
+}
+
+.twitter_container {
+	float: right;
+	padding: 20px;
+	padding-left: 10px;
+}
+
+.step_one_container_user {
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	background: #FFF;
+	-webkit-border-radius: 10px;
+	-webkit-box-shadow: 5px 5px 5px #888;
+        -moz-border-radius: 10px;
+        -moz-box-shadow: 5px 5px 5px #888;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.step_three_container_user {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	background: #FFF;
+	-webkit-border-radius: 10px;
+	-webkit-box-shadow: 5px 5px 5px #888;
+        -moz-border-radius: 10px;
+        -moz-box-shadow: 5px 5px 5px #888;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.explanation {
+	text-align: left;
+	margin-top: 5px;
+}
+
+.explanation a {
+	text-decoration: none;
+	font: 14px Helvetica, Arial;
+	color: #00aeff;
+}
+
+.service_plan_image img {
+	width: 320px;
+}
+
+.welcome {
+	font: bold 50px Goudy Old Style;
+	padding: 20px;
+	padding-bottom: 10px;
+	color: #2d78b2;
+	text-align: center;
+}
+
+.get_started {
+	margin-left: auto;
+	margin-right: auto;
+	width: 360px;
+	padding-bottom: 20px;
+}
+
+.welcome_subtext {
+	font: 30px Goudy Old Style;
+	padding: 20px;
+}
+
+.location_table {
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.step_one_subtext {
+	font: 26px Goudy Old Style, Georgia;
+	color: #FFF;
+	text-align: center;
+	/*padding-top: 5px;
+	padding-bottom: 5px;
+	background: #414141;*/
+	background-color: #313131;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+}
+
+.drop_off_location_type_user {
+	font: 20px Garamond, Georgia;
+	color: #888;
+	padding-top: 10px;
+}
+
+#progress {
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	margin-bottom: -20px;
+}
+
+#progress img {
+	width: 700px;
+}
+
+.user_session_logo {
+	width: 200px;
+	margin-bottom: auto;
+	margin-top: auto;
+}
+
+.login_text {
+	font: 13px Georgia, Lucida Grande;
+	color: #000;
+}
+
+.remember_me_text {
+	font: 12px Georgia;
+	color: #000;
+}
+
+.pricing_header {
+	font: 24px Lucida Grande, Georgia;
+	color: #d0ffc3;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+.credentials_text {
+	float: right;
+}
+
+.occasional {
+	float: left;
+}
+
+.occasional_image {
+	width: 240px;
+}
+
+.pricing_container {
+	width: 720px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+
+.no_more_container {
+	padding-top: 0px;
+	padding-left: 10px;
+}
+
+.no_more_container img {
+	width: 300px;
+}
+
+.we_text_header {
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	font: 30px Georgia, Garamond;
+	color: #d81a1a;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+.we_text_body {
+	font: 24px Georgia, Garamond;
+	color: #000;
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 5px;
+}
+
+.steps_image {
+	width: 250px;
+}
+
+.arrow {
+	position: relative;
+	bottom: 110px;
+}
+
+.member_sign_in {
+	font: 18px Georgia;
+	color: #000;
+	padding-left: 3px;
+	padding-bottom: 5px;
+}
+
+.see_how {
+	width: 160px;
+}
+
+.see_how_container {
+	float: left;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+
+input.email_text_box {
+	width: 150px;
+	height: 15px;
+	font: 14px Georgia, Garamond, Helvetica;
+}
+
+.account_summary_header {
+	font: 38px Goudy Old Style, American Typewriter, Georgia;
+	color: #DDEEFF;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	background: #313131;
+	/*border-top: 4px solid #BBB;*/
+}
+
+.account_summary_subtext {
+	font: 35px Goudy Old Style, Georgia;
+	color: #FFCCAA;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	color: #FFF;
+	background: #81ac6d;
+	background: #313131;
+	border-bottom: 4px solid #BBB;
+	border-top: 4px solid #BBB;
+}
+
+.account_summary_body {
+	font: 18px Georgia;
+	color: #888;
+	padding-left: 20px;
+	padding-top: 5px;
+}
+
+.drop_off_button {
+	width: 200px;
+}
+
+.account_summary_header_table {
+	width: 1120px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.location_separator {
+	border: 1px solid #4a89ad;
+        margin-bottom: 0px;
+}
+
+.location_table_spacer {
+	padding-bottom: 20px;
+}
+
+#selection_drop_off_location {
+    background-color: #313131;
+}
+
+.add_location_button img {
+	width: 200px;
+}
+
+.add_recipient_link img {
+	margin-top: 20px;
+	width: 200px;
+	margin-left: 0px;
+	float: right;
+}
+
+.add_recipient_link a {
+	font: 16px Georgia;
+	color: #364dae;
+	text-decoration: none;
+}
+
+.google_map img {
+	width: 220px;
+	border: 5px solid #b4eb00;
+}
+
+.recipient_name {
+	font: bold 34px Goudy Old Style, Bookman Old Style, Georgia, Myriad Pro;
+	color: #0077FF;
+	color: #3344AA;
+}
+
+.your_recipients {
+	font: 18px Georgia;
+	color: #888;
+	padding-top: 8px;
+	padding-bottom: 5px;
+	width: 300px;
+	text-align: center;
+}
+
+.current_plan_text {
+	font: 14px Georgia;
+	color: #777;
+}
+
+.recipient_table {
+	width: 300px;
+}
+
+.recipient_table a {
+	font: 14px Georgia;
+	color: #364dae;
+	text-decoration: none;
+}
+
+.gray {
+	width: 300px;
+	background: #EEE;
+}
+
+.dark_gray {
+	width: 300px;
+	background: #D4D4D4;
+}
+
+.recipient_service_plan_header {
+	font: 30px Georgia;
+	color: #2a79a6;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.current_plan_header {
+	font: 24px Georgia;
+	color: #2a79a6;
+	text-align: center;
+	padding-top: 20px;
+}
+
+.add_current_plan_text {
+	font: 20px Georgia;
+	color: #888;
+	text-align: center;
+}
+
+.current_plan_line {
+	width: 700px;
+	border: 1px solid #888;
+}
+
+.create_recipient_button {
+	width: 130px;
+	margin-top: 5px;
+}
+
+.your_recipients_container {
+	padding-top: 5px;
+}
+
+.recipient_line {
+	width: 300px;
+	border: 1px solid #BBB;
+	margin-left: 0px;
+}
+
+.add_recipient_header {
+	font: 32px Georgia, Garamond, American Typewriter, Georgia;
+	color: #FFF;
+	text-align: center;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	background: #175f7a;
+	background: #3388FF;
+	background: #424242;
+	border-bottom: 4px solid #85bfd2;
+	border-top: 4px solid #85bfd2;
+}
+
+.step_table {
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#step_two {
+	/*position: relative;
+	left: 1200px;*/
+}
+
+#step_three {
+	/*position: relative;
+	left: 1200px;*/
+}
+
+#step_four {
+	/*position: relative;
+	left: 1200px;*/
+}
+
+.adult_text {
+	color: #143383;
+}
+
+.child_text {
+	color: #27a117;
+}
+
+#recipient_container {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.recipient_green_line {
+	border: 2px solid #888;
+	margin-bottom: 7px;
+	margin-top: 10px;
+}
+
+.account_recipient_table {
+	width: 1120px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.recipient_location_header {
+	font: 14px Myriad Pro;
+}
+
+.recipient_location_name {
+	font: 17px Myriad Pro, Georgia, Tahoma;
+}
+
+.recipient_location_line {
+	width: 200px;
+	margin-bottom: 3px;
+	margin-top: 0px;
+	border: 1px solid #AAA;
+}
+
+.inline_location_name {
+	color: #ff4e00;
+	font: 16px Myriad Pro, Georgia;
+}
+
+.date_header {
+	font: 16px Georgia, Bookman Old Style, Goudy Old Style, Garamond, Georgia;
+	color: #FFF;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-align: center;
+	background: #280000;
+	background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0.48, rgb(29,54,158)),
+            color-stop(0.98, rgb(61,126,255))
+	);
+	background-image: -moz-linear-gradient(
+	    center bottom,
+	    rgb(29,54,158) 48%,
+	    rgb(61,126,255) 98%
+	);
+	height: 30px;
+	-webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+}
+
+.plan_header {
+	font: 42px Josefin Slab, Garamond, Georgia, Bookman Old Style, Goudy Old Style, Garamond;
+	color: #FFF;
+	padding-top: 15px;
+	padding-bottom: 10px;
+	padding-left: 20px;
+	text-align: left;
+	background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0.2, rgb(59,170,255)),
+	    color-stop(0.6, rgb(44,106,199))
+	);
+        background-image: -moz-linear-gradient(
+            center bottom,
+            rgb(59,170,255) 20%,
+            rgb(44,106,199) 60%
+        );
+	-webkit-border-radius: 10px 10px 0px 0px;
+        -moz-border-radius: 10px 10px 0px 0px;
+}
+
+.general_header {
+	font: 32px Josefin Slab, Garamond, Georgia, Bookman Old Style, Goudy Old Style, Garamond;
+	color: #FFF;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 20px;
+	text-align: left;
+	background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0.2, rgb(59,170,255)),
+	    color-stop(0.6, rgb(44,106,199))
+	);
+        background-image: -moz-linear-gradient(
+            center bottom,
+            rgb(59,170,255) 20%,
+            rgb(44,106,199) 60%
+        );
+	-webkit-border-radius: 10px 10px 0px 0px;
+        -moz-border-radius: 10px 10px 0px 0px;
+}
+
+.date_menu_header {
+	font: 32px Josefin Slab, Garamond, Georgia, Bookman Old Style, Goudy Old Style, Garamond;
+	color: #FFF;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 30px;
+	text-align: left;
+	background: #280000;
+	background-image: -moz-linear-gradient(
+            center bottom,
+            rgb(59,170,255) 20%,
+            rgb(44,106,199) 60%
+        );
+	background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0.2, rgb(59,170,255)),
+	    color-stop(0.6, rgb(44,106,199))
+	);
+	/*height: 30px;*/
+	-webkit-border-radius: 10px 10px 0px 0px;
+        -moz-border-radius: 10px 10px 0px 0px;
+}
+
+.menu_header {
+    font: 38px Josefin Slab;
+    color: #FFF;
+    padding-top: 0px;
+    padding-left: 20px;
+}
+
+.date_text {
+	margin-top: 5px;
+}
+
+#add_to_order img {
+	width: 200px;
+}
+
+.recipient_schedule_table {
+	width: 870px;
+}
+
+.weekly_header {
+	font: 24px Myriad Pro, Georgia, Garamond;
+	text-align: center;
+	padding-top: 25px;
+	padding-bottom: 3px;
+	color: #666;
+}
+
+.weekly_header_line {
+	border: 1px solid #888;
+	margin-bottom: 2px;
+	margin-top: 2px;
+}
+
+.scheduled {
+	font: 24px Myriad Pro, Georgia;
+	color: #5b22ff;
+	text-align: center;
+}
+
+.delivered {
+	font: 24px Myriad Pro, Georgia;
+	color: #29ad23;
+	text-align: center;
+}
+
+.canceled {
+	font: 24px Myriad Pro, Georgia;
+	color: #a72c2c;
+	text-align: center;
+}
+
+.view_daily_menu {
+	font: 14px Georgia;
+	color: #2174f0;
+	text-align: center;
+}
+
+.five_spacer {
+	padding-bottom: 5px;
+}
+
+.recipient_error_message_header {
+	font: 24px Georgia;
+	color: #b51414;
+	color: #FFF;
+	text-align: center;
+	padding-bottom: 5px;
+}
+
+.recipient_error_message_body {
+	font: 18px Georgia;
+	color: #b51414;
+	color: #FFF;
+	text-align: center;
+}
+
+.service_plan_table {
+	margin-left: auto;
+	margin-right: auto;
+	font: 28px Georgia, American Typewriter;
+	text-align: center;
+	color: #666;
+	margin-top: 10px;
+}
+
+.regular_schedule_table {
+	width: 1050px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 30px;
+}
+
+.regular_schedule_days {
+	font: 30px Georgia;
+	color: #888;
+}
+
+.recipient_success {
+	text-align: center;
+	font: 30px Georgia;
+	color: #FFF;
+	padding: 10px;
+	background: green;
+}
+
+.no_recipients {
+	font: 34px Georgia;
+	color: #888;
+	text-align: center;
+	padding-top: 25px;
+}
+
+.add_a_recipient {
+	text-align: center;
+	font: 30px Georgia;
+	color: #888;
+	padding-top: 20px;
+}
+
+.recipient_stat {
+	color: #175F7A;
+}
+
+.delivery_note {
+	font: 12px Myriad Pro, Georgia;
+	color: red;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.view_daily_menu a {
+	color: #2174F0;
+	text-decoration: none;
+}
+
+.no_deliveries {
+	font: 18px Georgia;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	color: #B00;
+}
+
+.update_delivery_status_link {
+	text-align: center;
+}
+
+.update_delivery_status_link a {
+	font: 20px Georgia;
+	color: #2174F0;
+	text-align: center;
+	text-decoration: none;
+}
+
+.delivery_schedule_not_delivered {
+	color: #00BB00;
+}
+
+.delivery_schedule_not_delivered {
+	color: #BB0000;
+}
+
+.check_back {
+	font: 30px Myriad Pro, Georgia;
+	text-align: center;
+	padding-top: 20px;
+}
+
+.no_location_text {
+	font: 18px Arvo, 'Josefin Slab', Myriad Pro;
+	text-align: center;
+	color: #AA0000;
+        padding-top: 10px;
+}
+
+.schedule_button {
+	width: 180px;
+}
+
+.daily_menu_button {
+	width: 180px; 
+}
+
+.delete_recipient_button {
+	width: 130px;
+}
+
+.recipient_buttons_table {
+	margin-left: -4px;
+}
+
+.lunch_button {
+	padding-left: 50px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	padding-bottom: 30px;
+	float: left;
+}
+
+.lunch_button img {
+	width: 200px;
+}
+
+.dinner_button {
+	padding-right: 50px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	float: right;
+}
+
+.dinner_button img {
+	width: 200px;
+}
+
+.meal_service_text {
+	font: 30px Garamond;
+	text-align: center;
+	padding-top: 15px;
+}
+
+.summary_line {
+	width: 140px;
+}
+
+.meal_summary_header {
+	font: 40px Garamond;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	text-align: center;
+	color: #fff9da;
+}
+
+.meal_summary_subtext {
+	font: 28px Josefin Slab, Garamond;
+	color: #FFF;
+	color: #c1deff;
+	padding-bottom: 0px;
+	padding-top: 15px;
+	padding-left: 20px;
+	text-align: left;
+}
+
+.edit_link {
+	padding-bottom: 10px;
+	font: 14px Arvo, Georgia, Helvetica;
+	color: #FFF;
+	padding-left: 20px;
+        padding-top: 5px;
+}
+
+.edit_link a {
+	font: 18px Josefin Slab, Georgia, Helvetica;
+	color: #22c2FF;
+	text-decoration: none;
+	text-align: left;
+	margin-left: 0px;
+	margin-bottom: 20px;
+}
+
+.selections_header_line {
+	border: 2px solid #AAA;
+	margin-top: 0px;
+}
+
+.meal_summary_location_subtext {
+	font: 28px Garamond;
+	color: #FFF;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	text-align: center;
+}
+
+.meal_summary_text {
+	font: 20px Josefin Slab, Garamond;
+	color: #DDD;
+	text-align: left;
+	padding-left: 20px;
+}
+
+.menu_today_header {
+	font: 30px Garamond, Georgia;
+	color: #4b88bb;
+	/*padding-left: 20px;*/
+	text-align: center;
+	padding-top: 10px;
+}
+
+.send_order_button {
+	width: 270px;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+        margin-bottom: 10px;
+}
+
+.send_order_button img {
+	width: 270px;
+}
+
+.place_order_button {
+	width: 290px;
+	margin-top: 5px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.place_order_button img {
+	width: 290px;
+}
+
+.order_summary_image img {
+	width: 240px;
+}
+
+.please_remember {
+	font: 16px Garamond, Georgia;
+	color: #a0eeff;
+	text-align: left;
+	padding-left: 20px;
+	padding-right: 10px;
+}
+
+.meal_summary_quantity {
+	color: #ff4e00;
+	color: #daeefc;
+	color: #71ff5a;
+	font: 20px Josefin Slab, Goudy Old Style, Myriad Pro, Georgia;
+	text-align: left;
+	float: left;
+}
+
+.selections_class_name {
+    font: 24px Dancing Script;
+    color: #FFF;
+    padding-left: 3px;
+}
+
+.remove_button a {
+   text-decoration: none;
+   color: #47cdff;
+   font: 16px Arvo, Josefin Slab;
+   float: right;
+   margin-right: 20px;
+}
+
+.remove_button img {
+  float: left;
+  font: 20px Goudy Old Style, Myriad Pro, Georgia;
+  color: #ff3bc5;
+  text-decoration: none;
+  width: 40px;
+  margin-left: 10px;
+}
+
+.meal_separator {
+	border: 1px solid #444;
+}
+
+.settings_subheader {
+    font: 18px Muli, Arvo, 'Josefin Slab';
+    color: #888;
+}
+
+.settings_minor {
+    font: 16px Muli, Goudy Old Style, 'Josefin Slab';
+    color: #888;
+}
+
+.settings_location_container {
+   padding-left: 20px;
+}
+
+.settings_location_name {
+   font: 24px Muli, Arvo, Goudy Old Style, Arvo;
+   color: #76d11d;
+}
+
+.settings_location_address {
+   font: 20px Muli, Arvo, Goudy Old Style, Arvo;
+   color: #666;
+}
+
+.settings_location_type {
+   font: 18px Muli, Arvo, Goudy Old Style, Arvo;
+   color: #548ba5;
+   margin-bottom: 10px;
+}
+
+.settings_map img {
+   border: 5px solid #888;
+   margin-right: 20px;
+   width: 220px;
+}
+
+.update_image {
+	width: 180px;
+        margin-left: 10px;
+        margin-top: 5px;
+}
+
+.settings_line {
+   border: 2px solid #888;
+   margin-top: 20px;
+}
+
+.error_message_header {
+	font: 24px 'Josefin Slab', Didot, Georgia;
+	color: #b51414;
+	color: #FFF;
+	text-align: center;
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+
+#update_settings_error_messages {
+	margin-bottom: 10px;
+	background: #9f4848;
+}
+
+#update_settings_success {
+	margin-bottom: 10px;
+	background: #4d87d5;
+        background: #25b8e3;
+        padding: 20px;
+}
+
+.basic_info {
+   font: 24px Muli, Arvo, Didot;
+   padding-left: 20px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+}
+
+.edit_user_table {
+   width: 450px;
+   padding-left: 10px;
+}
+
+input.edit_text_box {
+   width: 200px;
+   height: 25px;
+   font: 20px Muli, Arvo, Didot;
+   color: #2174f0;
+   padding-top: 5px;
+}
+
+.edit_settings_container {
+	width: 690px;
+	float: left;
+	background: #FFF;
+	-webkit-border-radius: 10px;
+	-webkit-box-shadow: 5px 5px 5px #888;
+        -moz-border-radius: 10px;
+        -moz-box-shadow: 5px 5px 5px #888;
+        padding-bottom: 10px;
+}
+
+.meal_order_location_update_container {
+	width: 690px;
+	float: left;
+	background: #FFF;
+	-webkit-border-radius: 10px;
+	-webkit-box-shadow: 5px 5px 5px #888;
+        -moz-border-radius: 10px;
+        -moz-box-shadow: 5px 5px 5px #888;
+        padding-bottom: 10px;
+}
+
+.meal_order_location_table {
+	width: 650px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.plans_container {
+	width: 1000px;
+	background: #FFF;
+	margin-left: auto;
+	margin-right: auto;
+	-webkit-border-radius: 10px;
+	-webkit-box-shadow: 5px 5px 5px #888;
+        -moz-border-radius: 10px;
+        -moz-box-shadow: 5px 5px 5px #888;
+	margin-bottom: 20px;
+        margin-top: -10px;
+}
+
+.plan_images {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 950px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.plan_images img {
+	width: 300px;
+}
+
+.meal_status_unconfirmed {
+	font: 26px Josefin Slab, Didot, Georgia, Garamond;
+	color: #ff3000;
+	padding-left: 20px;
+}
+
+.meal_status_received {
+	font: 26px Josefin Slab, Didot, Georgia, Garamond;
+	color: #c7ff85;
+	padding-left: 20px;
+}
+
+.meal_status_delivered {
+	font: 26px Josefin Slab, Didot, Georgia, Garamond;
+	color: #de85ff;
+	padding-left: 20px;
+}
+
+.meal_status_spacer {
+	padding-bottom: 8px;
+}
+
+#meal_summary_errors {
+	background: #d34747;
+}
+
+.meal_summary_error_text {
+	font: 20px Georgia;
+	padding-left: 0px;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: #FFF;
+}
+
+.menu_meal_selection_text {
+	font: 17px Georgia;
+	color: #FFF;
+}
+
+#header_error_messages_container {
+	position: relative;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	background: #9f4848;
+}
+
+.error_message_body {
+	font: 18px 'Josefin Slab', Didot, Georgia;
+	color: #b51414;
+	color: #FFF;
+	text-align: center;
+	padding-bottom: 5px;
+}
+
+/* Accordion styles. */
+
+#accordion {
+    width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#accordion a {
+    border:none;
+    outline-width:0;
+    text-decoration: none;
+}
+
+.accordion_menu_header_blue {
+    font: 20px Didot, Georgia;
+    color: #2174F0;
+    border: 2px solid #BBB;
+    -webkit-border-radius: 10px;
+    -webkit-box-shadow: 5px 5px 5px #ff8e8e;
+    -moz-border-radius: 10px;
+    -moz-box-shadow: 5px 5px 5px #ff8e8e;
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.22, rgb(94,108,129)),
+        color-stop(0.86, rgb(75,140,209))
+    );
+    background-image: -moz-linear-gradient(
+        center bottom,
+        rgb(94,108,129) 22%,
+        rgb(75,140,209) 86%
+    );
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.13, rgb(214,69,69)),
+        color-stop(0.77, rgb(112,4,4))
+    );
+    background-image: -moz-linear-gradient(
+        center bottom,
+        rgb(214,69,69) 13%,
+        rgb(112,4,4) 77%
+    );
+    padding: 15px;
+}
+
+.accordion_menu_header_green {
+    font: 20px Didot, Georgia;
+    color: #2174F0;
+    border: 2px solid #BBB;
+    -webkit-border-radius: 10px;
+    -webkit-box-shadow: 5px 5px 5px #8cce78;
+    -moz-border-radius: 10px;
+    -moz-box-shadow: 5px 5px 5px #8cce78;
+    background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.07, rgb(33,250,0)),
+    color-stop(0.54, rgb(36,181,0))
+);
+background-image: -moz-linear-gradient(
+    center bottom,
+    rgb(33,250,0) 7%,
+    rgb(36,181,0) 54%
+);
+    padding: 15px;
+}
+
+.accordion_menu_header_purple {
+    font: 20px Didot, Georgia;
+    color: #2174F0;
+    border: 2px solid #BBB;
+    -webkit-border-radius: 10px;
+    -webkit-box-shadow: 5px 5px 5px #b888e9;
+    -moz-border-radius: 10px;
+    -moz-box-shadow: 5px 5px 5px #b888e9;
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.07, rgb(37,14,112)),
+        color-stop(0.54, rgb(98,53,148))
+   );
+   background-image: -moz-linear-gradient(
+           center bottom,
+           rgb(37,14,112) 7%,
+           rgb(98,53,148) 54%
+   );
+   padding: 10px;
+}
+
+.view_menus {
+    font: 30px Dancing Script, Josefin Slab, Didot, Georgia;
+    color: #FFF;
+    text-decoration: none;
+    margin-top: -5px;
+}
+
+.selection_vendor_name {
+   font: 30px Arvo, Josefin Slab, Didot, Georgia;
+   color: #FFF;
+   margin-top: 0px;
+}
+
+.selection_vendor_address {
+   font: 24px Josefin Slab, Didot, Georgia;
+   color: #FFF;
+   margin-top: 5px;
+}
+
+.selection_vendor_description {
+   font: 20px Josefin Slab, Didot, Georgia;
+   color: #AAA;
+   margin-top: 5px;
+}
+
+.add_to_order_button {
+    float: right;
+    padding: 0px;
+}
+
+.add_to_order_button img {
+    width: 200px;
+}
+
+a {
+  outline-width:0;
+  -webkit-appearance:none;
+}
+
+.change_permanent_location {
+   padding-top: 5px;
+}
+
+.change_permanent_location_text {
+   font: 18px Muli, Arvo;
+   padding-bottom: 10px;
+}
+
+.change_permanent_location a {
+   font: 18px Muli, Arvo, Georgia;
+   color: #00a8e6;
+   text-decoration: none;
+}
+
+.plan_table {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+#plan_container {
+   width: 250px;
+   padding: 20px;
+   margin-left: auto;
+   margin-right: auto;
+   background: #313131;
+   border-radius: 10px;
+   box-shadow: 5px 5px 5px #444;
+   -webkit-box-shadow: 5px 5px 15px #444;
+   -moz-border-radius: 10px;
+   -moz-box-shadow: 5px 5px 5px #888;
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+
+.plan_title {
+   font: 32px Josefin Slab;
+   color: #FFF;
+   text-align: center;
+}
+
+.plan_subheader {
+   font: 26px Josefin Slab;
+   color: #FFF;
+   text-align: center;
+   margin-top: 20px;
+   margin-bottom: 10px;
+}
+
+.plan_detail {
+   font: 22px Josefin Slab;
+   color: #FFF;
+   margin-top: 3px;
+}
+
+.plan_price {
+   font: 30px Josefin Slab;
+   color: #c3f556;
+   text-align: center;
+   margin-top: 5px;
+}
+
+.dollar {
+   font: 18px Josefin Slab;
+   vertical-align: super;
+}
+
+.plan_band_one {
+   background: #75bbcd;
+   padding: 10px;
+   margin-left: -20px;
+   margin-right: -20px;
+   font: 30px 'Dancing Script', Josefin Slab;
+   color: #FFF;
+   margin-top: 10px;
+   text-align: center;
+}
+
+.plan_band_two {
+   background: #b975cd;
+   padding: 10px;
+   margin-left: -20px;
+   margin-right: -20px;
+   color: #FFF;
+   font: 30px 'Dancing Script', Josefin Slab;
+   margin-top: 10px;
+   text-align: center;
+}
+
+.plan_band_three {
+   background: #77cd75;
+   padding: 10px;
+   margin-left: -20px;
+   margin-right: -20px;
+   color: #FFF;
+   font: 30px 'Dancing Script', Josefin Slab;
+   margin-top: 10px;
+   text-align: center;
+}
+
+.select_plan_button {
+   margin-top: 15px;
+}
+
+.select_plan_button img {
+   width: 250px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+#order_container {
+   width: 1000px;
+   background: #FFF;
+   margin-left: auto;
+   margin-right: auto;
+   border-radius: 10px;
+   box-shadow: 5px 5px 5px #444;
+   -webkit-box-shadow: 5px 5px 15px #444;
+   -moz-border-radius: 10px;
+   -moz-box-shadow: 5px 5px 5px #444;
+   margin-bottom: 20px;
+   margin-top: -10px;
+   padding-bottom: 20px;
+}
+
+.new_order_title {
+   font: 34px Josefin Slab;
+   background: #0082cd;
+   background-image: -moz-linear-gradient(
+            center bottom,
+            rgb(59,170,255) 20%,
+            rgb(44,106,199) 60%
+        );
+  background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0.2, rgb(59,170,255)),
+      color-stop(0.6, rgb(44,106,199))
+  );
+   -moz-border-radius: 10px 10px 0px 0px;
+   border-radius: 10px 10px 0px 0px;
+   color: #FFF;
+   padding: 20px;
+}
+
+.new_order_label {
+   font: 18px Lato, Arvo;
+   padding-left: 25px;
+   padding-top: 10px;
+}
+
+input.new_order_field {
+   font: 18px Arvo;
+   margin-left: 25px;
+   color: #0077FF;
+}
+
+.card_type {
+   margin-left: 25px;
+}
+
+.order_details_container {
+   font: 24px Arvo, Josefin Slab;
+   padding-left: 20px;
+   padding-top: 10px;
+}
+
+.order_detail {
+   font: 18px Lato, Josefin Slab;
+}
+
+.order_detail_color {
+   font: 18px Lato, Josefin Slab;
+   color: #000;
+}
+
+.order_detail_separtor {
+   border: 1px solid #888;
+   margin-bottom: -5px;
+}
+
+.order_details_title {
+   font: 34px 'Dancing Script';
+   padding-left: 25px;
+   margin-bottom: -10px;
+   padding-top: 10px;
+}
+
+.order_table {
+   margin-bottom: 20px;
+}
+
+.no_credits {
+   font: 20px Josefin Slab;
+   text-align: center;
+   color: #FFF;
+   background: #c64e4e;
+   padding: 20px;
+}
+
+.actions {
+   margin-left: 25px;
+   margin-top: 20px;
+   width: 250px;
+}
+
+#order_errors {
+   background: #b05c5c;
+   padding: 10px;
+   margin-top: 20px;
+}
+
+.order_error_message {
+   font: 20px Josefin Slab, Arvo;
+   color: #FFF;
+   text-align: center;
+}
+
+.order_error_header {
+   font: 34px Josefin Slab, Arvo;
+   color: #FFF;
+   text-align: center;
+   padding-bottom: 5px;
+}
+
+.order_spacer {
+   padding-top: 10px;
+}
+
+#purchase_loading {
+   width: 250px;
+   margin-left: 25px;
+   margin-top: 40px;
+   margin-bottom: 30px;
+}
+
+.paypal_express_button {
+   padding-left: 25px;
+   margin-top: 10px;
+}
+
+.paypal_notice {
+   padding-left: 25px;
+   padding-top: 20px;
+   font: 18px Lato;
+}
+
+.vendor_logo img {
+   border: 2px solid #FFF;
+   margin-top: 7px;
+}
+
+.selections_vendor_name {
+   font: 18px Arvo;
+   color: #FFF;
+}
+
+.header_location_name {
+   font: 30px Dancing Script, Arvo;
+   color: #222;
+   text-align: center;
+   padding-top: 15px;
+}
+
+.selections_separator {
+   border: 1px solid #1bc1ff;
+   width: 635px;
+}
+
+.about_vendor {
+   font: 18px Arvo;
+   color: #FFF;
+   margin-top: 10px;
+}
+
+.click_to_view {
+   font: 18px Arvo;
+   color: #FFF;
+   text-align: right;
+}
+
+.accordion_header_table {
+   width: 100%;
+}
+
+.status {
+   font: 20px Josefin Slab;
+   color: #FFF;
+}
+
+.pending {
+   font: 20px Josefin Slab;
+   color: #ffec4a;
+}
+
+.received {
+   font: 20px Josefin Slab;
+   color: #e2abff;
+}
+
+.dashboard_google_map {
+   border: 2px solid #90ff00;
+   width: 220px;
+   margin-left: 20px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+
+.item_price {
+   font: 30px Josefin Slab, Arvo;
+   color: #a2ff00;
+   margin-left: 20px;
+   margin-top: 10px;
+}
+
+.nothing_scheduled {
+   font: 20px Arvo, Dancing Script;
+   color: #333;
+}
+
+.nothing_scheduled {
+   width: 300px;
+   margin-left: auto;
+   margin-right: auto;
+   margin-bottom: 30px;
+}
+
+.reset_password_container {
+   width: 800px;
+   margin-left: auto;
+   margin-right: auto;
+   background: #FFF;
+   -webkit-border-radius: 10px;
+   -border-radius: 10px;
+   -webkit-box-shadow: 5px 5px 5px #888;
+   -moz-border-radius: 10px;
+   -moz-box-shadow: 5px 5px 5px #888;
+   margin-bottom: 20px;
+}
+
+.password_reset_header {
+   font: 24px Arvo;
+   text-align: center;
+   padding-top: 10px;
+}
+
+.password_reset_subheader {
+   font: 20px Arvo;
+   padding-top: 10px;
+   padding-left: 30px;
+   padding-right: 30px;
+}
+
+.password_reset_field {
+   width: 380px;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 30px;
+}
+
+.password_reset_field_label {
+   font: 20px Arvo;
+}
+
+input.password_reset_text {
+   font: 20px Arvo;
+   color: #0077FF;
+}
+
+.reset_password_button {
+   width: 250px;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 30px;
+   margin-bottom: 20px;
+}
+
+.shared_links {
+   text-align: center;
+   padding-bottom: 20px;
+}
+
+.password_reset_error {
+   background: #bc6e6e;
+   color: #FFF;
+   font: 30px Josefin Slab;
+   text-align: center;
+   padding: 20px;
+   margin-top: 20px;
+}
+
+.featured_items {
+   font: 36px Josefin Slab, Arvo;
+   color: #FFF;
+}
+
+.menu_separator {
+   border: 1px solid #444;
+}
+
+.vendor_profile_link {
+   float: right;
+}
+
+.selections_header_table {
+   width: 600px;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 10px;
+}
+
+.vendor_profile_link a {
+   font: 18px Muli, Arvo, Josefin Slab;
+   color: #79deff;
+   margin-left: 20px;
+   margin-bottom: 10px;
+}

@@ -1,0 +1,5 @@
+<% if !scheduled?(RecipientRegularSchedule.find_by_location_recipient_id(@location_recipient.id), @day) %>
+	<%= link_to_remote image_tag("dont_deliver2.png", :class => "schedule_button"), :url => { :controller => "users", :action => "deliver_today", :id => @location_recipient.id, :day => @day }, :complete => visual_effect(:appear, @day, {:duration => 0.5, :from => 0.5, :to => 1.0 }) %>
+<% else %>
+	<%= link_to_remote image_tag("deliver2.png", :class => "schedule_button"), :url => { :controller => "users", :action => "no_delivery_today", :id => @location_recipient.id, :day => @day }, :complete => visual_effect(:appear, @day, {:duration => 0.5, :from => 0.5, :to => 1.0 }) %>
+<% end %>

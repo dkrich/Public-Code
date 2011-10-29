@@ -1,0 +1,19 @@
+<center>
+	<h1>Editing Meal Type</h1>
+	
+	<%= form_for(@meal_type) do |f| %>
+	  <%= f.error_messages %>
+		<p>
+  			Meal Type Identifier: <%= f.text_field :meal_type_id %>
+	  	<p>
+	  	<p>
+	  		Meal Type Name: <%= f.text_field :meal_type_name %>
+	  	<p>
+	  <p>
+	    <%= f.submit 'Update' %>
+	  </p>
+	<% end %>
+	
+	<%= link_to 'Show', @meal_type %> |
+	<%= link_to 'Back', meal_types_path %>
+</center>

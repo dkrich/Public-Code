@@ -1,0 +1,76 @@
+<div id="menu_container">
+	<% if @date_specified %>
+		<div class="admin_menu_date">
+			Menu for <%= Date.parse(@date_specified).strftime("%A, %B %e, %Y") %>
+		</div>
+	<% end %>
+	<hr class="menu_date_line">
+	<% if @date_specified %>
+		<% @date_parsed = Date.parse(@date_specified).strftime("%A").downcase %>
+		<% if @date_parsed == "monday" %>
+			<div class="menu_title_image">
+				<%= image_tag("deli_monday.png") %>
+			</div>
+		<% elsif @date_parsed == "tuesday" %>
+			<div class="menu_title_image">
+				<%= image_tag("italian_tuesday.png") %>
+			</div>
+		<% elsif @date_parsed == "wednesday" %>
+			<div class="menu_title_image">
+				<%= image_tag("southwest_wednesday.png") %>
+			</div>
+		<% end %>
+	<% else %>
+		<div class="admin_menu_title">
+			<%= @menu.name %>
+		</div>
+	<% end %>
+	<% @menu_items = MenuItem.find_all_by_menu_id(@menu.id) %>
+	<div class="entree_title">
+		Side
+	</div>
+	<% @menu_items.each do |menu_item| %>
+		<% @item = Item.find(menu_item.item_id) %>
+		<% if @item.item_type.upcase == "SIDE" %>
+			<div class="admin_menu_item_title">
+				<%= @item.name %>
+			</div>
+			<div class="admin_menu_item_description">
+				<%= @item.description %>
+			</div>
+		<% end %>
+	<% end %>
+	<div class="entree_title">
+		Entree
+	</div>
+	<% @menu_items.each do |menu_item| %>
+		<% @item = Item.find(menu_item.item_id) %>
+		<% if @item.item_type.upcase == "ENTREE" %>
+			<div class="admin_menu_item_title">
+				<%= @item.name %>
+			</div>
+			<div class="admin_menu_item_description">
+				<%= @item.description %>
+			</div>
+		<% end %>
+	<% end %>
+	<!--<div class="entree_title">
+		Dessert
+	</div>
+	<% @menu_items.each do |menu_item| %>
+		<% @item = Item.find(menu_item.item_id) %>
+		<% if @item.item_type.upcase == "DESSERT" %>
+			<div class="admin_menu_item_title">
+				<%= @item.name %>
+			</div>
+			<div class="admin_menu_item_description">
+				<%= @item.description %>
+			</div>
+		<% end %>
+	<% end %>-->
+	<% if is_admin(current_user) %>
+		<div class="edit_menu_link">
+			<%= link_to 'Edit Menu', edit_menu_path(@menu) %>
+		</div>
+	<% end %>
+</div>

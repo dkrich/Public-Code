@@ -1,0 +1,4 @@
+$("#registration_container").fadeOut(500);
+$("#whole_new_user_container").prepend('<div id="select_location" style="display:none"><%= escape_javascript(render(:partial => "select_location")) %></div>');
+$("#select_location").delay(500).fadeIn(500);
+$(".thanks").hide();

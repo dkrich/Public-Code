@@ -1,0 +1,194 @@
+<% @meal_type_one_count = 0 %>
+<% @meal_type_two_count = 0 %>
+<% @meal_type_three_count = 0 %>
+<% if @outstanding_order %>
+	<% @meal_type_one_count = @outstanding_order.meal_one_quantity %>
+	<% @meal_type_two_count = @outstanding_order.meal_two_quantity %>
+	<% @meal_type_three_count = @outstanding_order.meal_three_quantity %>
+<% end %>
+<% @next_five_days = get_weekdays %>
+<% @selected_date = Time.now %>
+<% if @selected_date.wday == 0 or @selected_date.wday == 1 or @selected_date.wday == 6 %>
+	<% @next_five_days_index = 0 %>
+<% elsif @selected_date.wday == 2 %>
+	<% @next_five_days_index = 1 %>
+<% elsif @selected_date.wday == 3 %>
+	<% @next_five_days_index = 2 %>
+<% elsif @selected_date.wday == 4 %>
+	<% @next_five_days_index = 3 %>
+<% elsif @selected_date.wday == 5 %>
+	<% @next_five_days_index = 4 %>
+<% end %>
+<% @daily_selection = DailySelection.find_by_date(@next_five_days[@next_five_days_index].strftime("%d%m%Y")) %>
+<% if !@daily_selection.blank? %>
+	<% if @meal_type_one_count > 0 %>
+		<div id="meal_one">
+			<table class="selections_summary_table" cellpadding="0">
+				<tr>
+					<td>
+						<div class="meal_summary_selection_blue">
+							<%= image_tag("selections_blue.png") %>
+						</div>
+					</td>
+					<td>
+						<div class="order_summary_image">
+							<%= image_tag("standard_fare_heading.png") %>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<% @menu_items = MenuItem.find_all_by_menu_id(@daily_selection.menu_type_one_id) %>
+					<% @menu_items.each do |menu_item| %>
+						<% @item = Item.find(menu_item.item_id) %>
+						<% if @item.item_type.upcase == "ENTREE" %>
+							<td valign="top" colspan="2">
+								<div class="selections_menu_item_header">
+									Entree: <%= @item.name %>
+								</div>
+							</td>
+						<% end %>
+					<% end %>
+				</tr>
+				<tr>
+					<% @menu_items.each do |menu_item| %>
+						<% @item = Item.find(menu_item.item_id) %>
+						<% if @item.item_type.upcase == "SIDE" %>
+							<td valign="top" colspan="2">
+								<div class="selections_menu_item_header">
+									Side: <%= @item.name %>
+								</div>
+							</td>
+						<% end %>
+					<% end %>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<div class="meal_summary_quantity">
+							Quantity: <%= @meal_type_one_count %>
+						</div>
+						<div class="remove_button">
+							<%= link_to_remote image_tag("down_arrow.png"), :url => { :controller => "users", :action => "remove_from_order", :id => @outstanding_order.id, :meal_type => 1 } %>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<% if @meal_type_two_count > 0 or @meal_type_three_count > 0 %>
+			<hr class="meal_separator">
+		<% end %>
+	<% end %>
+	<% if @meal_type_two_count > 0 %>
+		<div id="meal_two">
+			<table class="selections_summary_table" cellpadding="0">
+				<tr>
+					<td>
+						<div class="meal_summary_selection_blue">
+							<%= image_tag("selections_green.png") %>
+						</div>
+					</td>
+					<td>
+						<div class="order_summary_image">
+							<%= image_tag("salad_heading.png") %>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<% @menu_items = MenuItem.find_all_by_menu_id(@daily_selection.menu_type_two_id) %>
+					<% @menu_items.each do |menu_item| %>
+						<% @item = Item.find(menu_item.item_id) %>
+						<% if @item.item_type.upcase == "ENTREE" %>
+							<td valign="top" colspan="2">
+								<div class="selections_menu_item_header">
+									Entree: <%= @item.name %>
+								</div>
+							</td>
+						<% end %>
+					<% end %>
+				</tr>
+				<tr>
+					<% @menu_items.each do |menu_item| %>
+						<% @item = Item.find(menu_item.item_id) %>
+						<% if @item.item_type.upcase == "SIDE" %>
+							<td valign="top" colspan="2">
+								<div class="selections_menu_item_header">
+									Side: <%= @item.name %>
+								</div>
+							</td>
+						<% end %>
+					<% end %>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<div class="meal_summary_quantity">
+							Quantity: <%= @meal_type_two_count %>
+						</div>
+						<div class="remove_button">
+							<%= link_to_remote image_tag("down_arrow.png"), :url => { :controller => "users", :action => "remove_from_order", :id => @outstanding_order.id, :meal_type => 2 } %>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<% if @meal_type_three_count > 0 %>
+			<hr class="meal_separator">
+		<% end %>
+	<% end %>
+	<% if @meal_type_three_count > 0 %>
+		<div id="meal_three">
+			<table class="selections_summary_table" cellpadding="0">
+				<tr>
+					<td>
+						<div class="meal_summary_selection_blue">
+							<%= image_tag("selections_purple.png") %>
+						</div>
+					</td>
+					<td>
+						<div class="order_summary_image">
+							<%= image_tag("different_heading.png") %>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<% @menu_items = MenuItem.find_all_by_menu_id(@daily_selection.menu_type_three_id) %>
+					<% @menu_items.each do |menu_item| %>
+						<% @item = Item.find(menu_item.item_id) %>
+						<% if @item.item_type.upcase == "ENTREE" %>
+							<td valign="top" colspan="2">
+								<div class="selections_menu_item_header">
+									Entree: <%= @item.name %>
+								</div>
+							</td>
+						<% end %>
+					<% end %>
+				</tr>
+				<tr>
+					<% @menu_items.each do |menu_item| %>
+						<% @item = Item.find(menu_item.item_id) %>
+						<% if @item.item_type.upcase == "SIDE" %>
+							<td valign="top" colspan="2">
+								<div class="selections_menu_item_header">
+									Side: <%= @item.name %>
+								</div>
+							</td>
+						<% end %>
+					<% end %>
+				</tr>
+				<tr>
+					<td colspan="2" valign="middle">
+						<div class="meal_summary_quantity">
+							Quantity: <%= @meal_type_three_count %>
+						</div>
+						<div class="remove_button">
+							<%= link_to_remote image_tag("down_arrow.png"), :url => { :controller => "users", :action => "remove_from_order", :id => @outstanding_order.id, :meal_type => 3 } %>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	<% end %>
+<% end %>
+<% if @meal_type_one_count == 0 and @meal_type_two_count == 0 and @meal_type_three_count == 0 %>
+	<div class="meal_summary_text">
+		You haven't made any selections.
+	</div>
+<% end %>

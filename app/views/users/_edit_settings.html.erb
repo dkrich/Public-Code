@@ -1,0 +1,111 @@
+<div class="edit_settings_container">
+  <div class="general_header">
+          <div class="finished_updating">
+                <%= link_to "Return to Menus", {:controller => "users", :action => "finished_updating"}, :remote => true %>
+          </div>
+          Account Settings
+  </div>
+  <div id="update_settings_error_messages"></div>
+  <%= form_for @user, :as => :user, :url => { :controller => "users", :action => "update_settings" }, :method => "post", :remote => true do |e| %>
+        <div class="basic_info">
+          Your Basic Info
+        </div>
+        <table class="edit_user_table" cellspacing="10">
+                <tr>
+                        <td>
+                            <div class="settings_subheader">
+                              First Name:
+                          </div>
+                        </td>
+                        <td>
+                              <%=  e.text_field :first_name, :class => "edit_text_box" %>
+                        </td>
+                 </tr>
+                 <tr>
+                         <td>
+                            <div class="settings_subheader">
+                                Last Name:
+                            </div>
+                        </td>
+                        <td>
+                              <%= e.text_field :last_name, :class => "edit_text_box" %>
+                        </td>
+                </tr>
+                <tr>
+                         <td>
+                            <div class="settings_subheader">
+                                Email:
+                            </div>
+                        </td>
+                        <td>
+                              <%= e.text_field :email, :class => "edit_text_box" %>
+                        </td>
+                </tr>
+                <tr>
+                         <td>
+                            <div class="settings_subheader">
+                                Password:
+                            </div>
+                        </td>
+                        <td>
+                              <%= e.password_field :password, :class => "edit_text_box" %>
+                        </td>
+                </tr>
+                <tr>
+                         <td>
+                            <div class="settings_subheader">
+                                Confirm Password:
+                            </div>
+                           <div class="settings_minor">
+                                (If Changing)
+                           </div>
+                        </td>
+                        <td>
+                              <%= e.password_field :password_confirmation, :class => "edit_text_box" %>
+                        </td>
+                </tr>
+        </table>
+        <div class="update_image">
+                <%= image_submit_tag("update_settings.png", :class => "update_image") %>
+        </div>
+    <% end %>
+    <hr class="settings_line"/>
+    <div class="basic_info">
+          Your Regular Location
+    </div>
+    <div class="settings_location_container">
+      <% unless @drop_off_location.blank? %>
+            <table>
+                  <tr>
+                      <td valign="top">
+                                  <div class="settings_map">
+                                      <%= image_tag(@drop_off_location.map_url) %>
+                                  </div>
+                      </td>
+                      <td valign="top">
+                                  <div class="settings_location_name">
+                                      <%= @drop_off_location.name   %>
+                                  </div>
+                                  <div class="settings_location_address">
+                                      <%= @drop_off_location.street_address   %><br/>
+                                      <%="#{@drop_off_location.city}, #{@drop_off_location.state}" %>
+                                  </div>
+                                  <div class="settings_location_type">
+                                      Location Type: <%= @drop_off_location.location_type   %>
+                                  </div>
+                                  <div class="change_permanent_location">
+                                      <%= link_to "Change Regular Location", {:controller => "users", :action => "change_permanent_location"} %>
+                                  </div>
+                      </td>
+                  </tr>
+            </table>
+        <% else %>
+            <div class="change_permanent_location">
+                <div class="change_permanent_location_text">
+                    You haven't selected a drop-off location yet.
+                </div>
+                <%= link_to "Choose your location...", {:controller => "users", :action => "change_permanent_location"} %>
+            </div>
+        <% end %>
+    </div>
+</div>

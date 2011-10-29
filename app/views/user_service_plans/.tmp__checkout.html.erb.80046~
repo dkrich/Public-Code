@@ -1,0 +1,12 @@
+<div class="new_service_plan_step_two">
+	<table>
+		<tr>
+			<td>
+				<%= image_tag("step_two.png", :class => "new_service_plan_step_image") %>
+			</td>
+			<td>
+				Checkout
+			</td>
+		</tr>
+	</table>
+</div>

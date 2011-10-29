@@ -1,0 +1,54 @@
+.service_time_header {
+	font: bold 20px Georgia;
+	text-align: center;
+	padding-top: 20px;
+}
+
+.drop_off_times_header {
+	font: bold 30px Georgia;
+	text-align: center;
+}
+
+.add_time_url {
+	padding-top: 20px;
+	font: 18px Georgia;
+	text-align: center;
+}
+
+.add_time_url a {
+	text-decoration: none;
+}
+
+.drop_off_times_table {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.edit_times_table {
+   width: 300px;
+   font: 16px Helvetica;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 20px;
+}
+
+.table_header {
+	font: 20px Helvetica, Georgia;
+	color: #666;
+	height: 40px;
+	text-align: right;
+}
+
+input.drop_off_time {
+	width: 300px;
+	height: 30px;
+	font: 28px Helvetica, Georgia;
+}
+
+.delivery_time_text {
+	font: 20px Helvetica, Georgia;
+	color: #444;
+	padding-top: 10px;
+	text-align: center;
+}

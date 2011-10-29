@@ -1,0 +1,5 @@
+<% if @display_add_to_order_button %>
+    <div class="add_to_order_button">
+	<%= link_to image_tag("add_to_order.png"), { :controller => "users", :action => "add_meal_to_order", :id => @location_selection.id }, :remote => true %>
+    </div>
+<% end %>

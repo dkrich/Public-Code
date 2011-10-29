@@ -1,0 +1,101 @@
+<div id="about_us_container">
+	<div class="about_us_major_header">
+		Imagine never having to plan your own lunch again.
+	</div>
+	<div class="about_us_minor_header">
+		At Littlejaw, we take pride in providing a service that helps busy adults by removing one time-consuming task from their
+		day.
+		<div class="add_on_link">
+			<%= link_to "See how it works >>", "http://www.google.com" %>
+		</div>
+	</div>
+	<div class="about_us_header">
+		The Story
+	</div>
+	<div class="about_us_body">
+		Littlejaw 
+	</div>
+	<div class="about_us_header">
+		The Founders
+	</div>
+	<div class="about_us_body">
+		One evening, a mom and former financial advisor from Detroit, and the	other, a software engineer from Atlanta, began discussing the annoyances experienced by busy workers in office buildings
+		with limited options for lunch.
+		<p>They realized that on most days, they and their coworkers had to either rush to pack a lunch in the morning, or go out for an expensive, unhealthy lunch in the afternoon.</p>
+		<p>They began discussing the idea of a delivery service that took care of busy individuals on the days when they need it. A few months later, Littlejaw was born.</p>
+	</div>
+	<div class="about_us_header">
+		The Food
+	</div>
+	<div class="about_us_body">
+		We won't serve you anything that we wouldn't want to eat for lunch. Above all else, that's our guiding principle.
+		That's why our carefully-selected daily menu contains
+		only the freshest, highest-quality ingredients.
+		<p>All meals are prepared in an MDA-certified commercial kitchen by trained, licensed chefs.</p>
+		<p>At Littlejaw, safety and sanitation are our highest priorities. Every day we will deliver you a lunch that will make your co-workers
+		jealous.</p>
+		Trust us, this stuff is awesome. 
+	</div>
+	<div class="about_us_header">
+		Some Commonly Asked Questions
+	</div>
+	<div class="about_us_body">
+		<div class="about_us_subtitle">
+			You've got questions? Great, we've probably heard them before. Here are some of the things we're often asked.
+		</div>
+		<div class="about_us_faq">
+			How is this service different than that sandwich shop that delivers, that quaint take-out restaurant in the strip-mall, or the sweet old man who sells sandwiches in the basement?
+		</div>
+		<div class="about_us_faq_body">
+			<p>Littlejaw is similar in a lot of ways to other delivery services. First of all, we bring you a meal. Secondly, we, uh.....well, now that I think about it, we're not really that similar.</p>
+			<p>After all, most restaurants that deliver will charge you a delivery fee, and might throw in a processing fee for good measure. (Seriously, does anybody know what
+			the heck a "processing fee" is? If so, please let us know, because we don't, and we flat don't like 'em.)</p>
+			<p>Then, after all that, when the driver shows up, you have to leave a tip. So that nice 6 dollar sandwich has just somehow grown into a 10 dollar sandwich, which is funny, because we're pretty sure
+			you're getting the same sandwich that you thought you were when they told you it was 6 bucks. Let's leave the bait-and-switch for used car salesmen.</p>
+			<p>With Littlejaw, there are no hidden fees, no delivery charges, and no tips. All costs are made clear and paid up front, so all you have to do
+			is decide on which days you want us to bring you an awesome lunch.</p>
+			<p>We all love to get out of the office during the day. Sometimes we want to go run errands, grab a cup of coffee, or just experience a new restaurant. We get that, and that's why
+			our ordering system allows you to decide whether you want us to take care of your lunch, or whether you would rather handle it yourself. We just ask that you tell us by 8 am each day so we have time
+			to properly prepare your lunch for you.
+			<p>Oh, and with all due respect to the sweet old man in the basement, his sandwiches are okay, but we are certain you will like our food better.</p>
+		</div>
+		<div class="about_us_faq">
+			But other delivery services offer multiple menu choices. Why don't you?
+		</div>
+		<div class="about_us_faq_body">
+			<p>Think of the restaurant you eat at most often.</p>
+			<p>Now think about the last several items you ordered at that restaurant.</p>
+			<p>Chances are that you can count on one hand the number of unique things you ate. If that sounds familiar, it's because
+			when most people familiarize themselves with a menu at a favorite restaurant, they know what they like, and the
+			rest is just a distraction.</p>
+			<p>Our goal is for you to trust us to craft a delicious meal for you every day you want it. We feel confident that we
+			can do that, because we put all our attention into a few items, as opposed to a little attention into several items,
+			most of which you don't want anyway.</p>
+			<p>Menus are rotated on a daily basis, so you're never eating the same thing two days in a row.</p>
+			<p>Each day's menu is posted in advance, so you can easily view what we will be serving on a particular day. If you don't
+			like it, simply opt out that day, and we will try to do better the next time. We don't expect this to happen often,
+			but if it does, we would appreciate you letting us know, so we can make it better.</p>
+		</div>
+		<div class="about_us_faq">
+			Why can't I change my mind after 8am? What's so special about 8am?
+		</div>
+		<div class="about_us_faq_body">
+			<p>In short, we do this to save you money.</p>
+			<p>You might like having the ability to call up a delivery service on a moment's notice
+			or the flexibility of being able to drive to the local deli for your lunch whenever you want, but you are paying a lot
+			for that convenience.</p>
+			<p>A typical restaurant has to be able to respond to unpredictable demand, spend an enormous amount of cash on the overhead associated with keeping a
+			store open 12 or more hours a day, and keep a huge set of ingredients around to meet any request. Guess who ends up paying for all that?</p>
+			<p>By offering a limited menu and gathering orders in advance, we strip all those costs out, and pass the savings onto you.</p>
+		</div>
+		<div class="about_us_faq">
+			This all sounds fine, but you don't deliver to my office. How can we get Littlejaw to come here?
+		</div>
+		<div class="about_us_faq_body">
+			<br>Right here:
+			<div class="add_on_link">
+				<%= link_to "Submit a request for Littlejaw service at your office >>", "http://www.google.com" %>
+			</div>
+		</div>
+	</div>
+</div>

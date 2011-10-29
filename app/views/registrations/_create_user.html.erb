@@ -1,0 +1,45 @@
+<div id="registration_info">
+	<div id="new_user_form">
+            <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :remote => true) do |f| %>
+                <div id="registration_errors">
+                    <%= render :partial => "error_messages" %>
+                </div>
+                <div id="registration_form">
+                    <div class="new_service_plan_label">
+                            <%= f.label :email, "First Name" %>
+                    </div>
+                    <%= f.text_field :first_name, :maxlength => 50, :class => "new_service_plan_input" %>
+                    <div class="new_service_plan_label">
+                            <%= f.label :email, "Last Name" %>
+                    </div>
+                    <%= f.text_field :last_name, :maxlength => 50, :class => "new_service_plan_input" %>
+                    <div class="new_service_plan_label">
+                            <%= f.label :email, "Email" %>
+                    </div>
+                    <%= f.text_field :email, :maxlength => 50, :class => "new_service_plan_input" %>
+                    <div class="new_service_plan_label">
+                            <%= f.label :password, f.object.new_record? ? nil : "Change password", :class => "largelabel_alt" %>
+                    </div>
+                    <%= f.password_field :password, :maxlength => 40, :class => "new_service_plan_input" %>
+                    <div class="new_service_plan_label">
+                            <%= f.label :password_confirmation,  "Confirm Password", :class => "largelabel_alt" %>
+                    </div>
+                    <%= f.password_field :password_confirmation, :maxlength => 40, :class => "new_service_plan_input" %>
+                </div>
+                <!--<div class="new_service_plan_required">
+                        * Required Field
+                </div>-->
+                <div class="register_button">
+                        <%= image_submit_tag("get_started_alt.png", :class => "sign_up_button") %>
+                </div>
+                <div id="loading" style="display:none">
+                  <%= image_tag("email_loader.gif") %>
+                </div>
+            <% end %>
+            
+	</div>
+        <div class="thanks">
+            Thanks for trying Third Batch!<br/>
+            -We'll see ya soon!
+        </div>
+</div>

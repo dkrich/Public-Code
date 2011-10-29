@@ -1,0 +1,40 @@
+<h1>Editing drop_off_location</h1>
+
+<% form_for(@drop_off_location) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :type %><br />
+    <%= f.text_field :location_type %>
+  </p>
+  <p>
+    <%= f.label :street_address %><br />
+    <%= f.text_field :street_address %>
+  </p>
+  <p>
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </p>
+  <p>
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </p>
+  <p>
+    <%= f.label :map_url %><br />
+    <%= f.text_area :map_url %>
+  </p>
+  <p>
+    <%= f.label :occupancy %><br />
+    <%= f.text_field :occupancy %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @drop_off_location %> |
+<%= link_to 'Back', drop_off_locations_path %>

@@ -1,0 +1,48 @@
+<table class="menu_button_table">
+	<tr>
+		<td align="center">
+			<% if @current_menu == "standard" %>
+				<%= image_tag("standard_fare_illuminated.png") %>
+			<% else %>
+				<%= link_to_remote image_tag("standard_fare.png"), :url => { :controller => "users", :action => "switch_to_standard", :order_started => @order_started } %>
+			<% end %>
+		</td>
+		<td align="center">
+			<% if @current_menu == "salad" %>
+				<%= image_tag("salad_illuminated.png") %>
+			<% else %>
+				<%= link_to_remote image_tag("salad.png"), :url => { :controller => "users", :action => "switch_to_salad", :order_started => @order_started } %>
+			<% end %>
+		</td>
+		<td align="center">
+			<% if @current_menu == "different" %>
+				<%= image_tag("something_different_illuminated.png") %>
+			<% else %>
+				<%= link_to_remote image_tag("something_different.png"), :url => { :controller => "users", :action => "switch_to_different", :order_started => @order_started } %>
+			<% end %>
+		</td>
+	</tr>
+	<tr>
+		<td id="add_to_order" align="center">
+			<% if @order_started and @active_order_button == 1 %>
+				<%= link_to_remote image_tag("add_to_order_active.png"), :url => { :controller => "users", :action => "add_meal_to_order", :id => 1 } %>
+			<% else %>
+				<%= image_tag("add_to_order_inactive.png") %>
+			<% end %>
+		</td>
+		<td id="add_to_order" align="center">
+			<% if @order_started and @active_order_button == 2 %>
+				<%= link_to_remote image_tag("add_to_order_active.png"), :url => { :controller => "users", :action => "add_meal_to_order", :id => 2 } %>
+			<% else %>
+				<%= image_tag("add_to_order_inactive.png") %>
+			<% end %>
+		</td>
+		<td id="add_to_order" align="center">
+			<% if @order_started and @active_order_button == 3 %>
+				<%= link_to_remote image_tag("add_to_order_active.png"), :url => { :controller => "users", :action => "add_meal_to_order", :id => 3 } %>			
+			<% else %>
+				<%= image_tag("add_to_order_inactive.png") %>
+			<% end %>
+		</td>
+	</tr>
+</table>

@@ -1,0 +1,54 @@
+<div class="credentials_text">
+	<div class="login_box">
+		<table class="front_page_header_login_table" cellspacing=10>
+			<tr>
+				<td colspan="2">
+					<div class="member_sign_in">
+						Welcome back!
+					</div>
+					<div class="member_sign_in_subtext">
+						You can sign in with your email address below.
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="login_text">
+						<%= form_mini.label :email, "Email:" %>
+					</div>
+				</td>
+				<td>
+					<%= form_mini.text_field :email, :class => "email_text_box" %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="login_text">
+						<%= form_mini.label :password, "Password:" %>
+					</div>
+				</td>
+				<td>
+					<%= form_mini.password_field :password, :class => "email_text_box" %>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<div class="remember_me_text">
+						<%= form_mini.check_box :remember_me %>
+					   	<%= form_mini.label :remember_me, "Remember Me" %>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<div class="login_image">
+						<%= link_to_remote image_tag("littlejaw_sign_in.png", :class => "sign_in_button"), :url => { :controller => "user_sessions", :action => "create" }, :submit => "login_credentials" %>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<div class="forgotten_password">
+			<%= link_to "Forgot your password?", :controller => "password_resets", :action => "new" %>
+		</div>
+	</div>
+</div>

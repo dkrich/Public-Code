@@ -1,0 +1,26 @@
+<% form_remote_for @user_session, :url => { :controller => "user_sessions", :action => "create" } do |e| %>
+	<div id="login_credentials">
+		<%= render :partial => 'form', :object => e %>
+	</div>
+<% end %> 
+<div class="no_more_container">
+	<%= image_tag("never_banner.png") %>
+</div>
+<div class="see_how_container">
+	<%= image_tag("see_how.png", :class => "see_how") %>
+</div>
+<div class="clearboth"></div>
+<div class="pricing_container">
+	<div class="pricing_header">
+		How often would you like us to bring you a great meal?
+	</div>
+	<div class="occasional">
+		<%= image_tag("occasionally.png", :class => "occasional_image") %>
+	</div>
+	<div class="occasional">
+		<%= image_tag("regularly.png", :class => "occasional_image") %>
+	</div>
+	<div class="occasional">
+		<%= image_tag("every_day.png", :class => "occasional_image") %>
+	</div>
+</div>

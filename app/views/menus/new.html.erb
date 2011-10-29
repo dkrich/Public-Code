@@ -1,0 +1,37 @@
+<div class="create_new_menu_header">
+	New Menu
+</div>
+<%= form_for(@menu) do |f| %>
+  	<% if @menu.errors.any? %>
+          <% @menu.errors.full_messages.each do |msg| %>
+            <%= msg %>
+          <% end %>
+        <% end %>
+	<div id="new_menu_container">
+		<table cellspacing=8>
+			<tr>
+				<td>
+					<div class="new_menu_text">
+						Name:
+					</div>
+				</td>
+				<td>
+					<%= f.text_field :name, :class => "new_menu" %>
+				</td>
+                        </tr>
+                        <tr>
+                                <td>
+                                        <div class="new_menu_text">
+						Vendor:
+					</div>
+                                </td>
+                                <td>
+                                        <%= f.select :vendor_id, Vendor.all.collect {|p| [p.name, p.id]}, :selected => 1 %>
+                                </td>
+				<td>
+					<%= f.submit 'Create' %>
+				</td>
+			</tr>
+		</table>
+	</div>
+<% end %>

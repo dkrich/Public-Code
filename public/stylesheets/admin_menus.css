@@ -1,0 +1,525 @@
+.header_links a {
+	font: 14px Arvo, Didot, Georgia, Tahoma;
+	color: #AAA;
+	color: #06D;
+        color: #FFF;
+	text-decoration: none;
+	margin-right: 15px;
+	text-align: right;
+}
+
+.admin_header {
+	font: 32px Didot, Georgia;
+	color: #2565AC;
+	text-align: center;
+	padding-top: 20px;
+}
+
+.quick_stats_header {
+	font: 24px Didot, Georgia;
+	color: #666;
+	text-align: center;
+	padding-top: 15px;
+}
+
+.registered_users {
+	font: 18px Didot, Georgia;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.meal_schedule_type_one {
+	font: 22px Garamond;
+	color: #00347b;
+	text-align: center;
+}
+
+.meal_schedule_type_two {
+	font: 22px Garamond;
+	color: #00a904;
+	text-align: center;
+}
+
+.meal_schedule_type_three {
+	font: 22px Garamond;
+	color: #5000a9;
+	text-align: center;
+}
+
+.admin_logo {
+	width: 350px;
+	margin-top: 10px;
+}
+
+.editing_title {
+	font: 24px Georgia;
+	color: #222;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+
+.editing_subtitle {
+	font: 20px Georgia;
+	color: #4fc32f;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+
+.editing_item_name {
+	font: 18px Garamond, Georgia;
+	color: #222;
+}
+
+.editing_item_header {
+	font: bold 16px Georgia;
+}
+
+.editing_table {
+	width: 1000px;
+	padding-left: 8px;
+	padding-top: 10px;
+}
+
+.add_item_link a {
+	font: 16px Georgia;
+	text-decoration: none;
+	color: #6585d8;
+}
+
+.edit_menu_name_table {
+	width: 590px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+
+input.edit_menu {
+	width: 400px;
+	height: 35px;
+	font: 23px Georgia;
+	margin-left: 5px;
+	margin-right: 5px;
+	border: 2px solid #2c64d6;
+}
+
+.edit_menu_name {
+	padding-top: 10px;
+	font: 18px Georgia;
+}
+
+.edit_menu_name a {
+	font: 16px Georgia;
+	color: #2c64d6;
+	text-decoration: none;
+}
+
+#edit_menu_container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#admin_edit_menu_title {
+	font: 28px Garamond, Georgia;
+	text-align: center;
+	padding-top: 10px;
+}
+
+#all_menus_container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 50px;
+}
+
+.menu_list_header {
+	font: 32px Georgia;
+	padding-top: 10px;
+	text-align: center;
+}
+
+.create_new_menu_link {
+	margin-right: 10px;
+	margin-top: 10px;
+	text-align: center;
+}
+
+.create_new_menu_link a {
+	font: 16px Georgia;
+	color: #2773e5;
+	text-decoration: none;
+}
+
+.menu_list_name {
+	font: 28px Georgia;
+	color: #86332a;
+	text-align: center;
+	padding-top: 25px;	
+}
+
+.menu_list_name a {
+	color: #2773e5;
+	text-decoration: none;
+}
+
+.menu_list_item_type {
+	font: bold 24px Garamond, Georgia;
+	color: #3b13ce;
+	font-variant: small-caps;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 3px;
+}
+
+.menu_list_item_name {
+	font: bold 20px Garamond, Georgia;
+	color: #53862a;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.menu_list_item_description {
+	font: 16px Georgia;
+	color: #333;
+	text-align: center;
+	padding-top: 0px;
+}
+
+.schedule_table {
+	margin-left: auto;
+	margin-right: auto;
+	width: 900px;
+	height: 500px;
+	margin-bottom: 50px;
+}
+
+.calendar_month_header {
+	font: 35px Arvo, Garamond, Georgia;
+	color: #1d7ad1;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.calendar_date {
+	font: 20px Garamond, Georgia;
+	color: #222;
+}
+
+.schedule_weekday {
+	font: bold 20px Garamond, Georgia;
+	color: #333;
+}
+
+.calendar_box {
+	border: 2px solid #888;
+}
+
+.set_menu {
+	text-align: center;
+	padding-bottom: 5px;
+}
+
+.set_menu a {
+	font: bold 16px Lucida Grande, Garamond, Georgia;
+	color: #2174F0;
+	text-decoration: none;
+}
+
+.schedule_menu_name {
+	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.schedule_menu_name a {
+	font: bold 16px Helvetica, Georgia;
+	color: #2773E5;
+	text-decoration: none;
+	text-align: center;
+}
+
+.calendar_menu_name {
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 5px;
+}
+
+.calendar_menu_name a {
+	font: bold 18px Georgia;
+	color: #2773E5;
+	text-decoration: none;
+}
+
+.create_new_menu_header {
+	font: 30px Georgia;
+	text-align: center;
+	padding-top: 20px;
+	color: #58764b;
+}
+
+.new_menu_text {
+	font: 20px Georgia;
+	color: #555;
+}
+
+input.new_menu {
+	width: 400px;
+	height: 35px;
+	font: 30px Georgia;
+	color: #275c82;
+	border: 2px solid #275c82;
+}
+
+#new_menu_container {
+	width: 520px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 20px;
+}
+
+/* Styles for outstanding orders view. */
+
+.view_orders_date {
+	font: 30px Didot, Georgia;
+	color: #143383;
+	text-align: center;
+	padding-top: 20px;
+}
+
+.orders_note {
+	font: 16px Didot, Georgia;
+	color: red;
+	text-align: center;
+}
+
+.order_location_header {
+	font: 20px Didot, Georgia;
+	color: #175F7A;
+	text-align: center;
+	padding-top: 20px;
+}
+
+.orders_standard_count {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	font: 20px Didot, Georgia;
+	background-color: #004477;
+	color: #FFF;
+	text-align: center;
+	padding-top: 5px;
+}
+
+.orders_salad_count {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	font: 20px Didot, Georgia;
+	background-color: #008000;
+	color: #FFF;
+	text-align: center;
+	padding-top: 5px;
+}
+
+.orders_different_count {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	font: 20px Didot, Georgia;
+	background-color: #9065bb;
+	color: #FFF;
+	text-align: center;
+	padding-top: 5px;
+}
+
+.recipient_order_table {
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 30px;
+	padding-top: 10px;
+}
+
+.recipient_name_cell {
+    background-color: #313131;
+    padding: 5px;
+    color: #FFF;
+    font: 20px Helvetica;
+}
+
+.recipient_order_table_header {
+	font: bold 18px Didot, Georgia;
+	padding-bottom: 10px;
+        color: #333;
+}
+
+.no_deliveries {
+	font: 20px Garamond, Goudy Old Style;
+	color: #B33;
+	text-align: center;
+	padding-bottom: 10px;
+	padding-top: 3px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.delivery_schedule_recipient_name {
+	font: 20px Didot, Georgia;
+	color: #2BF;
+	text-align: center;
+}
+
+.meal_orders_summary_title {
+	font: 30px Georgia;
+	color: #444;
+}
+
+.meal_orders_summary_header {
+	font: 22px Georgia;
+	color: #444;
+}
+
+.meal_orders_standard_header {
+	font: 22px Georgia;
+	background-color: #5161a8;
+	color: #FFF;
+}
+
+.meal_orders_salad_header {
+	font: 22px Georgia;
+	background-color: #64955b;
+	color: #FFF;
+}
+
+.meal_orders_different_header {
+	font: 22px Georgia;
+	background-color: #9c6eb9;
+	color: #FFF;
+}
+
+.meal_orders_summary_table {
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+input.schedule_form_container {
+	width: 200px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.status_delivered {
+	color: #4FC32F;
+}
+
+.status_pending {
+	color: #DD88DD;
+}
+
+.location_schedule_header {
+   font: 28px Arvo;
+   text-align: center;
+}
+
+.admin_schedule_delivery_time {
+   font: 18px Arvo;
+   text-align: center;
+}
+
+.vendor_table {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 20px;
+   font: 18px Arvo;
+}
+
+.vendors_header {
+   font: 30px Arvo;
+   text-align: center;
+}
+
+.vendor_table_header {
+   text-align: center;
+}
+
+.vendor_table_cell {
+   font: 20px Arvo;
+}
+
+.admin_user_table {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+   font: 16px Helvetica;
+}
+
+.user_admin_header {
+   font: 30px Helvetica;
+   text-align: center;
+   padding-top: 20px;
+}
+
+.user_admin_subheader {
+   font: 24px Helvetica;
+   text-align: center;
+   padding-top: 10px;
+   padding-bottom: 10px;
+}
+
+.user_orders_title {
+   font: 30px Helvetica;
+   text-align: center;
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+
+.balanced {
+   color: #0D3;
+}
+
+.unbalanced {
+   color: #F33;
+}
+
+#edit_vendor_profile_container {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+   background: #FFF;
+}
+
+.editing_vendor_profile_header {
+   font: 24px Arvo;
+   text-align: center;
+   padding-top: 20px;
+   padding-bottom: 20px;
+}
+
+.editing_vendor_profile_label {
+   font: 18px Arvo;
+   text-align: right;
+}
+
+.edit_vendor_profile_table {
+   width: 900px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+textarea.edit_vendor_text_area {
+   font: 18px Arvo;
+   height: 150px;
+   width: 500px;
+}
+
+input.edit_vendor_text_area {
+   font: 18px Arvo;
+   width: 200px;
+}

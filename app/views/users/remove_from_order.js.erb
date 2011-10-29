@@ -1,0 +1,5 @@
+$("#meal_selections").replaceWith('<div id="meal_selections"><%= escape_javascript(render(:partial => "meal_selections")) %></div>');
+<% if @orders_remaining > 0  %>
+    $("#meal_three_<%= @location_selection_id %>").effect('highlight', {color: '#b680ff', mode: 'show'}, 1000);
+<% end %>
+$("#credits_remaining").replaceWith('<div id="credits_remaining"><%= escape_javascript(render(:partial => "credits_remaining")) %></div>');

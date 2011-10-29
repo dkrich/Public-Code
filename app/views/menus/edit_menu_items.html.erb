@@ -1,0 +1,62 @@
+<div class="editing_title">
+	Editing Items for <%= @menu.name %>
+</div>
+<div id="menu_items">
+	<%= render :partial => 'menu_items' %>
+</div>
+<div class="editing_subtitle">
+	All Items:
+</div>
+<table class="editing_table">
+	<tr>
+		<td>
+			<div class="editing_item_header">
+				Item Name
+			</div>
+		</td>
+		<td>
+			<div class="editing_item_header">
+				Item Description
+			</div>
+		</td>
+		<td>
+			<div class="editing_item_header">
+				Category
+			</div>
+		</td>
+		<td>
+			<div class="editing_item_header">
+				Calories
+			</div>
+		</td>
+	</tr>
+	<% @all_items.each do |item| %>
+		<tr>
+			<td>
+				<div class="editing_item_name">
+					<%= item.name %>
+				</div>
+			</td>
+			<td>
+				<div class="editing_item_name">
+					<%= item.description %>
+				</div>
+			</td>
+			<td>
+				<div class="editing_item_name">
+					<%= item.category %>
+				</div>
+			</td>
+			<td>
+				<div class="editing_item_name">
+					<%= item.calories %>
+				</div>
+			</td>
+			<td width="20%">
+				<div class="add_item_link">
+					<%= link_to "Add To Menu", :url => { :controller => "menus", :action => "add_item_to_menu", :id => @menu.id, :item_id => item.id }, :remote => true %>
+				</div>
+			</td>
+		</tr>
+	<% end %>
+</table>

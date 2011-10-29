@@ -1,0 +1,39 @@
+<div class="never_image">
+	<%= image_tag("never_banner.png") %>
+</div>
+<div class="explanations_header">
+	At Littlejaw, we're committed to providing the highest-quality meals as conveniently and as affordably as possible.
+</div>
+<div class="explanations_how">
+	This is how it works:
+</div>
+<div class="explanations_body">
+	Have you ever wondered why you can't have a restaurant quality meal delivered to you? It's because most quality restaurants
+	have built businesses that create customized menus that serve dine-in customers. Deliveries just don't fit into their businesses.
+	<p>
+		At Littlejaw we make restaurant-quality meals with the freshest, highest-quality ingredients, but craft meals specifically
+		to be delivered.
+	</p>
+	<p>
+		Of course, it is a bit more complex than that. To really offer great food, a restaurant must serve food immediately after it is
+		prepared, and this is how we're unique. By serving large groups of people in locations close to our kitchens, we are able to
+		provide the same high-quality meals you would expect in an expensive restaurant, but at a lower cost, and delivered directly to
+		you.
+	</p>
+	<p>
+		It is because of this commitment to serving only the highest-quality food in a timely manner that we do not offer one-off deliveries, or deliveries
+		to individuals the way a pizza delivery service would.
+	</p>
+	<p>
+		Additionally, we recognize that nobody likes repeatedly entering billing and address information, or calling up and wasting time placing an order.
+		That's why our streamlined ordering system allows you to simply opt-in or opt-out based on your daily preference without a
+		lot of back-and-forth. Once you select a package and pay the initial fee, there is nothing more for you to do besides check
+		out the daily menu and decide whether you want a meal or not. You don't have to figure out a tip, or pay a delivery or service charge. All costs are
+		made clear up-front.
+	</p>
+	<% if !current_user %>
+		<div class="sign_up">
+			<%= link_to image_tag("littlejaw_sign_up.png"), new_user_path %>
+		</div>
+	<% end %>
+</div>

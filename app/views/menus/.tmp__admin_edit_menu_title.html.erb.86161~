@@ -1,0 +1,1 @@
+Editing <font color="#d35511"><%= @menu.name %></font>

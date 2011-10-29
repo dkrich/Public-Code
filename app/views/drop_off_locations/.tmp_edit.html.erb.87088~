@@ -1,0 +1,77 @@
+<div id="location_container">
+	<div class="location_title">
+		Editing <font color="#d35511"><%= @drop_off_location.name %></font>
+	</div>
+
+	<% form_for(@drop_off_location) do |f| %>
+	  	<%= f.error_messages %>
+	  	<table class="edit_location_table">
+			<tr>
+				<td>
+					<div class="editing_location_name">
+	    				Name:
+					</div>
+				</td>
+				<td>
+					<%= f.text_field :name, :class => "location_name" %>
+				</td>
+	    	</tr>
+	   		<tr>
+				<td>
+					<div class="editing_location_name">
+						Location Type:
+					</div>
+				</td>
+				<td>
+					<%= f.text_field :location_type, :class => "location_name" %>
+				</td>
+	    	</tr>
+	  		<tr>
+				<td>
+					<div class="editing_location_name">
+						Street Address:
+					</div>
+				</td>
+				<td>
+					<%= f.text_field :street_address, :class => "location_name" %>
+				</td>
+	    	</tr>
+			<tr>
+				<td>
+					<div class="editing_location_name">
+						City:
+					</div>
+				</td>
+				<td>
+					<%= f.text_field :city, :class => "location_name" %>
+				</td>
+	    	</tr>
+			<tr>
+				<td>
+					<div class="editing_location_name">
+						State:
+					</div>
+				</td>
+				<td>
+					<%= f.text_field :state, :class => "location_name" %>
+				</td>
+	    	</tr>
+			<tr>
+				<td>
+					<div class="editing_location_name">
+						Map URL:
+					</div>
+				</td>
+				<td>
+					<%= f.text_area :map_url, :class => "location_description" %>
+				</td>
+	    	</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<%= f.submit 'Update' %>
+				</td>
+			</tr>
+		</table>
+	<% end %>
+	
+</div>

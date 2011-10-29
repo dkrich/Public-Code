@@ -1,0 +1,66 @@
+<div class="user_orders_title">
+    Orders for <%= @user.first_name + " " + @user.last_name %>
+</div>
+<% if !@user_order_confirmations.blank? %>
+    <table class="admin_user_table" border="1">
+        <tr>
+            <th>
+                Drop-Off Location
+            </th>
+            <th>
+                Menu Name
+            </th>
+            <th>
+                Vendor
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Order Date
+            </th>
+            <th>
+                Quantity
+            </th>
+        </tr>
+        <% @user_order_confirmations.each do |order_confirmation| %>
+            <% @location_selection = LocationSelection.find(order_confirmation.location_selection_id) %>
+            <% @drop_off_location_time = DropOffLocationTime.find(:first, :conditions => {:id => @location_selection.drop_off_location_time_id}) %>
+            <% if !@drop_off_location_time.blank? %>
+                <% @drop_off_location = DropOffLocation.find(@drop_off_location_time.drop_off_location_id) %>
+                <% @menu = Menu.find(@location_selection.menu_id) %>
+                <% @vendor = Vendor.find(@menu.vendor_id) %>
+                <% @price = @menu.price %>
+                <% @quantity = MealOrder.where(:user_id => @user.id, :location_selection_id => @location_selection.id).count %>
+                <tr>
+                    <td>
+                        <%= @drop_off_location.name %>
+                    </td>
+                    <td>
+                        <%= @menu.name %>
+                    </td>
+                    <td>
+                        <%= @vendor.name %>
+                    </td>
+                    <td>
+                        <%= @menu.price %>
+                    </td>
+                    <td>
+                        <%= order_confirmation.created_at.strftime("%A, %B %e, %Y") %>
+                    </td>
+                    <td>
+                        <%= @quantity %>
+                    </td>
+                </tr>
+             <% else %>
+                <tr>
+                    <td>
+                        Couldn't find a drop-off location time for this record.
+                    </td>
+                </tr>
+             <% end %>
+         <% end %>
+    </table>
+<% else %>
+    No orders found.
+<% end %>

@@ -1,0 +1,83 @@
+<table cellpadding="10">
+	<tr>
+		<td valign="top">
+			<div class="edit_recipient_subtitle">
+				Regular Schedule
+			</div>
+			<% @next_five_days = get_weekdays %>
+			<% @regular_schedule = RecipientRegularSchedule.find_by_location_recipient_id(@recipient.id) %>
+			<% if @regular_schedule %>
+				<table class="recipient_regular_schedule_table">
+					<tr>
+						<td width="20%">
+							<div class="regular_date_header">
+								Monday
+							</div>
+						</td>
+						<td width="20%">
+							<div class="regular_date_header">
+								Tuesday
+							</div>
+						</td>
+						<td width="20%">
+							<div class="regular_date_header">
+								Wednesday
+							</div>
+						</td>
+						<td width="20%">
+							<div class="regular_date_header">
+								Thursday
+							</div>
+						</td>
+						<td width="20%">
+							<div class="regular_date_header">
+								Friday
+							</div>
+						</td>
+					</tr>
+					<% @location_recipient = @recipient %>
+					<tr>
+						<td>
+							<% @day = "monday" %>
+							<div id="monday">
+								<%= render :partial => "monday" %>
+							</div>
+						</td>
+						<td>
+							<% @day = "tuesday" %>
+							<div id="tuesday">
+								<%= render :partial => "monday" %>
+							</div>
+						</td>
+						<td>
+							<% @day = "wednesday" %>
+							<div id="wednesday">
+								<%= render :partial => "monday" %>
+							</div>
+						</td>
+						<td>
+							<% @day = "thursday" %>
+							<div id="thursday">
+								<%= render :partial => "monday" %>
+							</div>
+						</td>
+						<td>
+							<% @day = "friday" %>
+							<div id="friday">
+								<%= render :partial => "monday" %>
+							</div>
+						</td>
+					</tr>
+				</table>
+			<% end %>
+		</td>
+		<td class="bottom">
+			<div class="what_it_is_header">
+				Regular Schedule
+			</div>
+			<div id="what_it_is">
+				<%= render :partial => "what_it_is" %>
+			</div>
+		</td>
+	</tr>
+</table>

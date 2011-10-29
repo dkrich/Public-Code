@@ -1,0 +1,134 @@
+#vendor_profile_container {
+    width: 1000px;
+    background: #FFF;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-border-radius: 10px;
+    -border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-box-shadow: 5px 5px 5px #888;
+    -moz-box-shadow: 5px 5px 5px #888;
+    margin-bottom: 30px;
+    margin-top: -10px;
+}
+
+.vendor_profile_header {
+   font: 36px Arvo, Josefin Slab;
+   padding-left: 5px;
+   color: #000;
+}
+
+.vendor_profile_table {
+   padding-left: 20px;
+   padding-top: 10px;
+   padding-bottom: 20px;
+}
+
+.vendor_image_table {
+   width: 1000px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.vendor_profile_logo {
+   margin-top: 5px;
+}
+
+.vendor_profile_logo img {
+   border: 3px solid #666;
+}
+
+.vendor_address {
+   font: 20px Josefin Slab;
+   color: #666;
+}
+
+.vendor_profile_intro {
+   font: italic 20px Georgia;
+   color: #999;
+   padding-left: 5px;
+   padding-right: 20px;
+}
+
+.vendor_profile_subheader {
+   font: 24px Arvo;
+   padding-top: 10px;
+   color: #FFF;
+   color: #449acc;
+   color: #d84b4b;
+}
+
+.vendor_location_subheader {
+   font: 24px Arvo;
+   padding-top: 5px;
+   color: #449acc;
+   color: #d84b4b;
+}
+
+.vendor_description {
+   font: 24px Josefin Slab;
+   color: #666;
+   padding-left: 20px;
+   padding-right: 20px;
+   padding-bottom: 20px;
+   width: 470px;
+   float: left;
+}
+
+.vendor_store_image {
+   width: 200px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.vendor_store_image img {
+   width: 200px;
+}
+
+.vendor_location {
+   float: right;
+   width: 470px;
+   margin-bottom: 30px;
+}
+
+.vendor_profile_map {
+   margin-top: 10px;
+}
+
+.vendor_profile_map img {
+   border: 3px solid #0072ff;
+}
+
+.map_marker img {
+   width: 20px;
+   padding-top: 8px;
+   padding-right: 5px;
+}
+
+.vendor_profile_separator {
+   border: 1px solid #0072ff;
+   margin-top: 10px;
+}
+
+.vendor_profile_top {
+     font: 36px Josefin Slab, Garamond, Georgia, Bookman Old Style, Goudy Old Style, Garamond;
+     color: #FFF;
+     padding-top: 15px;
+     padding-bottom: 10px;
+     padding-left: 20px;
+     text-align: left;
+     background-image: -webkit-gradient(
+         linear,
+         left bottom,
+         left top,
+         color-stop(0.2, rgb(59,170,255)),
+         color-stop(0.6, rgb(44,106,199))
+     );
+     background-image: -moz-linear-gradient(
+         center bottom,
+         rgb(59,170,255) 20%,
+         rgb(44,106,199) 60%
+     );
+     -webkit-border-radius: 10px 10px 0px 0px;
+     -moz-border-radius: 10px 10px 0px 0px;
+}

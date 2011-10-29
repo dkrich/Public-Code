@@ -1,0 +1,54 @@
+<div id="new_item_container">
+	<div class="create_new_item_header">
+		New Item
+	</div>
+	<%= form_for(@item) do |f| %>
+		<table class="new_item_table" cellspacing=10>
+			<tr>
+				<td>
+					<div class="new_item_text">
+						Name:
+					</div>
+				</td>
+				<td>
+					<%= f.text_field :name, :class => "new_item" %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="new_item_text">
+						Item Type:
+					</div>
+				</td>
+				<td>
+					<%= f.text_field :item_type, :class => "new_item" %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="new_item_text">
+						Description:
+					</div>
+				</td>
+				<td>
+					<%= f.text_area :description, :class => "new_item" %>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="new_item_text">
+						Calories:
+					</div>
+				</td>
+				<td>
+					<%= f.text_field :calories, :class => "new_item" %>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<%= f.submit 'Create' %>
+				</td>
+			</tr>
+		</table>
+	<% end %>
+</div>

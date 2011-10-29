@@ -1,0 +1,12 @@
+<div class="errors_container">
+	<% if @errors %>
+		<div class="error_message_header">
+			Something went wrong.
+		</div>
+		<% @errors.each do |error| %>
+			<div class="error_message_body">
+				<%= error %>
+			</div>
+		<% end %>
+	<% end %>
+</div>

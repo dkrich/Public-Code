@@ -1,0 +1,16 @@
+<div class="date_menu_header">
+	Selections for <%= @next_five_days[@next_five_days_index].strftime("%A, %B %e") %>
+</div>
+<!--<div class="menu_today_header">
+	<% if @next_five_days[@next_five_days_index] > Time.zone.now %>
+		Here's what we're going to have for you on <%= @next_five_days[@next_five_days_index].strftime("%A") %>:
+	<% else %>
+		Here's what we've got for you today:
+	<% end %>
+</div>-->
+<div id="menu_buttons">
+	<%= render :partial => "menu_buttons" %>
+</div>
+<div id="daily_menu">
+	<%= render :partial => "daily_menu_alt" %>
+</div>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  delivery_date_time: 2011-05-07 11:46:51
+  drop_off_location_id: 1
+  menu_id: 1
+
+two:
+  delivery_date_time: 2011-05-07 11:46:51
+  drop_off_location_id: 1
+  menu_id: 1

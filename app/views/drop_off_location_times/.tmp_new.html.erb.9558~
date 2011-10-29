@@ -1,0 +1,23 @@
+<h1>New drop_off_location_time</h1>
+
+<% form_for(@drop_off_location_time) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :drop_off_location_id %><br />
+    <%= f.text_field :drop_off_location_id %>
+  </p>
+  <p>
+    <%= f.label :delivery_time %><br />
+    <%= f.datetime_select :delivery_time %>
+  </p>
+  <p>
+    <%= f.label :meal_service %><br />
+    <%= f.text_field :meal_service %>
+  </p>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', drop_off_location_times_path %>

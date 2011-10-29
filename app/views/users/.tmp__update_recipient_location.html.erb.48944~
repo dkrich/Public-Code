@@ -1,0 +1,53 @@
+<table cellpadding='20'>
+	<tr>
+		<td width="70%">
+			<div class="edit_recipient_subtitle_location">
+				Pickup Location
+			</div>
+			<% @locations = DropOffLocation.find :all %>
+			<% @locations.each do |location| %>
+				<hr class="location_separator">
+				<table class="update_location_table">
+					<tr>
+						<td valign="top" width="50%">
+							<div class="update_drop_off_location_name">
+								<%= location.name %>
+							</div>
+							<div class="update_drop_off_location_address">
+								<%= location.street_address %>
+							</div>
+							<div class="update_drop_off_location_address">
+								<%= "#{location.city}, #{location.state}" %>
+							</div>
+							<div class="drop_off_location_type">
+								Location Type: <%= location.location_type %>
+							</div>
+						</td>
+						<td valign="top" width="20%">
+							<div class="user_google_map">
+								<%= image_tag(location.map_url) %>
+							</div>
+						</td>
+						<td width="1%" valign="top">
+							<% if location.id != @recipient.drop_off_location_id %>
+								<div class="add_recipient_link">
+									<%= link_to_remote "Update Location", :url => { :controller => "users", :action => "create_recipient_location", :id => location.id, :recipient_id => @recipient.id } %>
+								</div>
+							<% else %>
+								Current Location
+							<% end %>
+						</td>
+					</tr>
+				</table>
+			<% end %>
+		</td>
+		<td valign="top">
+			<div class="what_it_is_header_location">
+				Pickup Location
+			</div>
+			<div id="what_it_is">
+				<%= render :partial => "what_it_is" %>
+			</div>
+		</td>
+	</tr>
+</table>

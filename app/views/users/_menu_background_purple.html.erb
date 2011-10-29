@@ -1,0 +1,112 @@
+<% @next_five_days_index = get_next_five_day_index(Time.zone.now) %>
+<div id="menu_background_purple">
+  <table class="selections_header_table" cellpadding="10">
+      <tr>
+          <td>
+              <div class="featured_items">
+                  Featured Items
+              </div>
+          </td>
+          <td>
+              <div class="vendor_profile_link">
+                  <%= link_to "More About #{@vendor.name}", vendor_profile_path(@vendor.id) %>
+              </div>
+          </td>
+      </tr>
+  </table>
+    
+  <hr class="menu_separator"/>
+    <% @location_selections.each_with_index do |location_selection, index| %>
+        <% @location_selection = location_selection %>
+        <% @order_confirmation = UserOrderConfirmation.where(:user_id => current_user.id, :location_selection_id => location_selection.id).first %>
+        <% if !@order_confirmation.blank? %>
+            <% if @order_confirmation.confirmed %>
+                <% @display_add_to_order_button = false %>
+            <% else %>
+                <% @display_add_to_order_button = true %>
+            <% end %>
+        <% else %>
+            <% @display_add_to_order_button = true %>
+        <% end %>
+        <div class="clearboth"></div>
+		<% if !location_selection.menu_id.blank? %>
+                        <!--<% @menu = Menu.find(location_selection.menu_id) %>
+                        <div class="item_price">
+                            <%= @menu.price %> Credits
+                        </div>-->
+                        
+			<table class="selections_table" cellpadding="10">
+				<tr>
+                                    <td>
+                                        <div class="menu_header">
+                                            Selection <%= index + 1 %>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <% if !@order_confirmation.blank? %>
+                                            <% if !@order_confirmation.confirmed %>
+                                                <div id="add_to_order_three">
+                                                    <%= render :partial => "add_to_order_three" %>
+                                                </div>
+                                            <% end %>
+                                        <% else %>
+                                            <div id="add_to_order_three">
+                                                <%= render :partial => "add_to_order_three" %>
+                                            </div>
+                                        <% end %>
+                                    </td>
+                                </tr>
+                                <tr>
+					<td valign="top">
+						<% @menu_items = MenuItem.find_all_by_menu_id(location_selection.menu_id) %>
+						<% @menu_items.each do |menu_item| %>
+							<% @item = Item.find(menu_item.item_id) %>
+							<% if @item.item_type.upcase == "ENTREE" %>
+								<div class="menu_image">
+									<%= image_tag(@item.photo.url) %>
+								</div>
+					</td>
+					<td valign="top">
+								<div class="menu_item_header">
+									<%= @item.name %>
+								</div>
+								<div class="menu_item_description">
+									<%= @item.description %>
+								</div>
+							<% end %>
+						<% end %>
+					</td>
+				</tr>
+				
+						<% @menu_items.each do |menu_item| %>
+							<% @item = Item.find(menu_item.item_id) %>
+							<% if @item.item_type.upcase == "SIDE" %>
+                                <tr>
+					<td valign="top">
+								<div class="menu_image">
+									<%= image_tag(@item.photo.url) %>
+								</div>
+					</td>
+					<td valign="top">
+								<div class="menu_item_header">
+									<%= @item.name %>
+								</div>
+								<div class="menu_item_description">
+									<%= @item.description %>
+								</div>
+							<% end %>
+						<% end %>
+					</td>
+				</tr>
+			</table>
+		<% else %>
+			<div class="no_menu">
+				<%= image_tag("no_menu.png") %>
+			</div>	
+		<% end %>
+                <% if @location_selections.length > index + 1 %>
+                    <hr class="menu_separator"/>
+                <% end %>
+	<% end %>
+	<div class="clearboth"></div>
+</div>

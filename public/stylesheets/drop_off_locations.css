@@ -1,0 +1,210 @@
+#drop_off_container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#new_location_container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#location_container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.header_links a {
+    color: #06D;
+}
+
+.google_map img {
+	border: 4px solid #5a7fd1;
+}
+
+.user_google_map img {
+	border: 4px solid #5a7fd1;
+	margin-top: 5px;
+}
+
+.drop_off_location_name {
+	font: 24px Goudy Old Style, Georgia;
+	color: #222;
+	color: #66aec5;
+	padding-top: 5px;
+}
+
+.drop_off_location_address {
+	font: 19px Goudy Old Style, Georgia;
+	color: #444;
+}
+
+.drop_off_location_type {
+	font: 19px Goudy Old Style, Georgia;
+	color: #307b2e;
+}
+
+.delivery_time_text {
+	font: 14px Helvetica, Arial;
+}
+
+.location_table {
+	width: 1020px;
+	padding-left: 20px;
+}
+
+.drop_off_header {
+	font: 28px Georgia;
+	color: #86332a;
+	text-align: center;
+	padding-top: 25px;
+}
+
+.drop_off_table_header {
+	font: bold 14px Georgia;
+	text-align: left;
+}
+
+.drop_off_table_text {
+	font: 14px Georgia;
+}
+
+.drop_off_table_text_major {
+	font: bold 18px Georgia;
+	color: #00AA00;
+}
+
+.drop_off_table_url_text {
+	font: 12px Georgia;
+	word-break: break-all;
+}
+
+.drop_off_table_text a {
+	text-decoration: none;
+	color: #2773e5;
+}
+
+.drop_off_table {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.new_location {
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.new_location a {
+	font: 16px Georgia;
+	color: #2773e5;
+	text-decoration: none;
+}
+
+.preview_map {
+	padding-top: 2px;
+}
+
+.preview_map a {
+	font: 12px Georgia;
+	color: #2773e5;
+	text-decoration: none;
+}
+
+.map_container {
+	padding-top: 5px;
+}
+
+.map_container img {
+	border: 5px solid #AAA;
+}
+
+.new_location_header {
+	font: 30px Georgia;
+	text-align: center;
+	padding-top: 20px;
+	color: #58764b;
+}
+
+.new_location_table {
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 10px;
+}
+
+.new_location_text {
+	font: 20px Georgia;
+	color: #555;
+}
+
+input.new_location_input {
+	width: 400px;
+	height: 35px;
+	font: 30px Georgia;
+	color: #275c82;
+	border: 2px solid #275c82;
+	text-align: left;
+}
+
+textarea.new_location_input {
+	width: 400px;
+	height: 80px;
+	font: 20px Georgia;
+	color: #275c82;
+	border: 2px solid #275c82;
+	text-align: left;
+}
+
+.add_drop_off_location_header {
+	font: 30px Georgia;
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 8px;
+	color: #58764b;
+}
+
+.existing_drop_off_text {
+	font: 18px Georgia;
+	color: #665196;
+	color: #888;
+	padding-top: 3px;
+}
+
+.location_title {
+	font: 28px Garamond, Georgia;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.editing_location_name {
+	font: 18px Georgia, Garamond;
+	color: #222;
+	padding-top: 5px;
+	padding-bottom: 2px;
+}
+
+.edit_location_table {
+	width: 700px;
+	padding-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+textarea.location_description {
+	height: 150px;
+	width: 500px;
+	border: 2px solid #1175d3;
+	font: 18px Georgia;
+	color: #426e98
+}
+
+input.location_name {
+	height: 30px;
+	width: 500px;
+	font: 20px Georgia;
+	color: #426e98;
+	border: 2px solid #1175d3;
+}

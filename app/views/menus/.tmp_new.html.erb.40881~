@@ -1,0 +1,23 @@
+<div class="create_new_menu_header">
+	New Menu
+</div>
+<% form_for(@menu) do |f| %>
+  	<%= f.error_messages %>
+	<div id="new_menu_container">
+		<table cellspacing=8>
+			<tr>
+				<td>
+					<div class="new_menu_text">
+						Name:
+					</div>
+				</td>
+				<td>
+					<%= f.text_field :name, :class => "new_menu" %>
+				</td>
+				<td>
+					<%= f.submit 'Create' %>
+				</td>
+			</tr>
+		</table>
+	</div>
+<% end %>

@@ -1,0 +1,7 @@
+<% if !@outstanding_order.blank? %>
+  <% if !@outstanding_order.confirmed %>
+    <div class="add_to_order_button">
+	<%= link_to image_tag("add_to_basket.png"), { :controller => "users", :action => "add_meal_to_order", :id => 2 }, :remote => true %>
+    </div>
+  <% end %>
+<% end %>

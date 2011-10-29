@@ -1,0 +1,35 @@
+<% @daily_menu = DailyMenu.find_by_date(@menu_date) %>
+<% if @daily_menu.blank? %>
+	<div class="set_menu">
+		<%= link_to_function "Set Menu", "new Effect.toggle('menus_#{@menu_date}','appear')" %>
+	</div>
+	<div id=<%= "menus_#{@menu_date}" %> style="display:none">
+		<% @menus = Menu.find :all %>
+		<% @menus.each do |menu| %>
+			<hr class="green_line">
+			<div class="schedule_menu_name">
+				<%= link_to_remote menu.name, :url => { :controller => "menus", :action => "set_menu", :id => menu.id, :date => @menu_date, :date_unconverted => @date_unconverted } %>
+			</div>
+		<% end %>
+	</div>
+<% else %>
+	<% @menu = Menu.find(@daily_menu.menu_id) %>
+	<div class="calendar_menu_name">
+		<%= link_to @menu.name, { :controller => "menus", :action => "show", :id => @menu.id, :date => @date_unconverted } %>
+	</div>
+	<div class="set_menu">
+		<%= link_to_function "Update", "new Effect.toggle('menus_update_#{@menu_date}','appear')" %>
+	</div>
+	<div id=<%= "menus_update_#{@menu_date}" %> style="display:none">
+		<% @menus = Menu.find :all %>
+		<% @menus.each do |menu| %>
+			<hr class="green_line">
+			<div class="schedule_menu_name">
+				<%= link_to_remote menu.name, :url => { :controller => "menus", :action => "update_menu", :id => menu.id, :current_menu_id => @menu.id, :date => @menu_date, :date_unconverted => @date_unconverted } %>
+			</div>
+		<% end %>
+	</div>
+<% end %>
+<div class="set_menu">
+	<%= link_to "View Orders", { :controller => "users", :action => "delivery_schedule", :date => @date_unconverted } %>
+</div>

@@ -1,0 +1,67 @@
+<div class="account_container">
+	<div class="account_summary_header">
+		Hey <%= current_user.first_name %>,  here's your account summary.
+	</div>
+	<div class="drop_off_location">
+		<div class="account_summary_subtext">
+			<table class="account_summary_header_table">
+				<tr>
+					<td>
+						<div class="drop_off_text">
+							Your Drop-Off Locations
+						</div>
+					</td>
+					<td width="5%">
+						<div class="drop_off_button_container">
+							<%= link_to image_tag("add_a_drop_off.png", :class => "drop_off_button"), { :controller => "users", :action => "show_all_locations" } %>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<% if !@user_drop_off_locations.blank? %>
+		<% @user_drop_off_locations.each do |user_drop_off_location| %>
+			<% @location = DropOffLocation.find(user_drop_off_location.drop_off_location_id) %>
+			<table class="location_table">
+				<tr>
+					<td valign="top" width="25%">
+						<div class="drop_off_location_name">
+							<%= @location.name %>
+						</div>
+						<div class="drop_off_location_address">
+							<%= @location.street_address %>
+						</div>
+						<div class="drop_off_location_address">
+							<%= "#{@location.city}, #{@location.state}" %>
+						</div>
+						<div class="drop_off_location_type">
+							Location Type: <%= @location.location_type %>
+						</div>
+						<div class="add_recipient_link">
+							<%= link_to image_tag("add_a_recipient.png"), { :controller => "users", :action => "create_location_recipient", :id => @location.id } %>
+						</div>
+					</td>
+					<td valign="top" width="20%">
+						<div class="user_google_map">
+							<%= image_tag(@location.map_url) %>
+						</div>
+					</td>
+					<td width="5%" valign="top">
+						<div id= <%= "location_recipients_#{@location.id}" %> >
+							<%= render :partial => "location_recipients" %>
+						</div>
+						<div id= <%= "add_recipients_#{@location.id}" %> >
+							<%= render :partial => "new_recipient_form" %>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<hr class="location_separator">
+		<% end %>
+	<% else %>
+		<div class="account_summary_body">
+			You don't have any drop-off locations selected.
+		</div>
+	<% end %>
+</div>

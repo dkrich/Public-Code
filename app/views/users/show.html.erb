@@ -1,0 +1,132 @@
+<% @incomplete = false %>
+<% @drop_off_visible = false %>
+<% if flash[:notice] %>
+      <div id="flash_notice">
+          <div class="close_out">
+              <%= link_to image_tag("close_out.png"), {:controller => "users", :action => "remove_flash"}, :remote => true %>
+          </div>
+          <%= flash[:notice] %>
+      </div>
+<% end %>
+<div class="account_container">
+	<div id="user_container">
+		<% @next_five_days = get_weekdays %>
+		<div id="page_heading">
+			<div id="credits_remaining">
+                              <%= render :partial => "credits_remaining" %>
+			</div>
+		</div>
+                <div id="greeting_container">
+                      <div class="name_container">
+                              <%= current_user.first_name %> <%= current_user.last_name %>
+                      </div>
+                      <div class="day_container">
+                              Happy <%= Time.zone.now.strftime("%A") %>
+                      </div>
+                      <div class="settings">
+                              <%= link_to "Edit Settings", {:controller => "users", :action => "edit_settings"}, :remote => true %>
+                      </div>
+                </div>
+                <div class="clearboth"></div>
+	</div>
+	<div id="whole_container">
+		<div id="location_fact_container">
+			<div id="meal_order_drop_off_location_container">
+				<%= render :partial => "meal_order_drop_off_location" %>
+			</div>
+			<div id="menu_today">
+                            <% @user_drop_off_location = UserDropOffLocation.where(:user_id => current_user.id).last %>
+                            <% if @user_drop_off_location %>
+                                <% @drop_off_location = DropOffLocation.find(@user_drop_off_location.drop_off_location_id) %>
+                            <% end %>
+                            <div class="date_menu_header">
+                                Selections for <%= @next_five_days[@next_five_days_index].strftime("%A, %B %e") %>
+                            </div>
+                            <%  if !@user_drop_off_location.blank? %>
+                                <div class="header_location_name">
+                                    Today's Featured Restaurants at <%= @drop_off_location.name %>
+                                </div>
+                            <% end %>
+                            <hr class="selections_separator"/>
+                            <div id="accordion">
+                                <% unless @user_drop_off_location.blank? %>
+                                    <% @at_least_one_remaining_selection = false %>
+                                    <% @user_drop_off_location_times = DropOffLocationTime.where("drop_off_location_id = ? AND last_order_time > ?", @user_drop_off_location.drop_off_location_id, Time.zone.now.strftime("2000-01-01 %H:%M:%S").to_datetime).all %>
+                                    <% @user_drop_off_location_times.each do |time| %>
+                                        <% @location_selections = LocationSelection.find_all_by_drop_off_location_time_id_and_delivery_date_time(time.id, @next_five_days[@next_five_days_index].strftime("%d%m%Y")) %>
+                                        <% if !@location_selections.blank? %>
+                                            <% @at_least_one_remaining_selection = true %>
+                                        <% end %>
+                                    <% end %>
+                                    <% if @at_least_one_remaining_selection %>
+                                        <% @user_drop_off_location_times.each do |time| %>
+                                            <% @location_selections = LocationSelection.find_all_by_drop_off_location_time_id_and_delivery_date_time(time.id, @next_five_days[@next_five_days_index].strftime("%d%m%Y")) %>
+                                            <% if @location_selections %>
+                                                <% @menu = Menu.find(@location_selections[0].menu_id) %>
+                                                <% @vendor = Vendor.find(@menu.vendor_id) %>
+                                                <h3>
+                                                  <a href="#" style="border-style: none;">
+                                                      <div class="accordion_menu_header_purple">
+                                                          <table cellpadding="5" class="accordion_header_table">
+                                                              <tr>
+                                                                  <td>
+                                                                      <div class="view_menus">
+                                                                          Coming at <%= time.delivery_time.strftime("%l:%M%p").downcase %>:
+                                                                      </div>
+                                                                  </td>
+                                                                  <td>
+                                                                      <div class="click_to_view">
+                                                                          Click to see what we're serving.
+                                                                      </div>
+                                                                  </td>
+                                                              </tr>
+                                                          </table>
+                                                          <table cellpadding="5">
+                                                              <tr>
+                                                                  <td valign="top">
+                                                                      <div class="vendor_logo">
+                                                                          <%= image_tag(@vendor.logo.url(:medium)) %>
+                                                                      </div>
+                                                                  </td>
+                                                                  <td valign="top">
+                                                                      <div class="selection_vendor_name">
+                                                                          <%= @vendor.name %>
+                                                                      </div>
+                                                                      <div class="selection_vendor_address">
+                                                                          <%= @vendor.address %><br/>
+                                                                          <%= City.find(@vendor.city_id).name %>
+                                                                      </div>
+                                                                      <div class="about_vendor">
+                                                                          About <%= @vendor.name %>
+                                                                      </div>
+                                                                      <div class="selection_vendor_description">
+                                                                          <%= @vendor.description %>
+                                                                      </div>
+                                                                  </td>
+                                                              </tr>
+                                                          </table>
+                                                     </div>
+                                                  </a>
+                                                </h3>
+                                                <div class="accordion_menu">
+                                                      <%= render :partial => "menu_background_purple" %>
+                                                </div>
+                                            <% end %>
+                                         <% end %>
+                                    <% else %>
+                                        <div class="nothing_scheduled">
+                                            <%= image_tag("postit.png") %>
+                                        </div>
+                                    <% end %>
+                                 <% end %>
+                            </div>
+			</div>
+
+                            <div id="meal_summary">
+                                 <%= render :partial => "meal_summary" %>
+                            </div>
+
+			<div class="clearboth"></div>
+		</div>
+	</div>
+</div>

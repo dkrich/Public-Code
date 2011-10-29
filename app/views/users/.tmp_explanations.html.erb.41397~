@@ -1,0 +1,94 @@
+<div class="never_image">
+	<%= image_tag("never_banner.png") %>
+</div>
+<div class="explanations_header">
+	At Littlejaw, we're committed to providing the highest-quality lunches as conveniently and as affordably as possible.
+</div>
+<div class="explanations_how">
+	This is how it works:
+</div>
+<div class="never_image">
+	<%= image_tag("step_one.png") %>
+</div>
+<div class="step_one">
+	Step One: Register an Account
+</div>
+<div class="explanations_body">
+	The first step to enjoying a Littlejaw meal every day is creating an account! Don't worry, this process is completely free and takes less than a minute.
+</div>
+<div class="step_one">
+	<%= image_tag("registration.png", :class => "explanations_screenshot") %>
+</div>
+<br>
+<div class="never_image">
+	<%= image_tag("step_two.png") %>
+</div>
+<div class="step_one">
+	Step Two: Create a Recipient
+</div>
+<div class="explanations_body">
+	Once you have created your account, you will be taken to your account dashboard. This is the place where you will manage all aspects of your account.<br><br>
+	To begin, click the "Create a Recipient" button near the top of the page.
+</div>
+<div class="step_one">
+	<%= image_tag("dashboard.png", :class => "explanations_screenshot") %>
+</div>
+<div class="explanations_body">
+	First, enter the recipient's name. This should be something that is immediately identifiable to you and the recipient (if it isn't yourself). That way our drivers can get the right meals to the right people!
+</div>
+<div class="step_one">
+	<%= image_tag("recipient_name.png", :class => "name_screenshot") %>
+</div>
+<div class="explanations_step_image">
+	<%= image_tag("step_three.png") %>
+</div>
+<div class="step_one">
+	Step Three: Choose a Pickup Location
+</div>
+<div class="explanations_body">
+	Next, choose a pickup location. This is the place where the meals will be delivered.
+</div>
+<div class="step_one">
+	<%= image_tag("recipient_location.png", :class => "explanations_screenshot") %>
+</div>
+<div class="explanations_step_image">
+	<%= image_tag("step_three.png") %>
+</div>
+<div class="step_one">
+	Step Four: Set Your Schedule
+</div><br>
+<div class="step_one">
+	<%= image_tag("delivery_schedule.png", :class => "explanations_screenshot") %>
+</div>
+<div class="explanations_body">
+	Now comes the exciting part. Well I guess it isn't all that exciting. But now is the time you set your default delivery schedule.
+	<p>Here's how it works:</p>
+	<p>Let's say you work in an office where you have meetings every Friday in which lunch is provided for you. On
+	these days you probably don't want us to bring you your lunch. Instead of having to remember to cancel your delivery every week on
+	Friday, simply set your default schedule to not deliver to you on Friday. Then, every week thereafter, when we present you with your
+	schedule for the next 5 days, Friday will be defaulted to "Don't Deliver".</p>
+	<p>If your Friday meeting gets canceled, well that's no problem.
+	Just let us know you want your lunch by switching "Don't Deliver" to "Deliver" on your dashboard. Now, on that Friday we will bring you
+	your lunch, but the next week Friday will be defaulted to "Don't Deliver".</p>
+	You can think of the "Next 5 Days" schedule on your dashboard
+	as a temporary copy of your regular schedule, which can be changed without affecting your regular schedule. Your regular schedule can be
+	changed at any time in the recipient's settings.
+</div>
+<div class="explanations_step_image">
+	<%= image_tag("step_three.png") %>
+</div>
+<div class="step_one">
+	Step Five: Choose Your Plan
+</div>
+<div class="explanations_body">
+	Finally, you choose the plan that best suits you. This too can be changed at any time if you choose to renew your plan.
+	We don't much care for cell phone style contracts, and figure you probably don't, either.
+</div>
+<div class="step_one">
+	<%= image_tag("plans.png", :class => "explanations_screenshot") %>
+</div>
+<div class="explanations_body">
+	That's it, once you complete payment, you're all set. See, not everything in life has to be complicated!
+	<p>Got questions? We'd love to hear from you. <%= link_to "Contact Us", root_url %></p>
+</div>
+<br><br>

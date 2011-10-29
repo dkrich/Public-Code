@@ -1,0 +1,169 @@
+body {
+   background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(255,255,255)),
+        color-stop(1, rgb(64,166,255))
+    );
+    background-image: -moz-linear-gradient(
+        center bottom,
+        rgb(255,255,255) 0%,
+        rgb(64,166,255) 69%
+    );
+    background-repeat: repeat-x;
+    height: 100%;
+    margin-top: -10px;
+}
+
+html {
+
+}
+
+#page {
+    min-height: 100%;
+}
+
+img {
+	border-style: none;
+}
+
+#footer {
+	margin-left: auto;
+	margin-right: auto;
+	font: 12px Muli, Arvo, Myriad Pro, Lucida Grande, Helvetica, Arial;
+	color: #666;
+	text-align: center;
+	padding-top: 0px;
+        margin-bottom: 20px;
+}
+
+.sign_up {
+	width: 400px;
+	margin-top: 40px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.sign_up img {
+	width: 400px;
+}
+
+.admin_logo {
+	width: 350px;
+	margin-top: 10px;
+}
+
+.footer_line {
+	border: 1px solid #BBB;
+}
+
+.small_logo {
+	width: 250px;
+	padding-left: 15px;
+	padding-top: 10px;
+}
+
+.small_bakery_market_logo {
+	width: 270px;
+        margin-left: 10px;
+        margin-top: -15px;
+        margin-bottom: -15px;
+}
+
+.logo_container {
+        
+}
+
+.front_page_how_it_works {
+   margin-top: 10px;
+}
+
+.front_page_how_it_works a {
+   text-decoration: none;
+   color: #05F;
+   font: 18px Muli;
+}
+
+.header_logo {
+	width: 200px;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+
+.clearboth {
+	clear: both;
+}
+
+.header_container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.link_container {
+	margin-left: auto;
+	margin-right: auto;
+	width: 1000px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+}
+
+.admin_links {
+	float: left;
+	padding-top: 35px;
+	width: 300px;
+	margin-left: auto;
+	margin-right: autop;
+}
+
+.admin_links a {
+	font: 14px Myriad Pro, Tahoma, Lucida Grande, Tahoma;
+	color: #AAA;
+	text-decoration: none;
+	margin-left: 20px;
+}
+
+.header_links {
+	float: right;
+}
+
+.header_links a {
+	font: 14px Muli, 'Arvo', Didot, Georgia, Tahoma;
+	color: #AAA;
+	color: #666;
+	color: #FFF;
+	text-decoration: none;
+	margin-right: 15px;
+	text-align: right;
+}
+
+.header_links_table {
+	/*float: right;
+        position: relative;
+        top: 5px;*/
+        width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+}
+
+.small_logo {
+	width: 200px;
+	margin-bottom: auto;
+	margin-top: auto;
+}
+
+.front_page_container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.devise_links {
+   padding: 10px;
+}
+
+.devise_links a {
+   font: 16px Arvo;
+   text-decoration: none;
+   color: #0098e7;
+}

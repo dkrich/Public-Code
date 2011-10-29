@@ -1,0 +1,53 @@
+<div class="account_container">
+	<div class="account_summary_header">
+		Hey <%= current_user.first_name %>,  here's your account summary.
+	</div>
+	<div class="drop_off_location">
+		<div class="account_summary_subtext">
+			<table class="account_summary_header_table">
+				<tr>
+					<td>
+						<div class="drop_off_text">
+							Your Drop-Off Locations
+						</div>
+					</td>
+					<td width="5%">
+						<div class="drop_off_button_container">
+							<%= link_to_function image_tag("add_a_drop_off.png", :class => "drop_off_button"), "new Effect.toggle('locations_container', 'appear')" %>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<% if !@user_service_plans.blank? %>
+	
+	<% else %>
+		<div class="account_summary_body">
+			You don't have any drop-off locations selected.
+		</div>
+	<% end %>
+	<div id="locations_container" style="display:none">
+		<table class="location_table">
+			<tr>
+				<td>
+					<div class="drop_off_location_name">
+						1. Victor Center
+					</div>
+					<div class="drop_off_location_address">
+						27400 Northwestern Hwy
+					</div>
+					<div class="drop_off_location_address">
+						Southfield, Michigan
+					</div>
+				</td>
+				<td width="5%">
+					<div class="google_map">
+						<%= image_tag("http://maps.google.com/maps/api/staticmap?center=27400+Northwestern+Hwy+Southfield,+MI&zoom=13&size=212x212&maptype=roadmap
+							&markers=color:green|label:|27400+Northwestern+Hwy+Southfield,+MI&sensor=false") %>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>

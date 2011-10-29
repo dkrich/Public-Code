@@ -1,0 +1,38 @@
+<p>
+  <b>Name:</b>
+  <%=h @drop_off_location.name %>
+</p>
+
+<p>
+  <b>Street address:</b>
+  <%=h @drop_off_location.street_address %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%=h @drop_off_location.city %>
+</p>
+
+<p>
+  <b>Map url:</b>
+  <%=h @drop_off_location.map_url %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%=h @drop_off_location.state %>
+</p>
+
+<p>
+  <b>Occupancy:</b>
+  <%=h @drop_off_location.occupancy %>
+</p>
+
+<p>
+  <b>Square feet:</b>
+  <%=h @drop_off_location.square_feet %>
+</p>
+
+
+<%= link_to 'Edit', edit_drop_off_location_path(@drop_off_location) %> |
+<%= link_to 'Back', drop_off_locations_path %>

@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  service_plan_id: 1
+  ip_address: MyString
+  first_name: MyString
+  last_name: MyString
+  card_type: MyString
+  card_expires_on: 2011-05-06
+  billing_address: MyString
+  zip: 1
+  state: MyString
+
+two:
+  service_plan_id: 1
+  ip_address: MyString
+  first_name: MyString
+  last_name: MyString
+  card_type: MyString
+  card_expires_on: 2011-05-06
+  billing_address: MyString
+  zip: 1
+  state: MyString

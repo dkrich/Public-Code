@@ -1,0 +1,29 @@
+<div class="account_container">
+	<!--<div class="account_summary_header">
+		The Dashboard
+	</div>-->
+	<div class="drop_off_location">
+		<div class="account_summary_subtext">
+			<table class="account_summary_header_table">
+				<tr>
+					<td>
+						<div class="drop_off_text">
+							Your Recipients
+						</div>
+					</td>
+					<td width="5%" align="right">
+						<div class="drop_off_button_container">
+							<%= link_to image_tag("create_recipient2.png", :class => "drop_off_button"), { :controller => "users", :action => "create_location_recipient" } %>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="five_spacer"></div>
+	</div>
+	<div id="recipient_errors"></div>
+	<div id="recipient_success"></div>
+	<div id="recipient_info">
+		<%= render :partial => "recipient_info" %>
+	</div>
+</div>

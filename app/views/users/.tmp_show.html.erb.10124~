@@ -1,0 +1,191 @@
+<div class="account_container">
+	<div class="account_summary_header">
+		Hey <%= current_user.first_name %>,  here's your account summary.
+	</div>
+	<div class="drop_off_location">
+		<div class="account_summary_subtext">
+			<table class="account_summary_header_table">
+				<tr>
+					<td>
+						<div class="drop_off_text">
+							Your Recipients
+						</div>
+					</td>
+					<td width="5%" align="right">
+						<div class="drop_off_button_container">
+							<%= link_to image_tag("add_a_drop_off.png", :class => "drop_off_button"), { :controller => "users", :action => "create_location_recipient" } %>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div class="five_spacer"></div>
+	</div>
+	<% @location_recipients = LocationRecipient.find_all_by_user_id(current_user.id) %>
+	<% @location_recipients.each do |recipient| %>
+		<% @recipient_location = DropOffLocation.find(recipient.drop_off_location_id) %>
+		<div id="recipient_container">
+			<table class="account_recipient_table">
+				<tr>
+					<td>
+						<div class="recipient_name">
+							<%= recipient.recipient_first_name %>
+							<%= recipient.recipient_last_name %>
+						</div>
+						<div class="plan_header">
+							Current Plan:
+						</div>
+						<div class="plan_header">
+							Meals Remaining Before the Next Renewal:
+						</div>
+						<div class="plan_header">
+							Next Scheduled Meal Delivery:
+						</div>
+						<div class="weekly_header">
+							Next 5 Days
+						</div>
+						<table class="recipient_schedule_table">
+							<tr>
+								<td colspan=5>
+									<hr class="weekly_header_line">
+								</td>
+							</tr>
+							<tr>
+								<td class="border_right">
+									<div class="date_header">
+										<% @date = self.get_next_weekday(@date, Time.now) %>
+										<%= @date.strftime("%A, %B %e") %>
+									</div>
+								</td>
+								<td class="border_right">
+									<div class="date_header">
+										<% @date = self.get_next_weekday(@date, Time.now + 1.day) %>
+										<%= @date.strftime("%A, %B %e") %>
+									</div>
+								</td>
+								<td class="border_right">
+									<div class="date_header">
+										<% @date = self.get_next_weekday(@date, Time.now + 2.days) %>
+										<%= @date.strftime("%A, %B %e") %>
+									</div>
+								</td>
+								<td class="border_right">
+									<div class="date_header">
+										<% @date = self.get_next_weekday(@date, Time.now + 3.days) %>
+										<%= @date.strftime("%A, %B %e") %>
+									</div>
+								</td>
+								<td>
+									<div class="date_header">
+										<% @date = self.get_next_weekday(@date, Time.now + 4.days) %>
+										<%= @date.strftime("%A, %B %e") %>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td colspan=5>
+									<hr class="weekly_header_line">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="scheduled">
+										Scheduled
+									</div>
+								</td>
+								<td>
+									<div class="canceled">
+										Canceled
+									</div>
+								</td>
+								<td>
+									<div class="scheduled">
+										Scheduled
+									</div>
+								</td>
+								<td>
+									<div class="canceled">
+										Canceled
+									</div>
+								</td>
+								<td>
+									<div class="scheduled">
+										Scheduled
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="view_daily_menu">
+										View Daily Menu
+									</div>
+								</td>
+								<td>
+									<div class="view_daily_menu">
+										View Daily Menu
+									</div>
+								</td>
+								<td>
+									<div class="view_daily_menu">
+										View Daily Menu
+									</div>
+								</td>
+								<td>
+									<div class="view_daily_menu">
+										View Daily Menu
+									</div>
+								</td>
+								<td>
+									<div class="view_daily_menu">
+										View Daily Menu
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div class="view_daily_menu">
+										Cancel Meal
+									</div>
+								</td>
+								<td>
+									<div class="view_daily_menu">
+										Schedule Meal
+									</div>
+								</td>
+								<td>
+									<div class="view_daily_menu">
+										Cancel Meal
+									</div>
+								</td>
+								<td>
+									<div class="view_daily_menu">
+										Schedule Meal
+									</div>
+								</td>
+								<td>
+									<div class="view_daily_menu">
+										Cancel Meal
+									</div>
+								</td>
+							</tr>
+						</table>
+					</td>
+					<td align="center" rowspan="2" width="1%">
+						<div class="recipient_location_container">
+							<div class="recipient_location_header">
+								<span class="recipient_location_name">Drop-Off Location</span>
+								<hr class="recipient_location_line">
+								<span class="inline_location_name"><%= @recipient_location.name %></span><br>
+								<%= @recipient_location.street_address %>
+							</div>
+						</div>
+						<div class="google_map">
+							<%= image_tag(@recipient_location.map_url) %>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<hr class="recipient_green_line">
+	<% end %>
+</div>

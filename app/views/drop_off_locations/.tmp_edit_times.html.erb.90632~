@@ -1,0 +1,23 @@
+<% @service_times = DropOffLocationTime.find_all_by_drop_off_location_id(@drop_off_location.id) %>
+<div class="drop_off_times_header">
+	Drop-Off Times for <%= @drop_off_location.name %>
+</div>
+<div class="service_time_header">
+	Lunch Service Times
+</div>
+<% @service_times.each do |service_time| %>
+	<% if service_time == "lunch" %>
+		<%= service_time.service_time %>
+	<% end %>
+<% end %>
+<div class="service_time_header">
+	Dinner Service Times
+</div>
+<% @service_times.each do |service_time| %>
+	<% if service_time == "dinner" %>
+		<%= service_time.service_time %>
+	<% end %>
+<% end %>
+<div class="add_time_url">
+	<%= link_to "Add a Delivery Time", :controller => "drop_off_location_times", :action => "new", :id => @drop_off_location.id %>
+</div>

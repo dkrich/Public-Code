@@ -1,0 +1,106 @@
+/*#whole_container {
+	width: 1100px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}*/
+
+/*#main_container {
+	width: 680px;
+	background-color: #313131;
+	border: 3px solid #7ca166;
+}*/
+
+#user_service_plan_container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 20px;
+}
+
+.step_image {
+	width: 70px;
+}
+
+.service_plan_logo_container {
+	/*float: left;*/
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 10px;
+	padding-bottom: 6px;
+}
+
+#info_container {
+	background-color: #ebe5d5;
+	background-color: #FFF;
+}
+
+.register_button {
+	padding-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 10px;
+	width: 300px;
+}
+
+.sign_up_button {
+	width: 300px;
+}
+
+.new_service_plan_step {
+	font: 22px Garamond, Georgia, Myriad Pro, Tahoma, Georgia;
+	color: #65656d;
+	margin-left: auto;
+	margin-right: auto;
+	width: 225px;
+	padding-top: 10px;
+}
+
+.new_service_plan_step_two {
+	font: 20px Myriad Pro, Georgia;
+	color: #65656d;
+	margin-left: auto;
+	margin-right: auto;
+	width: 180px;
+	padding-top: 20px;
+}
+
+.new_service_plan_step_image {
+	width: 30px;
+}
+
+.select_plan {
+	margin-left: auto;
+	margin-right: auto;
+	width: 360px;
+	padding-top: 15px;
+}
+
+.plan_header {
+	font: 16px Myriad Pro, Lucida Grande, Tahoma, Georgia;
+	color: #888;
+}
+
+.plan_subtext {
+	padding-left: 25px;
+	font: 14px Georgia;
+	color: #666;
+}
+
+input.new_service_plan_prefix {
+	height: 40px;
+	width: 55px;
+	font: 26px Helvetica, American Typewriter, Goudy Old Style, Georgia;
+	border: 2px solid #87d343;
+	color: #2565AC;
+}
+
+input.new_service_plan_suffix {
+	height: 40px;
+	width: 70px;
+	font: 26px Helvetica, American Typewriter, Goudy Old Style, Georgia;
+	border: 2px solid #87d343;
+	color: #2565AC;
+}

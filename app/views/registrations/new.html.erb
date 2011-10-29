@@ -1,0 +1,69 @@
+
+<% unless devise_error_messages!.blank? %>
+    <div id="new_user_error_container">
+        <div class="new_user_error_header">
+            Something went wrong.
+        </div>
+        <% if devise_error_messages!.downcase.include?("email") and devise_error_messages!.downcase.include?("blank") %>
+            <div class="error">
+                Please enter an email address.
+            </div>
+        <% end %>
+        <% if devise_error_messages!.downcase.include?("password") %>
+            <% if devise_error_messages!.downcase.include?("blank") or devise_error_messages!.downcase.include?("short") %>
+                <div class="error">
+                    Password must be at least six characters.
+                </div>
+            <% end %>
+            <% if devise_error_messages!.downcase.include?("match") %>
+                <div class="error">
+                    Please make sure password matches confirmation.
+                </div>
+            <% end %>
+        <% end %>
+        <% if devise_error_messages!.downcase.include?("taken") %>
+            <div class="error">
+                That email address has already been registered.
+            </div>
+        <% end %>
+    </div>
+<% end %>
+
+
+  <div id="whole_new_user_container">
+        
+	<div id="registration_container">
+		<div class="main_container">
+			<div class="new_user_service_plan">
+				<table class="registration_header_table">
+					<tr>
+						<td>
+							<div class="header_table_text">
+								User Registration
+							</div>
+
+						</td>
+						<td align="right">
+
+						</td>
+					</tr>
+				</table>
+				<div class="clearboth"></div>
+			</div>
+			<div id="registration_errors">
+
+			</div>
+			<div id="info_container">
+				<%= render :partial => "create_user" %>
+			</div>
+                        <div class="clearboth"/>
+                        <%= render :partial => "devise/shared/links" %>
+		</div>
+	</div>
+        <!--<div class="thanks">
+                Thanks for trying Bakery Market!<br/>
+                -We'll see ya soon!
+        </div>-->
+  <div class="clearboth"></div>
+</div>
+

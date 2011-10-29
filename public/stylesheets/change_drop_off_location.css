@@ -1,0 +1,194 @@
+body {
+   /* background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.22, rgb(209,240,255)),
+        color-stop(1, rgb(64,166,255))
+    );
+    background-image: -moz-linear-gradient(
+        center bottom,
+        rgb(209,240,255) 22%,
+        rgb(64,166,255) 100%
+    );
+    background-repeat: repeat-x;
+    margin-top: -10px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid;*/
+   background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(255,255,255)),
+        color-stop(1, rgb(64,166,255))
+    );
+    background-image: -moz-linear-gradient(
+        center bottom,
+        rgb(255,255,255) 0%,
+        rgb(64,166,255) 69%
+    );
+    background-repeat: repeat-x;
+    /*background: url('/images/tiles.png');
+    background-attachment:fixed;*/
+    height: 100%;
+    margin-top: -10px;
+}
+
+html {
+
+}
+
+#footer {
+   margin-top: 30px;
+   margin-bottom: 20px;
+}
+
+#page {
+    min-height: 100%;
+}
+
+.new_user_location_header {
+	font: 26px Josefin Slab, Garamond, Georgia;
+	text-align: left;
+	padding-left: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	color: #FFF;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+        -moz-border-radius: 10px 10px 0px 0px;
+	background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0.2, rgb(59,170,255)),
+	    color-stop(0.6, rgb(44,106,199))
+	);
+        background-image: -moz-linear-gradient(
+            center bottom,
+            rgb(59,170,255) 20%,
+            rgb(44,106,199) 60%
+        );
+}
+
+.new_user_location_table {
+	width: 950px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.new_user_drop_off_location_name {
+	font: 22px Muli, Arvo, Goudy Old Style, Garamond, Georgia;
+	color: #222;
+	color: #66aec5;
+        color: #e85700;
+        color: #9600ff;
+	padding-top: 5px;
+        margin-right: 5px;
+}
+
+.new_user_drop_off_location_address {
+	font: 18px Muli, Arvo, Goudy Old Style, Garamond, Georgia;
+	color: #444;
+        margin-right: 5px;
+}
+
+.new_user_drop_off_location_type {
+	font: 16px Muli, Arvo, Goudy Old Style, Garamond, Georgia;
+	color: #999;
+        margin-right: 5px;
+        margin-top: 5px;
+}
+
+.new_user_select_location_button {
+	float: right;
+}
+
+.current_location_text {
+        float: right;
+        font: 20px Muli, Josefin Slab;
+        color: #36748b;
+        color: #85d100;
+        padding-right: 15px;
+        padding-top: 10px;
+}
+
+.new_user_select_location_button img {
+	width: 250px;
+}
+
+.new_user_location_selection_container {
+	-webkit-border-radius: 10px;
+	background: #FFF;
+	-webkit-box-shadow: 5px 5px 5px #888;
+        -moz-border-radius: 10px;
+        -moz-box-shadow: 5px 5px 5px #888;
+        padding-bottom: 10px;
+        width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -10px;
+}
+
+.user_google_map img {
+    border: 3px solid #31ace5;
+    width: 220px;
+}
+
+.skip_step_link a {
+  font: 22px Garamond, Georgia;
+  color: #fffa6c;
+  text-decoration: none;
+}
+
+.add_location {
+   font: 20px Muli, Arvo;
+   text-align: center;
+   padding-top: 10px;
+}
+
+.add_location a {
+   color: #0077FF;
+   text-decoration: none;
+}
+
+.new_location_header {
+   font: 22px Muli, Arvo;
+   padding-left: 20px;
+   padding-top: 20px;
+}
+
+.location_request_form {
+   padding-left: 20px;
+}
+
+input.request_form_input {
+   font: 20px Muli, Arvo;
+   width: 300px;
+   color: #0077FF;
+}
+
+textarea.request_form_input {
+   font: 20px Muli, Arvo;
+   width: 500px;
+   height: 200px;
+   color: #0077FF;
+}
+
+.request_form_label {
+   font: 18px Muli, Arvo, Josefin Slab;
+   color: #888;
+   padding-top: 10px;
+}
+
+.request_form_label_service {
+   font: 20px Muli, Arvo, Josefin Slab;
+   padding-top: 30px;
+   padding-bottom: 10px;
+}
+
+.request_form_submit {
+   margin-top: 20px;
+   margin-bottom: 10px;
+}

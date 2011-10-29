@@ -1,0 +1,38 @@
+<div class="date_menu_header">
+          Selections for <%= @next_five_days[@next_five_days_index].strftime("%A, %B %e") %>
+  </div>
+  <div id="accordion">
+      <h3>
+        <a href="#" style="border-style: none;">
+              <div class="accordion_menu_header_blue">
+                  <%= image_tag("impressionist_standard.png") %>
+                  <span class="view_menus">Standard Fare</span>
+              </div>
+          </a>
+      </h3>
+      <div class="accordion_menu">
+              <%= render :partial => "menu_background_blue" %>
+      </div>
+      <h3>
+        <a href="#">
+              <div class="accordion_menu_header_green">
+                  <%= image_tag("impressionist_garden.png") %>
+                  <span class="view_menus">From the Garden</span>
+              </div>
+          </a>
+      </h3>
+      <div>
+              <%= render :partial => "menu_background_green" %>
+      </div>
+      <h3>
+        <a href="#">
+              <div class="accordion_menu_header_purple">
+                  <%= image_tag("impressionist_different.png") %>
+                  <span class="view_menus">Something Different</span>
+              </div>
+          </a>
+      </h3>
+      <div>
+              <%= render :partial => "menu_background_purple" %>
+      </div>
+</div>

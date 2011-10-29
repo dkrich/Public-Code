@@ -1,0 +1,6 @@
+<% @deliver_today = RecipientRegularSchedule.find_by_location_recipient_id(@location_recipient.id).friday %>
+<% if !@deliver_today %>
+	<%= link_to_remote "Don't Deliver", :url => { :controller => "users", :action => "no_delivery_today", :id => @location_recipient.id, :day => "friday" } %>
+<% else %>
+	<%= link_to_remote "Deliver", :url => { :controller => "users", :action => "deliver_today", :id => @location_recipient.id, :day => "friday" } %>
+<% end %>

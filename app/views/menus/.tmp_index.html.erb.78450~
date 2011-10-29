@@ -1,0 +1,65 @@
+<!--<div id="menu_container">
+	<div class="menu_title">
+		<%= image_tag("standard_fare.png") %>
+	</div>
+	<div class="menu_subtitle">
+		<%= image_tag("starters.png") %>
+	</div>
+	<div class="items_container">
+		<div class="item_title">
+			Chicken Schwarma
+		</div>
+		<div class="item_description">
+			This is Shana's personal favorite. She eats it all the time, and despite her ongoing battle with just ridiculous halitosis, swears by this simple garlic dish.
+		</div>
+		<div class="item_title">
+			Shana's Famous Butter Sandwich
+		</div>
+		<div class="item_description">
+			While not complicated or especially healthy, what began as an afternoon snack has become one of our most popular options.
+		</div>
+	</div>
+	<br>
+</div>-->
+<div id="all_menus_container">
+	<div class="menu_list_header">
+		Listing All Menus
+	</div>
+	<div class="create_new_menu_link">
+		<%= link_to "Create New Menu", new_menu_path %>
+	</div>
+	<% @menus.each do |menu| %>
+		<div class="menu_list_name">
+			<%= link_to menu.name, menu_path(menu) %>
+		</div>
+		<% @menu_items = MenuItem.find_all_by_menu_id(menu.id) %>
+		<div class="menu_list_item_type">
+			Entree
+		</div>
+		<% @menu_items.each do |item| %>
+			<% @item = Item.find(item.item_id) %>
+			<% if @item.item_type.upcase == "ENTREE" %>
+				<div class="menu_list_item_name">
+					<%= @item.name %>
+				</div>
+				<div class="menu_list_item_description">
+					<%= @item.description %>
+				</div>
+			<% end %>
+		<% end %>
+		<div class="menu_list_item_type">
+			Dessert
+		</div>
+		<% @menu_items.each do |item| %>
+			<% @item = Item.find(item.item_id) %>
+			<% if @item.item_type.upcase == "DESSERT" %>
+				<div class="menu_list_item_name">
+					<%= @item.name %>
+				</div>
+				<div class="menu_list_item_description">
+					<%= @item.description %>
+				</div>
+			<% end %>
+		<% end %>
+	<% end %>
+</div>

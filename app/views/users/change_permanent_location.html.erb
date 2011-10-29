@@ -1,0 +1,62 @@
+<div class="new_user_location_selection_container">
+	<div class="new_user_location_header">
+             <% unless @delivery_location.blank? %>
+                  Update Delivery Location
+             <% else %>
+                  Select Delivery Location
+             <% end %>
+	</div>
+        <div class="add_location">
+            Don't see your location listed? <%= link_to "Let us know you would like us to add you.", users_request_location_path %>
+        </div>
+        <hr class="location_separator"/>
+	<% @locations = DropOffLocation.find :all %>
+	<% @locations.each_with_index do |location, index| %>
+		<table class="new_user_location_table">
+			<tr>
+				<td valign="top" width="300px">
+					<div class="new_user_drop_off_location_name">
+						<%= location.name %>
+					</div>
+					<div class="new_user_drop_off_location_address">
+						<%= location.street_address %>
+					</div>
+					<div class="new_user_drop_off_location_address">
+						<%= "#{location.city}, #{location.state}" %>
+					</div>
+					<div class="new_user_drop_off_location_type">
+						Location Type: <%= location.location_type %>
+					</div>
+				</td>
+				<td valign="top" width="1%">
+					<div class="user_google_map">
+						<%= image_tag(location.map_url) %>
+					</div>
+				</td>
+				<td width="300px" valign="top">
+                                    <% unless @delivery_location.blank? %>
+                                        <% if location.id != @delivery_location.id %>
+                                              <div class="new_user_select_location_button">
+                                                      <%= link_to image_tag("select_location.png"), { :controller => "users", :action => "update_location", :id => location.id } %>
+                                              </div>
+                                        <% else %>
+                                              <div class="current_location_text">
+                                                      This is your current location.
+                                              </div>
+                                        <% end %>
+                                    <% else %>
+                                        <div class="new_user_select_location_button">
+                                            <%= link_to image_tag("select_location.png"), { :controller => "users", :action => "update_location", :id => location.id } %>
+                                        </div>
+                                    <% end %>
+				</td>
+			</tr>
+		</table>
+		<% if index < @locations.length - 1 %>
+			<hr class="location_separator"/>
+		<% else %>
+			<div class="five_spacer"></div>
+		<% end %>
+	<% end %>
+</div>
+

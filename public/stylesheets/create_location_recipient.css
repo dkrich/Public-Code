@@ -1,0 +1,131 @@
+body {
+	background: #CCEEAA;
+	/*background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    right bottom,
+	    color-stop(0.27, rgb(112,168,84)),
+    	color-stop(0.64, rgb(184,204,171))
+	);*/
+}
+
+.step_one_subtext {
+	font: 22px Bookman Old Style, Georgia;
+	color: #FFF;
+	text-align: center;
+	/*padding-top: 5px;
+	padding-bottom: 5px;
+	background: #414141;*/
+	background-color: #313131;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+}
+
+.step_one {
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+	background: #FFF;
+	-webkit-border-radius: 10px;
+	-webkit-box-shadow: 5px 5px 5px #888;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.new_recipient_label {
+	font: 16px Myriad Pro, Georgia;
+	color: #555;
+	padding-top: 5px;
+}
+
+input.new_recipient_input {
+	height: 20px;
+	width: 250px;
+	font: 20px Georgia;
+}
+
+input.new_service_plan_input {
+	height: 40px;
+	width: 400px;
+	font: 28px Helvetica, American Typewriter, Goudy Old Style, Georgia;
+	border: 2px solid #87d343;
+	color: #2565AC;
+}
+
+.area_code_paren {
+	font: 40px Arial;
+	color: #888;
+}
+
+.new_recipient_subtext {
+	font: 12px Myriad Pro, Georgia;
+	color: #333;
+}
+
+.required {
+	font: 12px Myriad Pro, Georgia;
+	color: #CC1d1d;
+	float: right;
+	position: relative;
+	top: 5px;
+}
+
+.add_recipient_table {
+	width: 410px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 10px;
+}
+
+.user_google_map img {
+	width: 220px;
+}
+
+.step_two_container {
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	background: #FFF;
+	-webkit-border-radius: 10px;
+	-webkit-box-shadow: 5px 5px 5px #888;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.location_table {
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.drop_off_location_type {
+	font: 16px Georgia;
+	color: #48771b;
+	padding-top: 5px;
+}
+
+.step_three_container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	background: #FFF;
+	-webkit-border-radius: 10px;
+	-webkit-box-shadow: 5px 5px 5px #888;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.step_four_container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	background: #FFF;
+	-webkit-border-radius: 10px;
+	-webkit-box-shadow: 5px 5px 5px #888;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.service_plan_image img {
+	width: 320px;
+}

@@ -1,0 +1,12 @@
+<% form_remote_for @user, :url => { :controller => "users", :action => "create" } do |f| %>
+	<div id="registration_errors">
+  		<%= render :partial => "error_messages" %>
+	</div>
+  	<div id="registration_form">
+  		<%= render :partial => "users/form", :object => f %>
+	</div>
+	<div class="new_service_plan_required">
+		* Required Field
+	</div>
+	<div class="clearboth"></div>
+<% end %>

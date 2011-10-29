@@ -1,0 +1,18 @@
+<p>
+  <b>Drop off location:</b>
+  <%=h @drop_off_location_time.drop_off_location_id %>
+</p>
+
+<p>
+  <b>Delivery time:</b>
+  <%=h @drop_off_location_time.delivery_time %>
+</p>
+
+<p>
+  <b>Meal service:</b>
+  <%=h @drop_off_location_time.meal_service %>
+</p>
+
+
+<%= link_to 'Edit', edit_drop_off_location_time_path(@drop_off_location_time) %> |
+<%= link_to 'Back', drop_off_location_times_path %>

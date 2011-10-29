@@ -1,0 +1,9 @@
+<% if @deliver_today %>
+	<div class="scheduled">
+		<%= link_to_remote "Scheduled", :url => { :controller => "users", :action => "cancel_temporary_delivery", :id => @location_recipient.id, :day => @day } %>
+	</div>
+<% else %>
+	<div class="canceled">
+		<%= link_to_remote "Not Scheduled", :url => { :controller => "users", :action => "add_temporary_delivery", :id => @location_recipient.id, :day => @day } %>
+	</div>
+<% end %>

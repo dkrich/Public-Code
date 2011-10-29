@@ -1,0 +1,20 @@
+<div class="new_service_plan_label">
+	<%= form.label :email, "First Name*" %>
+</div>
+<%= form.text_field :email, :maxlength => 50, :class => "new_service_plan_input" %>
+<div class="new_service_plan_label">
+	<%= form.label :email, "Last Name*" %>
+</div>
+<%= form.text_field :email, :maxlength => 50, :class => "new_service_plan_input" %>
+<div class="new_service_plan_label">
+	<%= form.label :email, "Email*" %>
+</div>
+<%= form.text_field :email, :maxlength => 50, :class => "new_service_plan_input" %>
+<div class="new_service_plan_label">
+	<%= form.label :password, form.object.new_record? ? nil : "Change password", :class => "largelabel_alt" %>*
+</div>
+<%= form.password_field :password, :maxlength => 40, :class => "new_service_plan_input" %>
+<div class="new_service_plan_label">
+	<%= form.label :password_confirmation,  "Confirm Password", :class => "largelabel_alt" %>*
+</div>
+<%= form.password_field :password_confirmation, :maxlength => 40, :class => "new_service_plan_input" %>

@@ -1,0 +1,13 @@
+<div id="whole_container">
+	<div class="thanks">
+		<%= image_tag("thanks.png") %>
+	</div>
+	<div id="main_container">
+		<div class="new_user_service_plan">
+			Let's get you set up.
+		</div>
+		<div id="info_container">
+			<%= render :partial => "create_user" %>
+		</div>
+	</div>
+</div>

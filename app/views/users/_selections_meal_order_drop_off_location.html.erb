@@ -1,0 +1,10 @@
+<div class="meal_summary_location_name">
+	<%= @drop_off_location.name %>
+</div>
+<div class="meal_summary_location_address">
+	<%= @drop_off_location.street_address %><br/>
+	<%= @drop_off_location.city %>, <%= @drop_off_location.state %>
+</div>
+<div class="dashboard_google_map">
+    <%= image_tag(@drop_off_location.map_url) %>
+</div>

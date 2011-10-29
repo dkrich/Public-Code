@@ -1,0 +1,54 @@
+.never_image img {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	padding-top: 10px;
+}
+
+.explanations_step_image img {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	padding-top: 30px;
+}
+
+.explanations_header {
+	font: 30px Interstate, American Typewriter, Georgia;
+	text-align: center;
+	padding-top: 15px;
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	color: #666;
+}
+
+.explanations_how {
+	font: 34px American Typewriter, Times New Roman, Georgia;
+	text-align: center;
+	padding-top: 20px;
+	color: #CC0000;
+}
+
+.step_one {
+	font: 30px American Typewriter, Georgia;
+	text-align: center;
+}
+
+.explanations_body {
+	font: 20px Bookman Old Style, Myriad Pro, Georgia;
+	text-align: left;
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.explanations_screenshot {
+	width: 800px;
+	border: 8px solid;
+}
+
+.name_screenshot {
+	border: 8px solid;
+}

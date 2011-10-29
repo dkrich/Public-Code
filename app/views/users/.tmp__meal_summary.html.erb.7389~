@@ -1,0 +1,72 @@
+<% if @outstanding_order %>
+	<div class="general_header">
+		Meal Summary
+	</div>
+	<div id="meal_summary_errors">
+	
+	</div>
+	<div class="meal_summary_subtext">
+		Order Status
+	</div>
+	<hr class="selections_header_line">
+	<% if !@outstanding_order.confirmed %>
+		<div class="meal_status_unconfirmed">
+			Unconfirmed
+		</div>
+	<% else %>
+		<% if !@outstanding_order.delivered %>
+			<div class="meal_status_received">
+				Received
+			</div>
+		<% else %>
+			<div class="meal_status_delivered">
+				Delivered
+			</div>
+		<% end %>
+	<% end %>
+	<div class="meal_summary_subtext">
+		Your Selections
+	</div>
+	<hr class="selections_header_line">
+	<div id="meal_selections">
+		<%= render :partial => "meal_selections" %>
+	</div>
+	<!--<div class="meal_summary_subtext">
+		Order Total
+	</div>
+	<hr class="selections_header_line">
+	<div id="order_total">
+		<%= render :partial => "order_total" %>
+	</div>-->
+	<!--<div class="meal_summary_subtext">
+		Credits Remaining
+	</div>
+	<hr class="selections_header_line">
+	<div id="credits_remaining">
+		<%= render :partial => "credits_remaining" %>
+	</div>-->
+	<!--<div class="please_remember">
+		Please Remember: Tipping is not expected or necessary.
+	</div>-->
+	<div class="meal_summary_subtext">
+		Delivery Location
+	</div>
+	<hr class="selections_header_line">
+	<% @drop_off_location = DropOffLocation.find(@outstanding_order.drop_off_location_id) %>
+	<div id="selection_drop_off_location">
+		<%= render :partial => "selections_meal_order_drop_off_location" %>
+	</div>
+	<% if !@outstanding_order.confirmed %>
+		<div class="edit_link">
+			<%= link_to_remote "Change Location", :url => { :controller => "users", :action => "change_meal_order_destination", :meal_order => @outstanding_order.id } %>
+		</div>
+		<!--<div class="google_map">
+			<%= image_tag(@drop_off_location.map_url) %>
+		</div>-->
+		<div class="place_order_button">
+			<%= link_to_remote image_tag("send_order_button.png"), :url => { :controller => "users", :action => "send_order", :id => @outstanding_order.id } %>
+		</div>
+	<% else %>
+		<div class="meal_status_spacer"></div>
+	<% end %>
+<% end %>

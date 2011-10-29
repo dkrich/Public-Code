@@ -1,0 +1,66 @@
+<%= form_for(@vendor_profile, :html => { :multipart => true }) do |f| %>
+    <% if @vendor_profile.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@vendor_profile.errors.count, "error") %> prohibited this vendor from being saved:</h2>
+
+        <ul>
+        <% @vendor_profile.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <table cellpadding="5" class="edit_vendor_profile_table">
+        <tr>
+            <td valign="top">
+                <div class="editing_vendor_profile_label">
+                    Intro:
+                </div>
+            </td>
+            <td>
+                <%= f.text_area :intro, :class => "edit_vendor_text_area" %>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <div class="editing_vendor_profile_label">
+                    Map URL:
+                </div>
+            </td>
+            <td>
+                <%= f.text_area :map_url, :class => "edit_vendor_text_area" %>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <div class="editing_vendor_profile_label">
+                    Description:
+                </div>
+            </td>
+            <td>
+                <%= f.text_area :description, :class => "edit_vendor_text_area" %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="editing_vendor_profile_label">
+                    Phone Number:
+                </div>
+            </td>
+            <td>
+                <%= f.text_field :phone, :class => "edit_vendor_text_area" %>
+                <%= f.hidden_field :vendor_id, :value => params[:id] %>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <center>
+                    <div class="actions">
+                        <%= f.submit %>
+                    </div>
+                </center>
+            </td>
+        </tr>
+    </table>
+<% end %>

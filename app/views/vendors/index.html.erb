@@ -1,0 +1,31 @@
+<div class="vendors_header">
+    All Vendors
+</div>
+
+<table class="vendor_table" cellpadding="5" border="1">
+  <tr>
+    <th class="logo">Logo</th>
+    <th class="vendor_table_header">Name</th>
+    <th class="vendor_table_header">Address</th>
+    <th class="vendor_table_header">City</th>
+    <th class="vendor_table_header">Description</th>
+  </tr>
+
+<% @vendors.each do |vendor| %>
+  <tr>
+    <td><%= image_tag(vendor.logo.url(:medium)) %></td>
+    <td class="vendor_table_cell"><%= vendor.name %></td>
+    <td><%= vendor.address %></td>
+    <td><%= City.find(vendor.city_id).name %></td>
+    <td><%= vendor.description %></td>
+    <td><%= link_to 'Show', vendor %></td>
+    <td><%= link_to 'Edit', edit_vendor_path(vendor) %></td>
+    <td><%= link_to 'Edit Profile', edit_vendor_profile_path(vendor) %></td>
+    <td><%= link_to 'Destroy', vendor, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Vendor', new_vendor_path %>

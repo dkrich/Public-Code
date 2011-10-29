@@ -1,0 +1,29 @@
+<div class="step_three_container_user">
+	<div class="step_one_subtext">
+		<table class="step_table">
+			<tr>
+				<td width="1%">
+					<%= image_tag("step_three.png", :class => "step_image") %>
+				</td>
+				<td nowrap="true">
+					Finally, choose your plan.
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="service_plan_image">
+		<table class="service_plan_table">
+			<tr>
+				<td>
+					<%= link_to image_tag("basic.png", :mouseover => image_path("basic_selected.png")), { :controller => "users", :action => "create_user_plan", :id => 1 } %>
+				</td>
+				<td>
+					<%= link_to image_tag("prime.png", :mouseover => image_path("prime_selected.png")), { :controller => "users", :action => "create_user_plan", :id => 2 } %>
+				</td>
+				<td>
+					<%= link_to image_tag("premium.png", :mouseover => image_path("premium_illuminated.png")), { :controller => "users", :action => "create_user_plan", :id => 3 } %>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>

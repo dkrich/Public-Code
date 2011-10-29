@@ -1,0 +1,73 @@
+<div class="view_orders_date">
+	Orders for <%= Date.parse(@date).strftime("%A, %B %e, %Y") %>
+</div>
+<div class="orders_note">
+	Please note that orders are subject to change until 8am the day of delivery.
+</div>
+<% @drop_off_locations = DropOffLocation.find :all %>
+<div class="schedule_form_container">
+	<% form_for :recipient_temporary_schedule, :url => {:action => 'update_delivery_statuses', :date => @date} do -%>
+		<% @drop_off_locations.each do |location| %>
+			<% @recipients = LocationRecipient.find_all_by_drop_off_location_id(location.id) %>
+			<% if !@recipients.blank? %>
+				<div class="order_location_header">
+					Current Orders for <%= location.name %>
+				</div>
+				<div class="delivery_schedule_recipient_name">
+					<div id="delivery_statuses">
+						<table class="recipient_order_table">
+							<tr>
+								<td>
+									<div class="recipient_order_table_header">
+										Recipient Name
+									</div>
+								</td>
+								<td>
+									<div class="recipient_order_table_header">
+										Current Delivery Status
+									</div>
+								</td>
+								<td>
+									<div class="recipient_order_table_header">
+										Set Status
+									</div>
+								</td>
+							</tr>
+							<% @beginning_of_week = get_first_day(@date) %>
+							<% @end_of_week = get_first_day(@date) + 7.days %>
+							<% @recipients.each do |recipient| %>
+								<% @this_weeks_schedule = RecipientTemporarySchedule.find(:last, :conditions => ["location_recipient_id = ? AND created_at <= ? AND created_at >= ?", recipient.id, Time.parse(@end_of_week.strftime("%e%B%Y")), Date.parse(@beginning_of_week.strftime("%e%B%Y"))]) %>
+								<% @appended_string = Date.parse(@date).strftime("%A").downcase %>
+								<% if scheduled?(@this_weeks_schedule, @appended_string) %>
+									<tr>
+										<td>
+											<%= recipient.recipient_first_name %>
+											<%= recipient.recipient_last_name %>
+										</td>
+										<td>
+											<% if delivered?(@this_weeks_schedule, @appended_string) %>
+												<div class="delivery_schedule_delivered">
+													Delivered
+												</div>
+											<% else %>
+												<div class="delivery_schedule_not_delivered">
+													Not Delivered
+												</div>
+											<% end %>
+										</td>
+										<td>
+											<% fields_for "recipient_temporary_schedule[]", @this_weeks_schedule do |status| %>
+												<%= status.check_box "#{@appended_string}_delivered" %> Delivered
+											<% end %>
+										</td>
+									</tr>
+								<% end %>
+							<% end %>
+						</table>
+					</div>
+				</div>
+			<% end %>
+		<% end %>
+		<%= submit_tag 'Update', :class => "schedule_form_container" %>
+	<% end %>
+</div>

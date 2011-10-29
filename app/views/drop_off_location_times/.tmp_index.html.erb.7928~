@@ -1,0 +1,24 @@
+<h1>Listing drop_off_location_times</h1>
+
+<table>
+  <tr>
+    <th>Drop off location</th>
+    <th>Delivery time</th>
+    <th>Meal service</th>
+  </tr>
+
+<% @drop_off_location_times.each do |drop_off_location_time| %>
+  <tr>
+    <td><%=h drop_off_location_time.drop_off_location_id %></td>
+    <td><%=h drop_off_location_time.delivery_time %></td>
+    <td><%=h drop_off_location_time.meal_service %></td>
+    <td><%= link_to 'Show', drop_off_location_time %></td>
+    <td><%= link_to 'Edit', edit_drop_off_location_time_path(drop_off_location_time) %></td>
+    <td><%= link_to 'Destroy', drop_off_location_time, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New drop_off_location_time', new_drop_off_location_time_path %>

@@ -1,0 +1,240 @@
+.edit_recipient_header {
+	font: 40px Georgia;
+	color: #FFF;
+	text-align: center;
+	background: #313131;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+.edit_recipient_subtitle {
+	font: 40px Myriad Pro, Georgia;
+	color: #666;
+	text-align: center;
+	padding-top: 20px;
+}
+
+.edit_recipient_subtitle_location {
+	font: 40px Myriad Pro, Georgia;
+	color: #666;
+	text-align: center;
+	padding-top: 20px;
+}
+
+.edit_recipient_small_subtitle {
+	font: 24px Myriad Pro, Georgia;
+	color: #666;
+	text-align: left;
+	padding-top: 10px;
+}
+
+.edit_recipient_name {
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#edit_recipient_nav_container {
+	height: 50px;
+}
+
+.update_name_button {
+	width: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+}
+
+.update_name_button img {
+	width: 200px;
+}
+
+.edit_nav_table {
+	width: 100%;
+	height: 60px;
+	border: 0px;
+}
+
+#edit_nav_active {
+	background: #3388FF;
+	background: #00AA00;
+	height: 60px;
+	font: 30px American Typewriter, Myriad Pro, Georgia;
+	color: #FFF;
+	text-align: center;
+}
+
+#edit_nav_inactive {
+	background: #FFF;
+	height: 60px;
+	font: 30px American Typewriter, Myriad Pro, Georgia;
+	color: #FFF;
+	text-align: center;
+}
+
+.edit_nav_text {
+	font: 30px Georgia, American Typewriter, Myriad Pro, Georgia;
+	color: #FFF;
+	color: #3388FF;
+	text-align: center;
+	padding-top: 13px;
+}
+
+.edit_nav_text a {
+	text-decoration: none;
+	color: #3388FF;
+}
+
+.edit_nav_text_inactive {
+	font: 30px Georgia, American Typewriter, Myriad Pro, Georgia;
+	color: #FFF;
+	text-align: center;
+	padding-top: 13px;
+}
+
+.active_background {
+	background: #0077AA;
+	height: 100px;
+}
+
+input.edit_recipient_name {
+	width: 400px;
+	height: 40px;
+	font: 34px Georgia, American Typewriter, Garamond, Bookman Old Style, Georgia;
+	color: #0077AA;
+	border: 3px solid #004477;
+	padding: 5px;
+}
+
+input.update_prefix {
+	width: 70px;
+	height: 40px;
+	font: 36px Arial, American Typewriter, Garamond, Bookman Old Style, Georgia;
+	color: #0077AA;
+	border: 3px solid #004477;
+	padding: 5px;
+}
+
+input.update_suffix {
+	width: 90px;
+	height: 40px;
+	font: 36px Arial, American Typewriter, Garamond, Bookman Old Style, Georgia;
+	color: #0077AA;
+	border: 3px solid #004477;
+	padding: 5px;
+}
+
+.recipient_regular_schedule_table {
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+}
+
+.regular_date_header {
+	font: 20px Garamond, Georgia;
+	color: #FFF;
+	padding: 5px;
+	background: #004477;
+	background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0.48, rgb(29,54,158)),
+    	color-stop(0.98, rgb(61,126,255))
+	);
+	text-align: center;
+}
+
+#what_it_is {
+	padding-right: 40px;
+}
+
+.what_it_is_explanation {
+	background: #FFF;
+	font: 16px Myriad Pro;
+	color: #666;
+	max-width: 450px;
+}
+
+.what_it_is_header {
+	font: 24px Myriad Pro;
+	color: #CC0000;
+}
+
+.what_it_is_header_location {
+	font: 24px Myriad Pro;
+	color: #CC0000;
+	padding-top: 30px;
+}
+
+.bottom {
+	padding-top: 30px;
+	padding-bottom: 20px;
+}
+
+.update_location_table {
+	width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.update_drop_off_location_name {
+	font: 24px Myriad Pro, Georgia;
+	color: #00BB00;
+}
+
+.update_drop_off_location_address {
+	font: 20px Myriad Pro, Georgia;
+	color: #444;
+}
+
+.drop_off_location_type {
+	font: 16px Myriad Pro, Georgia;
+	color: #444;
+}
+
+#error_messages_container {
+	padding-bottom: 10px;
+	padding-top: 10px;
+	text-align: center;
+	vertical-align: middle;
+	margin-bottom: -30px;
+}
+
+.update_recipient_success {
+	background: #3388FF;
+	font: 30px Georgia, American Typewriter, Bookman Old Style, Georgia, Myriad Pro, Georgia;
+	color: #FFF;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	text-align: center;
+	vertical-align: middle;
+	margin-bottom: -30px;
+}
+
+.current_location {
+	font: 18px Myriad Pro, Georgia, American Typewriter, Garamond;
+	color: #00AA22;
+}
+
+.area_code_paren {
+	font: 40px Arial;
+	color: #888;
+}
+
+.new_recipient_label {
+	font: 16px Myriad Pro, Georgia;
+	color: #555;
+	padding-top: 5px;
+}
+
+#recipient_number {
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.update_location_button img {
+	width: 150px;
+}

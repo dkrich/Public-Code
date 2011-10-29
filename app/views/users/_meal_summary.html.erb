@@ -1,0 +1,38 @@
+
+	<div class="general_header">
+		Your Basket
+	</div>
+	<div id="meal_summary_errors">
+	
+	</div>
+	
+	<div class="meal_summary_subtext">
+		Your Selections
+	</div>
+	<hr class="selections_header_line"/>
+
+	<div id="meal_selections">
+            <% if @location_selection %>
+		<%= render :partial => "meal_selections" %>
+            <% else %>
+                <div class="meal_summary_text">
+                    No selections posted for today.
+                </div>
+            <% end %>
+	</div>
+	<div class="meal_summary_subtext">
+		Delivery Location
+	</div>
+	<hr class="selections_header_line"/>
+        <% if !@user_drop_off_location.blank? %>
+            <div id="selection_drop_off_location">
+                 <%= render :partial => "selections_meal_order_drop_off_location" %>
+            </div>
+        <% end %>
+        <div id="loading" style="display:none">
+            <%= image_tag("email_loader.gif") %>
+        </div>
+
+        <div class="meal_status_spacer"></div>
+
+                

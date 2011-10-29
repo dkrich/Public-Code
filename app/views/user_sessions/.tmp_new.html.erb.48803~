@@ -1,0 +1,8 @@
+<div id="header_error_messages_container">
+	
+</div>
+<% form_remote_for :user_session, @user_session, :url => { :controller => "user_sessions", :action => "create" } do |e| %>
+	<div id="login_credentials">
+		<%= render :partial => 'form_mini', :object => e %>
+	</div>
+<% end %> 

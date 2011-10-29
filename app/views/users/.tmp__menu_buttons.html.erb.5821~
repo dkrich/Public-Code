@@ -1,0 +1,36 @@
+<table class="menu_button_table">
+	<tr>
+		<td align="center">
+			<% if @current_menu == "standard" %>
+				<%= image_tag("standard_fare_illuminated.png") %>
+			<% else %>
+				<%= link_to_remote image_tag("standard_fare.png"), :url => { :controller => "users", :action => "switch_to_standard" } %>
+			<% end %>
+		</td>
+		<td align="center">
+			<% if @current_menu == "salad" %>
+				<%= image_tag("salad_illuminated.png") %>
+			<% else %>
+				<%= link_to_remote image_tag("salad.png"), :url => { :controller => "users", :action => "switch_to_salad" } %>
+			<% end %>
+		</td>
+		<td align="center">
+			<% if @current_menu == "different" %>
+				<%= image_tag("something_different_illuminated.png") %>
+			<% else %>
+				<%= link_to_remote image_tag("something_different.png"), :url => { :controller => "users", :action => "switch_to_different" } %>
+			<% end %>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<%= link_to_remote "Add To Order", :url => { :controller => "users", :action => "add_meal_to_order", :id => 1 } %>
+		</td>
+		<td>
+			<%= link_to_remote "Add To Order", :url => { :controller => "users", :action => "add_meal_to_order", :id => 2 } %>
+		</td>
+		<td>
+			<%= link_to_remote "Add To Order", :url => { :controller => "users", :action => "add_meal_to_order", :id => 3 } %>			
+		</td>
+	</tr>
+</table>

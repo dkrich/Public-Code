@@ -1,0 +1,80 @@
+<%= form_for(@order, :url => {:controller => "orders", :action => "create", :id => @service_plan.id}) do |f| %>
+  <% if @order.errors.any? %>
+      <div id="order_errors">
+          <div class="order_error_header">
+              Something went wrong.
+          </div>
+          <% @order.errors.full_messages.each do |msg| %>
+              <div class="order_error_message">
+                  <%= msg %>.
+              </div>
+          <% end %>
+      </div>
+  <% end %>
+
+  <div class="field">
+    <div class="order_spacer"></div>
+    <div class="new_order_label">
+        First Name
+    </div>
+    <%= f.text_field :first_name, :class => "new_order_field" %>
+  </div>
+  <div class="field">
+    <div class="new_order_label">
+        Last Name
+    </div>
+    <%= f.text_field :last_name, :class => "new_order_field" %>
+  </div>
+  <div class="field">
+    <div class="new_order_label">
+        Card Type
+    </div>
+    <div class="card_type">
+        <%= f.select :card_type, [["Visa", "visa"], ["Mastercard", "mastercard"], ["Discover", "discover"], ["American Express", "american_express"]] %>
+    </div>
+  </div>
+  <div class="field">
+    <div class="new_order_label">
+        Card Number
+    </div>
+    <%= f.text_field :card_number, :class => "new_order_field" %>
+  </div>
+  <div class="field">
+    <div class="new_order_label">
+        Card Verification Value (CVV)
+    </div>
+    <%= f.text_field :card_verification, :size => 4, :maxlength => 4, :class => "new_order_field" %>
+  </div>
+  <div class="field">
+    <div class="new_order_label">
+        Expiration Date
+    </div>
+    <div class="card_type">
+        <%= f.date_select :card_expires_on, :discard_day => true, :start_year => Date.today.year, :end_year => (Date.today.year + 10), :add_month_numbers => true %>
+    </div>
+  </div>
+  <!--<div class="field">
+    <%= f.label :billing_address %><br />
+    <%= f.text_field :billing_address %>
+  </div>
+  <div class="field">
+    <%= f.label :zip %><br />
+    <%= f.text_field :zip %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </div>-->
+  <div id="purchase_loading" style="display:none;">
+      <center><%= image_tag("email_loader.gif") %></center>
+  </div>
+  <div class="actions">
+      <%= image_submit_tag("complete_purchase.png") %>
+  </div>
+  <!--<div class="paypal_notice">
+      Or, you can checkout with PayPal if you prefer:
+  </div>
+  <div class="paypal_express_button">
+      <%= link_to image_tag("https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"), :controller => "orders", :action => "express", :id => @service_plan.id %>
+  </div>-->
+<% end %>

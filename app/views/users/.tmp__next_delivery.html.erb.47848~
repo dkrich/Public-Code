@@ -1,0 +1,10 @@
+Next Scheduled Meal Delivery:
+<% @next_five_days = get_weekdays %>
+<span class="recipient_stat">
+	<% @next_deliver_int = next_delivery(@location_recipient.id) %>
+	<% if @next_deliver_int < 5 %>
+		<%= @next_five_days[@next_deliver_int].strftime("%A, %B %e") %>
+	<% else %>
+		There are no scheduled deliveries this week.
+	<% end %>
+</span>

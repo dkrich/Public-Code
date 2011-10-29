@@ -1,0 +1,39 @@
+<div class="reset_password_container">
+    <div class="date_menu_header">
+        Forget Your Password?
+    </div>
+    <div class="password_reset_subheader">
+        No worries, just give us the email address you registered with, and we'll send you instructions for setting a new password.
+    </div>
+    <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+        <% if devise_error_messages!.downcase.include?("email") and devise_error_messages!.downcase.include?("blank") %>
+            <div class="password_reset_error">
+                Please enter an email address.
+            </div>
+        <% elsif devise_error_messages!.downcase.include?("email") and devise_error_messages!.downcase.include?("found") %>
+            <div class="password_reset_error">
+                We couldn't find a user with that email address.
+            </div>
+        <% end %>
+        <div class="password_reset_field">
+            <table>
+                <tr>
+                    <td>
+                      <div class="password_reset_field_label">
+                          Email:
+                      </div>
+                    </td>
+                    <td>
+                        <%= f.email_field :email, :class => "password_reset_text" %>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="reset_password_button">
+            <%= image_submit_tag("reset_password.png") %>
+        </div>
+    <% end %>
+    <div class="shared_links">
+        <%= render :partial => "devise/shared/links" %>
+    </div>
+</div>

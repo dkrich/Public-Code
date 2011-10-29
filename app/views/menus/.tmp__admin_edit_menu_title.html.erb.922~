@@ -1,0 +1,2 @@
+Editing <font color="#d35511"><%= @menu.name %></font><br>
+Current Meal Type: <%= MealType.find_by_meal_type_id(@menu.meal_type).meal_type_name %>

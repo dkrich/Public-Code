@@ -1,0 +1,68 @@
+<% if @selected_date.wday == 0 or @selected_date.wday == 1 or @selected_date.wday == 6 %>
+	<% @next_five_days_index = 0 %>
+<% elsif @selected_date.wday == 2 %>
+	<% @next_five_days_index = 1 %>
+<% elsif @selected_date.wday == 3 %>
+	<% @next_five_days_index = 2 %>
+<% elsif @selected_date.wday == 4 %>
+	<% @next_five_days_index = 3 %>
+<% elsif @selected_date.wday == 5 %>
+	<% @next_five_days_index = 4 %>
+<% end %>
+
+<div id="menu_background_purple">
+	<div class="standard_fare_heading">
+		<%= image_tag("different_heading.png") %>
+	</div>
+	<% @daily_selection = DailySelection.find_by_date(@next_five_days[@next_five_days_index].strftime("%d%m%Y")) %>
+	<% if !@daily_selection.menu_type_three_id.blank? %>
+		<table class="selections_table" cellpadding="10">
+			<tr>
+				<td valign="top">
+					<% @menu_items = MenuItem.find_all_by_menu_id(@daily_selection.menu_type_three_id) %>
+					<% @menu_items.each do |menu_item| %>
+						<% @item = Item.find(menu_item.item_id) %>
+						<% if @item.item_type.upcase == "ENTREE" %>
+							<div class="menu_image">
+								<%= image_tag(@item.photo.url) %>
+							</div>
+				</td>
+				<td valign="top">
+							<div class="menu_item_header">
+								Entree: <%= @item.name %>
+							</div>
+							<div class="menu_item_description">
+								<%= @item.description %>
+							</div>
+						<% end %>
+					<% end %>
+				</td>
+			</tr>
+			<tr>
+				<td valign="top">
+					<% @menu_items.each do |menu_item| %>
+						<% @item = Item.find(menu_item.item_id) %>
+						<% if @item.item_type.upcase == "SIDE" %>
+							<div class="menu_image">
+								<%= image_tag(@item.photo.url) %>
+							</div>
+				</td>
+				<td valign="top">
+							<div class="menu_item_header">
+								Side: <%= @item.name %>
+							</div>
+							<div class="menu_item_description">
+								<%= @item.description %>
+							</div>
+						<% end %>
+					<% end %>
+				</td>
+			</tr>
+		</table>
+	<% else %>
+		<div class="no_menu">
+			<%= image_tag("no_menu.png") %>
+		</div>	
+	<% end %>
+	<div class="clearboth"></div>
+</div>

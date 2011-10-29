@@ -1,0 +1,138 @@
+#item_container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#new_item_container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.header_links a {
+	font: 14px Didot, Georgia, Tahoma;
+	color: #AAA;
+	color: #06D;
+	text-decoration: none;
+	margin-right: 15px;
+	text-align: right;
+}
+
+.admin_item_image {
+	width: 100px;
+	border: 5px solid #666;
+}
+
+.menu_logo {
+	width: 250px;
+	padding-left: 15px;
+	padding-top: 10px;
+}
+
+.item_title {
+	font: 28px Garamond, Georgia;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.editing_item_header {
+	font: 18px Georgia, Garamond;
+	color: #666;
+}
+
+.create_new_item_header {
+	font: 30px Georgia;
+	text-align: center;
+	padding-top: 20px;
+	color: #58764b;
+}
+
+.item_name {
+	font: 14px Georgia, Garamond;
+	color: #222;
+	padding-top: 5px;
+	padding-bottom: 2px;
+}
+
+.editing_item_name {
+	font: bold 18px Georgia, Garamond;
+	color: #222;
+	padding-top: 5px;
+	padding-bottom: 2px;
+}
+
+.editing_table {
+	width: 1000px;
+	padding-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.edit_item_table {
+	width: 500px;
+	padding-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.edit_item_link a {
+	font: 14px Georgia, Garamond;
+	color: #53a8ff;
+	text-decoration: none;
+}
+
+textarea.item_description {
+	height: 150px;
+	width: 500px;
+	border: 2px solid #1175d3;
+	font: 18px Georgia;
+	color: #426e98
+}
+
+input.item_name {
+	height: 30px;
+	width: 500px;
+	font: 20px Georgia;
+	color: #426e98;
+	border: 2px solid #1175d3;
+}
+
+.new_item_table {
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 20px;
+}
+
+.new_item_text {
+	font: 20px Georgia;
+	color: #555;
+}
+
+input.new_item {
+	width: 400px;
+	height: 35px;
+	font: 30px Georgia;
+	color: #275c82;
+	border: 2px solid #275c82;
+}
+
+textarea.new_item {
+	width: 400px;
+	height: 80px;
+	font: 20px Georgia;
+	color: #275c82;
+	border: 2px solid #275c82;
+}
+
+.create_new_item_link {
+	margin-right: 10px;
+	margin-top: 10px;
+	text-align: center;
+}
+
+.create_new_item_link a {
+	font: 16px Georgia;
+	color: #2773e5;
+	text-decoration: none;
+}

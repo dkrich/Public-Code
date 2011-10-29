@@ -1,0 +1,208 @@
+<div class="view_orders_date">
+	Orders for <%= Date.parse(@date).strftime("%A, %B %e, %Y") %>
+</div>
+<div class="orders_note">
+	Please note that orders are subject to change until 8am the day of delivery.
+</div>
+
+<% @meal_type_one_name = MealType.find_by_meal_type_id(1).meal_type_name %>
+<% @meal_type_two_name = MealType.find_by_meal_type_id(2).meal_type_name %>
+<% @meal_type_three_name = MealType.find_by_meal_type_id(3).meal_type_name %>
+
+<% @selections = DailySelection.find_last_by_date(Date.parse(@date).strftime("%d%m%Y")) %>
+<% @selection_one_items = MenuItem.find_all_by_menu_id(@selections.menu_type_one_id) %>
+<% @selection_one_items.each do |menu_item| %>
+	<% @item = Item.find(menu_item.item_id) %>
+	<% if @item.item_type.upcase == "ENTREE" %>
+		<% @selection_one_entree = @item %>
+	<% elsif @item.item_type.upcase == "SIDE" %>
+		<% @selection_one_side = @item %>
+	<% end %>
+<% end %>
+<% @selection_two_items = MenuItem.find_all_by_menu_id(@selections.menu_type_two_id) %>
+<% @selection_two_items.each do |menu_item| %>
+	<% @item = Item.find(menu_item.item_id) %>
+	<% if @item.item_type.upcase == "ENTREE" %>
+		<% @selection_two_entree = @item %>
+	<% elsif @item.item_type.upcase == "SIDE" %>
+		<% @selection_two_side = @item %>
+	<% end %>
+<% end %>
+<% @selection_three_items = MenuItem.find_all_by_menu_id(@selections.menu_type_three_id) %>
+<% @selection_three_items.each do |menu_item| %>
+	<% @item = Item.find(menu_item.item_id) %>
+	<% if @item.item_type.upcase == "ENTREE" %>
+		<% @selection_three_entree = @item %>
+	<% elsif @item.item_type.upcase == "SIDE" %>
+		<% @selection_three_side = @item %>
+	<% end %>
+<% end %>
+
+<% @outstanding_order_total = 0 %>
+<% @outstanding_order_meal_one_total = 0 %>
+<% @outstanding_order_meal_two_total = 0 %>
+<% @outstanding_order_meal_three_total = 0 %>
+
+<% @drop_off_locations = DropOffLocation.find :all %>
+<div class="schedule_form_container">
+	<% form_for :meal_order, :url => {:action => 'update_delivery_statuses', :date => @date} do -%>
+		<% @drop_off_locations.each do |location| %>
+			<% @outstanding_order_one_count = 0 %>
+			<% @outstanding_order_two_count = 0 %>
+			<% @outstanding_order_three_count = 0 %>
+			<div class="order_location_header">
+				Current Orders for <%= location.name %>
+			</div
+			<% @location_outstanding_orders = Array.new %>
+			<% @outstanding_orders.each do |order| %>
+				<% if order.drop_off_location_id == location.id and order.confirmed %>
+					<% @outstanding_order_one_count =  @outstanding_order_one_count + order.meal_one_quantity %>
+					<% @outstanding_order_two_count =  @outstanding_order_two_count + order.meal_two_quantity %>
+					<% @outstanding_order_three_count =  @outstanding_order_three_count + order.meal_three_quantity %>
+					<% @location_outstanding_orders << order %>
+					<% @outstanding_order_meal_one_total = @outstanding_order_meal_one_total + @outstanding_order_one_count %>
+					<% @outstanding_order_meal_two_total = @outstanding_order_meal_two_total + @outstanding_order_two_count %>
+					<% @outstanding_order_meal_three_total = @outstanding_order_meal_three_total + @outstanding_order_three_count %>
+				<% end %>
+			<% end %>
+			<% if !@location_outstanding_orders.blank? %>
+				<div class="orders_standard_count">
+					<%= MealType.find_by_meal_type_id(1).meal_type_name %> Orders: <%= @outstanding_order_one_count %>
+					<div class="menu_meal_selection_text">
+						Entree: <%= @selection_one_entree.name %>
+					</div>
+					<div class="menu_meal_selection_text">
+						Side: <%= @selection_one_side.name %>
+					</div>
+				</div>
+				<div class="orders_salad_count">
+					<%= MealType.find_by_meal_type_id(2).meal_type_name %> Orders: <%= @outstanding_order_two_count %>
+					<div class="menu_meal_selection_text">
+						Entree: <%= @selection_two_entree.name %>
+					</div>
+					<div class="menu_meal_selection_text">
+						Side: <%= @selection_two_side.name %>
+					</div>
+				</div>
+				<div class="orders_different_count">
+					<%= MealType.find_by_meal_type_id(3).meal_type_name %> Orders: <%= @outstanding_order_three_count %>
+					<div class="menu_meal_selection_text">
+						Entree: <%= @selection_three_entree.name %>
+					</div>
+					<div class="menu_meal_selection_text">
+						Side: <%= @selection_three_side.name %>
+					</div>
+				</div>
+				<% @location_outstanding_orders.each do |meal_order| %>
+					<div class="delivery_schedule_recipient_name">
+						<div id="delivery_statuses">
+							<table class="recipient_order_table">
+								<tr>
+									<td>
+										<div class="recipient_order_table_header">
+											Recipient Name
+										</div>
+									</td>
+									<td>
+										<div class="recipient_order_table_header">
+											Selected Meals
+										</div>
+									</td>
+									<td>
+										<div class="recipient_order_table_header">
+											Current Delivery Status
+										</div>
+									</td>
+									<td>
+										<div class="recipient_order_table_header">
+											Set Status
+										</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<% @user = User.find(meal_order.user_id) %>
+										<%= @user.first_name %>
+										<%= @user.last_name %>
+									</td>
+									<td>
+										<% if meal_order.meal_one_quantity > 0 %>
+											<div>
+												<%= @meal_type_one_name %>: <%= meal_order.meal_one_quantity %>
+											</div>
+										<% end %>
+										<% if meal_order.meal_two_quantity > 0 %>
+											<div>
+												<%= @meal_type_two_name %>: <%= meal_order.meal_two_quantity %>
+											</div>
+										<% end %>
+										<% if meal_order.meal_one_quantity > 0 %>
+											<div>
+												<%= @meal_type_three_name %>: <%= meal_order.meal_three_quantity %>
+											</div>
+										<% end %>
+									<td>
+										<% if meal_order.delivered != true %>
+											<div class="status_pending">
+												Pending
+											</div>
+										<% else %>
+											<div class="status_delivered">
+												Delivered
+											</div>
+										<% end %>
+									</td>
+									<td>
+										<% fields_for "meal_order[]", meal_order do |status| %>
+											<%= status.check_box "delivered" %> Delivered
+										<% end %>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				<% end %>
+			<% else %>
+				<div class="no_deliveries">
+					There are no scheduled deliveries for <%= location.name %>.
+				</div>
+			<% end %>
+		<% end %>
+		<%= submit_tag 'Update', :class => "schedule_form_container" %>
+	<% end %>
+</div>
+<% @outstanding_order_total = @outstanding_order_meal_one_total + @outstanding_order_meal_two_total + @outstanding_order_meal_three_total %>
+<table class="meal_orders_summary_table" cellpadding="5">
+	<tr>
+		<td class="meal_orders_summary_title">
+			Summary of Orders
+		</td>
+	</tr>
+	<tr>
+		<td class="meal_orders_summary_title">
+			Total Orders: <%= @outstanding_order_total %>
+		</td>
+	</tr>
+	<tr>
+		<td class="meal_orders_summary_header">
+			<%= @meal_type_one_name %> Count
+		</td>
+		<td class="meal_orders_summary_header">
+			<%= @meal_type_two_name %> Count
+		</td>
+		<td class="meal_orders_summary_header">
+			<%= @meal_type_three_name %> Count
+		</td>
+	</tr>
+	<tr>
+		<td class="meal_orders_standard_header">
+			<%= @outstanding_order_meal_one_total %>
+		</td>
+		<td class="meal_orders_salad_header">
+			<%= @outstanding_order_meal_two_total %>
+		</td>
+		<td class="meal_orders_different_header">
+			<%= @outstanding_order_meal_three_total %>
+		</td>
+	</tr>
+</table>

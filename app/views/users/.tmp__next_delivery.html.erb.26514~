@@ -1,0 +1,9 @@
+<% @next_five_days = get_weekdays %>
+<div class="next_delivery">
+	<% @next_deliver_int = next_delivery(current_user.id) %>
+	<% if @next_deliver_int < 5 %>
+		<%= @next_five_days[@next_deliver_int].strftime("%A, %B %e") %>
+	<% else %>
+		There are no scheduled deliveries this week.
+	<% end %>
+</div>

@@ -1,0 +1,8 @@
+<div class="add_recipient_header">
+	Add a Recipient
+</div>
+<div id="create_recipient_step">
+	<div id="step_one">
+		<%= render :partial => "step_one" %>
+	</div>
+</div>

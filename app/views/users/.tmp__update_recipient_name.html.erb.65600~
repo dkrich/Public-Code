@@ -1,0 +1,48 @@
+<table cellpadding='20'>
+	<tr>
+		<td width="55%">
+			<div class="edit_recipient_subtitle">
+				Display Name
+			</div>
+			<div id="recipient_name">
+				<% form_remote_for :location_recipient, :url => {:controller => "users", :action => "update_name", :id => @recipient.id} do |f| %>
+					<div class="edit_recipient_name">
+						<div class="edit_recipient_small_subtitle">
+							First Name
+						</div>
+						<%= f.text_field :recipient_first_name, :value => @recipient.recipient_first_name, :class => "edit_recipient_name" %>
+						<div class="edit_recipient_small_subtitle">
+							Last Name
+						</div>
+						<%= f.text_field :recipient_last_name, :value => @recipient.recipient_last_name, :class => "edit_recipient_name" %>
+					</div>
+					<div class="edit_recipient_subtitle">
+						Phone Number
+					</div>
+					<div id="recipient_number">
+						<table>
+							<tr>
+								<td colspan="3">
+									<span class="area_code_paren">( <%= f.text_field :phone_number_area_code, :value => @recipient.phone_number_area_code, :maxlength => 3, :class => "update_prefix" %> )
+									<%= f.text_field :phone_number_prefix, :value => @recipient.phone_number_prefix, :maxlength => 3, :class => "update_prefix" %> - </span>
+									<%= f.text_field :phone_number_suffix, :value => @recipient.phone_number_suffix, :maxlength => 4, :class => "update_suffix" %>
+								</td>
+							</tr>
+						</table>
+					</div>
+				<% end %>
+				<div class="update_name_button">
+					<%= link_to_remote "Update", :url => { :controller => "users", :action => "update_recipient_name", :id => @recipient.id }, :submit => "recipient_name" %>
+				</div>
+			</div>
+		</td>
+		<td>
+			<div class="what_it_is_header">
+				Display Name and Phone Number
+			</div>
+			<div id="what_it_is">
+				<%= render :partial => "what_it_is" %>
+			</div>
+		</td>
+	</tr>
+</table>

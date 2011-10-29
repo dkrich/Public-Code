@@ -1,0 +1,24 @@
+<% if @scheduled_today == true %>
+	<% @delivered = @user_temporary_schedule.send("#{@day}_delivered") %>
+	<% if @delivered == true %>
+		<div class="delivered">
+			Delivered
+		</div>
+	<% else %>
+		<div class="scheduled">
+			<% if Time.now < Time.local(@date.strftime("%Y"), @date.strftime("%m"), @date.strftime("%d"), 8)  %>
+				<%= link_to_remote image_tag("deliver2.png", :class => "schedule_button"), :url => { :controller => "users", :action => "cancel_temporary_delivery", :id => current_user.id, :day => @day, :date => @date }, :complete => visual_effect(:appear, "recipient_schedule_#{current_user.id}_#{@day}", {:duration => 0.5, :from => 0.5, :to => 1.0 }) %>
+			<% else %>
+				Scheduled
+			<% end %>
+		</div>
+	<% end %>
+<% else %>
+	<div class="canceled">
+		<% if Time.now < Time.local(@date.strftime("%Y"), @date.strftime("%m"), @date.strftime("%d"), 8)  %>
+			<%= link_to_remote image_tag("dont_deliver2.png", :class => "schedule_button"), :url => { :controller => "users", :action => "add_temporary_delivery", :id => current_user.id, :day => @day, :date => @date }, :complete => visual_effect(:appear, "recipient_schedule_#{current_user.id}_#{@day}", {:duration => 0.5, :from => 0.5, :to => 1.0 }) %>
+		<% else %>
+			Not Scheduled
+		<% end %>
+	</div>
+<% end %>

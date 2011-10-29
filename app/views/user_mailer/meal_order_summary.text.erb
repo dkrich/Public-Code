@@ -1,0 +1,22 @@
+Hello <%= @user.first_name %>,
+
+We wanted to let you know that we have received your order, and the team at <%= @vendor.name.html_safe %> is busy putting it together for you.
+
+Here's what we have for you:
+
+Delivery Time: <%= @delivery_time %>
+
+Delivery Location: <%= @drop_off_location.name %>
+
+Meal Summary:
+<% if !@item_one_entree.blank? %>
+Entree: <%= @item_one_entree.name %>
+<% end %>
+<% if @item_one_side %>
+Side: <%= @item_one_side.name %>
+<% end %>
+Quantity: <%= @quantity %>
+
+Thanks!
+
+-Bakery Market

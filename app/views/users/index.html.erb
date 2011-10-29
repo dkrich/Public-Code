@@ -1,0 +1,39 @@
+<div class="header_container">
+          <div class="link_container">
+              <table class="header_links_table">
+                <tr>
+                  <td>
+                    <div class="logo_container">
+                        <%= link_to image_tag("streetsign.png"), root_url %>
+                    </div>
+                  </td>
+                   <td>
+                      <div class="header_links">
+                         <div class="sign_in">
+                            <%= link_to image_tag("login_plain.png", :mouseover => "login_illuminated.png"), new_user_session_path %>
+                        </div>
+                      </div>
+                   </td>
+                </tr>
+              </table>
+              
+            </div>
+          </div>
+<div class="index_container">
+  <div class="delivery_evolved">
+    Delivery has evolved.
+    <div class="front_page_subtitle">
+        We're bringing the best restaurants in Nashville right to your doorstep.
+    </div>
+    <div class="sign_up">
+        <%= link_to image_tag("sign_up_plain.png", :mouseover => "sign_up_illuminated.png"), new_user_registration_path %>
+    </div>
+    <div class="front_page_how_it_works">
+        <%= link_to "See How It Works", users_explanations_path %>
+    </div>
+  </div>
+  <div class="screenshot">
+    <%= image_tag("screenshot.png") %>
+  </div>
+  <div class="clearboth"></div>
+</div>

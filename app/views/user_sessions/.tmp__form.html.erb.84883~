@@ -1,0 +1,38 @@
+<div class="credentials_text">
+	<div class="member_sign_in">
+		Member Sign-In
+	</div>
+	<table class="front_page_header_login_table">
+		<tr>
+			<td>
+				<div class="login_text">
+					<%= form.label :email, "Email:" %>
+				</div>
+			</td>
+			<td>
+				<%= form.text_field :email, :class => "email_text_box" %>
+			</td>
+			<td>
+				<div class="remember_me_text">
+					<%= form.check_box :remember_me %>
+				   	<%= form.label :remember_me, "Remember Me" %>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="login_text">
+					<%= form.label :password, "Password:" %>
+				</div>
+			</td>
+			<td>
+				<%= form.password_field :password, :class => "email_text_box" %>
+			</td>
+			<td>
+				<div class="front_page_header_login_image">
+					<%= link_to_remote image_tag("login_alt.png"), :url => { :controller => "user_sessions", :action => "create_from_header" }, :submit => "login_credentials" %>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>

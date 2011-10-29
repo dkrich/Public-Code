@@ -1,0 +1,64 @@
+<div id="new_location_container">
+	<div class="new_location_header">
+		New Drop-Off Location
+	</div>
+	<%= form_for(@drop_off_location) do |f| %>
+	  <table class="new_location_table" cellspacing=10>
+	  	<tr>
+	  		<td>
+	  			<div class="new_location_text">
+	  				Name:
+				</div>
+	  		</td>
+			<td>
+				<%= f.text_field :name, :class => "new_location_input" %>
+			</td>
+	  	</tr>
+		<tr>
+			<td>
+				<div class="new_location_text">
+					Address:
+				</div>
+			</td>
+			<td>
+				<%= f.text_field :street_address, :class => "new_location_input" %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="new_location_text">
+					City:
+				</div>
+			</td>
+			<td>
+				<%= f.text_field :city, :class => "new_location_input" %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="new_location_text">
+					State:
+				</div>
+			</td>
+			<td>
+				<%= f.text_field :state, :class => "new_location_input" %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="new_location_text">
+					Map URL:
+				</div>
+			</td>
+			<td>
+				<%= f.text_area :map_url, :class => "new_location_input" %>
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 align="center">
+				<%= f.submit 'Create' %>
+			</td>
+		</tr>
+	  </table>
+	<% end %>
+</div>

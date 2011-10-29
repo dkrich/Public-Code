@@ -1,0 +1,3 @@
+<div class="update_recipient_success">
+	<%= @attribute %> was successfully updated.
+</div>

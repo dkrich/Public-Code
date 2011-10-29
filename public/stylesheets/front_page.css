@@ -1,0 +1,90 @@
+body {
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(255,255,255)),
+        color-stop(1, rgb(64,166,255))
+    );
+    background-image: -moz-linear-gradient(
+        center bottom,
+        rgb(255,255,255) 0%,
+        rgb(64,166,255) 69%
+    );
+    background-repeat: repeat-x;
+    height: 100%;
+    margin-top: -10px;
+}
+
+.header {
+    margin-top: 30px;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.front_page_subtitle {
+   padding-top: 10px;
+   font: 28px 'Josefin Slab';
+   margin-bottom: -20px;
+}
+
+.index_logo {
+    width: 350px;
+}
+
+.sign_in {
+    float: right;
+    width: 150px;
+}
+
+.sign_in img {
+    width: 130px;
+    float: right;
+}
+
+.index_container {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.screenshot {
+    width: 400px;
+    float: right;
+    margin-top: 50px;
+}
+
+.screenshot img {
+    width: 400px;
+}
+
+.sign_up {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sign_up img {
+    width: 300px;
+}
+
+.delivery_evolved {
+    font: 55px Josefin Slab;
+    color: #FFF;
+    float: left;
+    margin-top: 150px;
+    width: 550px;
+    text-align: center;
+}
+
+#footer {
+    margin-top: 50px;
+}
+
+.header_links_table {
+   width: 970px;
+   margin-left: auto;
+   margin-right: auto;
+}

@@ -1,0 +1,5 @@
+<%= form_for @user_session, :as => :user_session, :url => { :controller => "user_sessions", :action => "create" }, :method => "post", :remote => true do |e| %>
+      <div id="login_credentials">
+             <%= render :partial => 'form_mini', :object => e %>
+      </div>
+<% end %> 

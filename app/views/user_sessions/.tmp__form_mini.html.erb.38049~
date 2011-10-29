@@ -1,0 +1,35 @@
+<div class="credentials_text">
+	<table class="front_page_header_login_table">
+		<tr>
+			<td>
+				<div class="front_page_header_sign_in_text">
+					<%= form_mini.label :email, "Email:" %>
+				</div>
+			</td>
+			<td>
+				<%= form_mini.text_field :email, :class => "front_page_header_login_text" %>
+			</td>
+			<td>
+				<div class="front_page_header_remember_me_text">
+					<%= form_mini.check_box :remember_me %>
+				   	<%= form_mini.label :remember_me, "Remember Me" %>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="front_page_header_sign_in_text">
+					<%= form_mini.label :password, "Password:" %>
+				</div>
+			</td>
+			<td>
+				<%= form_mini.password_field :password, :class => "front_page_header_login_text" %>
+			</td>
+			<td>
+				<div class="front_page_header_login_image">
+					<%= link_to_remote image_tag("login_alt.png"), :url => { :controller => "user_sessions", :action => "create_from_header" }, :submit => "login_credentials" %>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>

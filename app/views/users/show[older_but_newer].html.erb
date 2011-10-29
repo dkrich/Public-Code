@@ -1,0 +1,141 @@
+<% @incomplete = false %>
+<% @drop_off_visible = false %>
+<% if flash[:notice] %>
+      <div id="flash_notice">
+          <div class="close_out">
+              <%= link_to image_tag("close_out.png"), {:controller => "users", :action => "remove_flash"}, :remote => true %>
+          </div>
+          <%= flash[:notice] %>
+      </div>
+<% end %>
+<div class="account_container">
+	<div id="user_container">
+		<% @next_five_days = get_weekdays %>
+		<div id="page_heading">
+			<div id="credits_remaining">
+				<%= render :partial => "credits_remaining" %>
+			</div>
+		</div>
+                <div id="greeting_container">
+                      <div class="name_container">
+                              <%= current_user.first_name %> <%= current_user.last_name %>
+                      </div>
+                      <div class="day_container">
+                              Happy <%= Time.zone.now.strftime("%A") %>!
+                      </div>
+                      <div class="settings">
+                              <%= link_to "Edit Settings", {:controller => "users", :action => "edit_settings"}, :remote => true %>
+                      </div>
+                </div>
+                <div class="clearboth"></div>
+	</div>
+	<div id="whole_container">
+		<div id="location_fact_container">
+			<div id="meal_order_drop_off_location_container">
+				<%= render :partial => "meal_order_drop_off_location" %>
+			</div>
+			<div id="menu_today">
+				
+                                <div class="date_menu_header">
+                                        Selections for <%= @next_five_days[@next_five_days_index].strftime("%A, %B %e") %>
+                                </div>
+                                <% @user_drop_off_location = UserDropOffLocation.where(:user_id => current_user.id).last %>
+                                <div id="accordion">
+                                    <% unless @user_drop_off_location.blank? %>
+                                        <% @user_drop_off_location_times = DropOffLocationTime.where(:drop_off_location_id => @user_drop_off_location.drop_off_location_id).all %>
+                                        <% @user_drop_off_location_times.each do |time| %>
+                                            <h3>
+                                              <a href="#" style="border-style: none;">
+                                                    <div class="accordion_menu_header_blue">
+                                                        <span class="view_menus"><%= time.delivery_time.strftime("%I:%M %p") %></span>
+                                                    </div>
+                                                </a>
+                                            </h3>
+                                            <div class="accordion_menu">
+                                                <%= render :partial => "menu_background_blue" %>
+                                            </div>
+                                        <% end %>
+                                    <% end %>
+                                </div>
+
+                                <div id="accordion">
+                                    <h3>
+                                      <a href="#" style="border-style: none;">
+                                            <div class="accordion_menu_header_blue">
+                                                <%= image_tag("impressionist_standard.png") %>
+                                                <span class="view_menus">Standard Fare</span>
+                                            </div>
+                                        </a>
+                                    </h3>
+                                    <div class="accordion_menu">
+                                            <%= render :partial => "menu_background_blue" %>
+                                    </div>
+                                    <h3>
+                                      <a href="#">
+                                            <div class="accordion_menu_header_green">
+                                                <%= image_tag("impressionist_garden.png") %>
+                                                <span class="view_menus">From the Garden</span>
+                                            </div>
+                                        </a>
+                                    </h3>
+                                    <div>
+                                            <%= render :partial => "menu_background_green" %>
+                                    </div>
+                                    <h3>
+                                      <a href="#">
+                                            <div class="accordion_menu_header_purple">
+                                                <%= image_tag("impressionist_different.png") %>
+                                                <span class="view_menus">Something Different</span>
+                                            </div>
+                                        </a>
+                                    </h3>
+                                    <div>
+                                            <%= render :partial => "menu_background_purple" %>
+                                    </div>
+                              </div>
+			</div>
+			<% if @outstanding_order.blank? %>
+				<div id="location_container">
+					<div class="location_container">
+                                                <div class="send_order_button"></div>
+						<div class="place_order_button">
+							<%= link_to image_tag("place_order_plain.png", :mouseover => "place_order_illuminated.png"), { :controller => "users", :action => "start_order" }, :remote => true %>
+						</div>
+                                                <div id="place_order_loading" style="display:none">
+                                                  <%= image_tag("email_loader.gif") %>
+                                                </div>
+						<div class="location_name_header">
+							Next Arrival: 11:30 am
+						</div>
+						<div class="location_name_header">
+							Drop-Off Location
+						</div>
+						<hr class="location_line"/>
+						<% if @user_drop_off_location %>
+							<% @drop_off_location = DropOffLocation.find(@user_drop_off_location.drop_off_location_id) %>
+								<div class="location_name">
+									<%= @drop_off_location.name %>
+								</div>
+								<div class="location_address">
+									<%= @drop_off_location.street_address %><br/>
+									<%= @drop_off_location.city %>, <%= @drop_off_location.state %>
+								</div>
+								<div class="google_map">
+									<%= image_tag(@drop_off_location.map_url) %>
+								</div>
+						<% else %>
+							<div class="no_location_text">
+								No Location Selected
+							</div>
+						<% end %>
+					</div>
+				</div>
+			<% end %>
+                            <div id="meal_summary">
+                                 <%= render :partial => "meal_summary" %>
+                            </div>
+                       
+			<div class="clearboth"></div>
+		</div>
+	</div>
+</div>

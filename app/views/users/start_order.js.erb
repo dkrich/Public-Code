@@ -1,0 +1,5 @@
+$("#location_container").fadeOut(500);
+$("#menu_buttons").replaceWith('<div id="menu_buttons"><%= escape_javascript(render(:partial => "menu_buttons")) %></div>');
+
+$("#meal_summary").replaceWith('<div id="meal_summary" style="display:none"><%= escape_javascript(render(:partial => "meal_summary")) %></div>');
+$("#meal_summary").delay(800).fadeIn(500);

@@ -1,0 +1,23 @@
+<div id="menu_container">
+	<div class="menu_title">
+		<%= image_tag("standard_fare.png") %>
+	</div>
+	<div class="menu_subtitle">
+		<%= image_tag("starters.png") %>
+	</div>
+	<div class="items_container">
+		<div class="item_title">
+			Chicken Schwarma
+		</div>
+		<div class="item_description">
+			This is Shana's personal favorite. She eats it all the time, and despite her ongoing battle with just ridiculous halitosis, swears by this simple garlic dish.
+		</div>
+		<div class="item_title">
+			Shana's Famous Butter Sandwich
+		</div>
+		<div class="item_description">
+			While not complicated or especially healthy, what began as an afternoon snack has become one of our most popular options.
+		</div>
+	</div>
+	<br>
+</div>

@@ -1,0 +1,12 @@
+<h1>Editing meal_type</h1>
+
+<% form_for(@meal_type) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @meal_type %> |
+<%= link_to 'Back', meal_types_path %>

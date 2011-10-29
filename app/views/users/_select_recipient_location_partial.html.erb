@@ -1,0 +1,38 @@
+<% @locations = DropOffLocation.find :all %>
+<% @locations.each do |location| %>
+	<hr class="location_separator">
+	<table class="update_location_table">
+		<tr>
+			<td valign="top" width="300px">
+				<div class="update_drop_off_location_name">
+					<%= location.name %>
+				</div>
+				<div class="update_drop_off_location_address">
+					<%= location.street_address %>
+				</div>
+				<div class="update_drop_off_location_address">
+					<%= "#{location.city}, #{location.state}" %>
+				</div>
+				<div class="drop_off_location_type">
+					Location Type: <%= location.location_type %>
+				</div>
+			</td>
+			<td valign="top" width="20px" align="center">
+				<div class="google_map">
+					<%= image_tag(location.map_url) %>
+				</div>
+			</td>
+			<td width="30%" valign="top" align="center">
+				<% if location.id != @recipient.drop_off_location_id %>
+					<div class="update_location_button">
+						<%= link_to image_tag("update.png"), :url => { :controller => "users", :action => "update_recipient_location", :id => location.id, :recipient_id => @recipient.id }, :remote => true %>
+					</div>
+				<% else %>
+					<div class="current_location">
+						Current Location
+					</div>
+				<% end %>
+			</td>
+		</tr>
+	</table>
+<% end %>

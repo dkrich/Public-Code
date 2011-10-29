@@ -1,0 +1,70 @@
+<div class="step_one_subtext">
+	<table class="step_table">
+		<tr>
+			<td width="1%">
+				<%= image_tag("step_three.png", :class => "step_image") %>
+			</td>
+			<td nowrap="true">
+				Set the weekly delivery schedule for Dan. (This can be changed at any time.)
+			</td>
+		</tr>
+	</table>
+</div>
+<div class="service_plan_image">
+	<table class="regular_schedule_table">
+		<tr>
+			<td>
+				<div class="regular_schedule_days">
+					Monday
+				</div>
+			</td>
+			<td>
+				<div class="regular_schedule_days">
+					Tuesday
+				</div>
+			</td>
+			<td>
+				<div class="regular_schedule_days">
+					Wednesday
+				</div>
+			</td>
+			<td>
+				<div class="regular_schedule_days">
+					Thursday
+				</div>
+			</td>
+			<td>
+				<div class="regular_schedule_days">
+					Friday
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div id="monday">
+					<%= render :partial => 'monday' %>
+				</div>
+			</td>
+			<td>
+				<div id="tuesday">
+					<%= render :partial => 'tuesday' %>
+				</div>
+			</td>
+			<td>
+				<div id="wednesday">
+					<%= render :partial => 'wednesday' %>
+				</div>
+			</td>
+			<td>
+				<div id="thursday">
+					<%= render :partial => 'thursday' %>
+				</div>
+			</td>
+			<td>
+				<div id="friday">
+					<%= render :partial => 'friday' %>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>

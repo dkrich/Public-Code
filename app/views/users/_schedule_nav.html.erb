@@ -1,0 +1,25 @@
+<table class="edit_nav_table" cellpadding=0 cellspacing=0>
+	<tr>
+		<td width="33%">
+			<div id="edit_nav_inactive">
+				<div class="edit_nav_text">
+					<%= link_to "Basic Info", :url => { :controller => "users", :action => "switch_to_name", :id => @recipient.id }, :remote => true %>
+				</div>
+			</div>
+		</td>
+		<td width="33%">
+			<div id="edit_nav_active">
+				<div class="edit_nav_text_inactive">
+					Regular Schedule
+				</div>
+			</div>
+		</td>
+		<td width="33%">
+			<div id="edit_nav_inactive">
+				<div class="edit_nav_text">
+					<%= link_to "Pickup Location", :url => { :controller => "users", :action => "switch_to_location", :id => @recipient.id }, :remote => true %>
+				</div>
+			</div>
+		</td>
+	</tr>
+</table>

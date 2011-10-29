@@ -1,0 +1,182 @@
+body {
+   background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(255,255,255)),
+        color-stop(1, rgb(64,166,255))
+    );
+    background-image: -moz-linear-gradient(
+        center bottom,
+        rgb(255,255,255) 0%,
+        rgb(64,166,255) 69%
+    );
+    background-repeat: repeat-x;
+    /*background: url('/images/tiles.png');
+    background-attachment:fixed;*/
+    height: 100%;
+    margin-top: -10px;
+}
+
+html {
+
+}
+
+#explanations_container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 0px;
+}
+
+.explanations_container {
+    width: 1000px;
+    background: #FFF;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-border-radius: 10px;
+    -border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-box-shadow: 5px 5px 5px #888;
+    -moz-box-shadow: 5px 5px 5px #888;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.explanations_major_header {
+	font: 40px Josefin Sans, Georgia;
+	text-align: center;
+	padding-top: 10px;
+        color: #FFF;
+}
+
+.explanations_body {
+	font: 18px Muli, Arvo, Josefin Slab, Bookman Old Style, Georgia;
+	padding-top: 5px;
+	padding-bottom: 0px;
+        padding-left: 20px;
+        padding-right: 20px;
+        color: #444;
+}
+
+.table_header {
+   font: 20px Muli;
+}
+
+.explanations_subheader {
+    font: 30px Muli, Arvo, Josefin Slab;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    color: #2b499e;
+    
+}
+
+.meal_type_one_header {
+    font: 40px Dancing Script;
+    padding-top: 10px;
+    color: #901111;
+}
+
+.meal_type_two_header {
+    font: 40px Dancing Script;
+    padding-top: 10px;
+    color: #6bc500;
+}
+
+.meal_type_three_header {
+    font: 40px Dancing Script;
+    padding-top: 10px;
+    color: #5800c5;
+}
+
+.meal_type_body {
+    padding-top: 10px;
+}
+
+.explanations_sign_up {
+	width: 400px;
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+        margin-bottom: 20px;
+}
+
+.explanations_sign_up img {
+	width: 400px;
+}
+
+.explanations_spacer {
+    padding: 20px;
+}
+
+.never_image img {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	padding-top: 10px;
+}
+
+.explanations_step_image img {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	padding-top: 30px;
+}
+
+.explanations_header {
+	font: 30px Interstate, American Typewriter, Georgia;
+	text-align: center;
+	padding-top: 15px;
+	width: 900px;
+	margin-left: auto;
+	margin-right: auto;
+	color: #666;
+}
+
+.explanations_how {
+	font: 34px American Typewriter, Times New Roman, Georgia;
+	text-align: center;
+	padding-top: 20px;
+	color: #CC0000;
+}
+
+.step_one {
+	font: 30px American Typewriter, Georgia;
+	text-align: center;
+}
+
+.explanations_screenshot {
+	width: 800px;
+	border: 8px solid;
+}
+
+.name_screenshot {
+	border: 8px solid;
+}
+
+.explanation_title {
+	font: 40px Garamond, Georgia;
+	color: #225db6;
+}
+
+.explanation_body {
+	font: 18px Bookman Old Style, Garamond, Georgia;
+}
+
+.explanations_red_header {
+   font: 22px Muli, Arvo;
+   color: #d84b4b;
+   padding-left: 18px;
+}
+
+.last_paragraph {
+   padding-bottom: 20px;
+}
+
+.explanations_table {
+   padding-top: 20px;
+   width: 1000px;
+   padding-left: 20px;
+   padding-right: 20px;
+}

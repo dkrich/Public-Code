@@ -1,0 +1,61 @@
+
+	<!--<div class="front_page_explanations">
+		Something cool is coming to Nashville.
+	</div>	-->
+        
+<div class="index_links">
+     <%= link_to "Sign In", login_path %>
+</div>
+<div class="index_links">
+     <%= link_to "See How It Works", {:controller => "users", :action => "explanations"} %>
+</div>
+<div class="front_page_logo">
+     <%= image_tag("bakery_market_front_page.png") %>
+</div>
+<div class="clearboth"></div>
+<div id="contrast_container">
+  <div class="no">
+    <div class="no_header">
+      Why settle for this:
+      <div class="no_body">
+        Tipping.
+      </div>
+      <div class="no_body">
+        Delivery Charges.
+      </div>
+      <div class="no_body">
+        Hidden Fees.
+      </div>
+      <div class="no_body">
+        Driving around.
+      </div>
+      <div class="no_body">
+        Waiting in line.
+      </div>
+    </div>
+  </div>
+  <div class="yes">
+    <div class="yes_header">
+      When you can have this:
+      <div class="yes_body">
+        Top Quality Ingredients.
+      </div>
+      <div class="yes_body">
+        Delivery Service.
+      </div>
+      <div class="yes_body">
+        Convenience.
+      </div>
+      <div class="yes_body">
+        Reliability.
+      </div>
+      <div class="yes_body">
+        Your Lunch Hour.
+      </div>
+    </div>
+  </div>
+</div>
+<div class="clearboth"></div>
+<div class="sign_up">
+        <%= link_to image_tag("sign_up_didot.png"), new_user_path %>
+</div>

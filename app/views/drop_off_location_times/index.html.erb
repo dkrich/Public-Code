@@ -1,0 +1,29 @@
+<div class="drop_off_times_header">
+	Drop Off Times
+</div>
+
+<table class="drop_off_times_table">
+	  <tr>
+	    <th class="service_time_header">Drop Off Location</th>
+	    <th class="service_time_header">Delivery Time</th>
+	    <th class="service_time_header">Meal Service</th>
+	  </tr>
+
+	<% @drop_off_location_times.each do |drop_off_location_time| %>
+	  <tr>
+	    <td><%=h DropOffLocation.find(drop_off_location_time.drop_off_location_id).name %></td>
+	    <td><%=h drop_off_location_time.delivery_time.strftime("%I:%M %p") %></td>
+	    <td><%=h drop_off_location_time.meal_service %></td>
+	    <td><%= link_to 'Show', drop_off_location_time %></td>
+	    <td><%= link_to 'Edit', :controller => "drop_off_locations", :action => "edit_times", :id => drop_off_location_time.drop_off_location_id %></td>
+	    <td><%= link_to 'Destroy', drop_off_location_time, :confirm => 'Are you sure?', :method => :delete %></td>
+	  </tr>
+	<% end %>
+	<tr>
+	  <td colspan=3>
+	  	<div class="add_time_url">
+	  		<%= link_to 'Add a Time', new_drop_off_location_time_path %>
+		</div>
+	  </td>
+	</tr>
+</table>

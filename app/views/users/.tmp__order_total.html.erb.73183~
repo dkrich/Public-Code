@@ -1,0 +1,8 @@
+<% if @outstanding_order %>
+	<% @total_orders = @outstanding_order.meal_one_quantity + @outstanding_order.meal_two_quantity + @outstanding_order.meal_three_quantity %>
+<% else %>
+	<% @total_orders = 0 %>
+<% end %>
+<div class="meal_summary_price">
+	$<%= @total_orders * 8 %>
+</div>

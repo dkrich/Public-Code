@@ -1,0 +1,3 @@
+$("#meal_summary_errors").replaceWith('<div id="meal_summary_errors"><%= escape_javascript(render(:partial => "meal_summary_errors")) %></div>');
+$("#meal_selections").replaceWith('<div id="meal_selections"><%= escape_javascript(render(:partial => "meal_selections")) %></div>');
+$('#meal_three_<%= @location_selection_id %>').effect('highlight', {color: '#b680ff', mode: 'show'}, 1000);

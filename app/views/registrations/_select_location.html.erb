@@ -1,0 +1,42 @@
+<div class="new_user_location_selection_container">
+	<div class="new_user_location_header">
+		Congrats- your account has been created!<br/>
+                Now select the location where you want your meals dropped off.
+	</div>
+	<% @locations = DropOffLocation.find :all %>
+	<% @locations.each_with_index do |location, index| %>
+		<table class="new_user_location_table">
+			<tr>
+				<td valign="top" width="25%">
+					<div class="new_user_drop_off_location_name">
+						<%= location.name %>
+					</div>
+					<div class="new_user_drop_off_location_address">
+						<%= location.street_address %>
+					</div>
+					<div class="new_user_drop_off_location_address">
+						<%= "#{location.city}, #{location.state}" %>
+					</div>
+					<div class="new_user_drop_off_location_type">
+						Location Type: <%= location.location_type %>
+					</div>
+				</td>
+				<td valign="top" width="20%">
+					<div class="user_google_map">
+						<%= image_tag(location.map_url) %>
+					</div>
+				</td>
+				<td width="1%" valign="top">
+					<div class="new_user_select_location_button">
+						<%= link_to image_tag("select_location.png"), { :controller => "users", :action => "create_user_location", :id => location.id } %>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<% if index < @locations.length - 1 %>
+			<hr class="location_separator"/>
+		<% else %>
+			<div class="five_spacer"></div>
+		<% end %>
+	<% end %>
+</div>

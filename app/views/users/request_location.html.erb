@@ -1,0 +1,42 @@
+<div class="new_user_location_selection_container">
+    <div class="new_user_location_header">
+        Request a Delivery Location
+    </div>
+    <div class="new_location_header">
+      We're always looking for new spots to offer service to. <p>Got a place in mind? We'd love to hear about it.</p>
+    </div>
+    <%= form_tag(users_send_location_request_path) do %>
+        <div class="location_request_form">
+            <div class="request_form_label">
+                Your Name:
+            </div>
+            <%= text_field_tag "name", nil, :class => "request_form_input" %>
+            <div class="request_form_label">
+                Your Email:
+            </div>
+            <%= text_field_tag "email", nil, :class => "request_form_input" %>
+            <div class="request_form_label_service">
+                Where would you like service?
+            </div>
+            <div class="request_form_label">
+                Address:
+            </div>
+            <%= text_field_tag "address", nil, :class => "request_form_input" %>
+            <div class="request_form_label">
+                City:
+            </div>
+            <%= text_field_tag "city", nil, :class => "request_form_input" %>
+            <div class="request_form_label">
+                State:
+            </div>
+            <%= text_field_tag "state", nil, :class => "request_form_input" %>
+            <div class="request_form_label">
+                Additional Comments:
+            </div>
+            <%= text_area_tag "comments", nil, :class => "request_form_input" %>
+            <div class="request_form_submit">
+                <%= image_submit_tag("send_request.png") %>
+            </div>
+        </div>
+    <% end %>
+</div>

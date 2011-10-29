@@ -1,0 +1,12 @@
+<div class="date_menu_header">
+	<%= Time.now.strftime("%A, %B %e") %>
+</div>
+<div class="menu_today_header">
+	Here's what we've got for you today:
+</div>
+<div id="menu_buttons">
+	<%= render :partial => "menu_buttons" %>
+</div>
+<div id="daily_menu">
+	<%= render :partial => "daily_menu_alt" %>
+</div>

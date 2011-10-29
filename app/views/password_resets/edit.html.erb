@@ -1,0 +1,49 @@
+<div class="password_reset_box">
+  <div class="password_reset_header">
+          Set a New Password
+  </div>
+  <div id="reset_password_errors">
+
+  </div>
+  <%= form_for @user, :url => password_reset_path, :method => :put do |f| %>
+  <% if !@user.errors.blank? %>
+    <div id="reset_password_errors">
+      <div class="password_reset_error_header">
+        Uh-oh.
+      </div>
+      <% @user.errors.full_messages.each do |error| %>
+        <div class="password_reset_error_body">
+          <%= error %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  <table class="set_new_password_table" cellspacing="15">
+    <tr>
+      <td>
+        <div class="password_reset_table_labels">
+          New Password:
+        </div>
+      </td>
+      <td>
+        <%= f.password_field :password, :class => "reset_password_text" %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="password_reset_table_labels">
+          Confirm Password:
+        </div>
+      </td>
+      <td>
+          <%= f.password_field :password_confirmation, :class => "reset_password_text" %>
+      </td>
+    </tr>
+  </table>
+  
+  
+    <div class="submit_button">
+      <%= image_submit_tag("submit.png", :class => "login_image") %>
+    </div>
+  <% end %>
+</div>

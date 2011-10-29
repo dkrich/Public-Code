@@ -1,0 +1,44 @@
+<% @location_recipients = LocationRecipient.find_all_by_user_id_and_drop_off_location_id(current_user.id, @location.id) %>
+<% if !@location_recipients.blank? %>
+	<div class="your_recipients_container">
+		<div class="your_recipients">
+			Your Recipients at this Location
+		</div>
+		<% @location_recipients.each_with_index do |recipient, index| %>
+			<hr class="recipient_line">
+			<!--<% if index.remainder(2) == 0 %>
+				<div class="gray">
+			<% else %>
+				<div class="dark_gray">
+			<% end %>-->
+			<table class="recipient_table">
+				<tr>
+					<td>
+						<div class="recipient_name">
+							<%= "#{index + 1}. #{recipient.recipient_first_name}" %>
+							<%= recipient.recipient_last_name %>
+						</div>
+					</td>
+					<td nowrap=true align="right">
+						<%= link_to "Manage Plan", { :controller => "users", :action => "manage_service_plans", :id => recipient.id } %>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<div class="current_plan_text">
+							<font color="#ba5427">Current Plan:</font>
+							<% @current_plan = UserServicePlan.find_by_location_recipient_id(recipient.id) %>
+							<% if !@current_plan.blank? %>
+								<%= @current_plan.name %>
+							<% else %>
+								<%= "No active plan." %>
+							<% end %>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<!--</div>-->
+		</div>
+	<% end %>
+	<hr class="recipient_line">
+<% end %>

@@ -1,0 +1,17 @@
+<table class="credits_table">
+	<tr>
+		<td>
+			<div class="credits_remaining">
+				Credits Remaining
+				<div class="credits_remaining_number">
+					<%= current_user.meals_remaining %>
+				</div>
+			</div>
+		</td>
+		<td>
+			<div class="purchase_credits_button">
+				<%= image_tag("purchase_credits_button.png") %>
+			</div>
+		</td>
+	</tr>
+</table>

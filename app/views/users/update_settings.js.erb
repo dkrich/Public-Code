@@ -1,0 +1,7 @@
+$(".error_message_header").remove();
+$(".name_container").replaceWith('<div class="name_container"><%= escape_javascript(render(:partial => "name")) %></div>');
+$("#update_settings_error_messages").before('<div id="update_settings_success"><div class="error_message_header">Your account settings have been updated.</div></div>');
+$("#update_settings_success").delay(2000).fadeOut(500);
+$("#update_settings_success").delay(0).queue(function() {
+      $("#update_settings_success").remove();
+ } );

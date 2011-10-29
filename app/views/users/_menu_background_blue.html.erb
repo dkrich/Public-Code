@@ -1,0 +1,68 @@
+<% @next_five_days_index = get_next_five_day_index(Time.zone.now) %>
+<div id="menu_background_blue">
+        <% if @daily_selection %>
+            <div id="add_to_order_one">
+                <%= render :partial => "add_to_order_one" %>
+            </div>
+        <% end %>
+        <div class="menu_header">
+          Standard Fare
+        </div>
+        <div class="clearboth"></div>
+	<% if @daily_selection %>
+		<% if !@daily_selection.menu_type_one_id.blank? %>
+			<table class="selections_table" cellpadding="10">
+				<tr>
+					<td valign="top">
+						<% @menu_items = MenuItem.find_all_by_menu_id(@daily_selection.menu_type_one_id) %>
+						<% @menu_items.each do |menu_item| %>
+							<% @item = Item.find(menu_item.item_id) %>
+							<% if @item.item_type.upcase == "ENTREE" %>
+								<div class="menu_image">
+									<%= image_tag(@item.photo.url) %>
+								</div>
+					</td>
+					<td valign="top">
+								<div class="menu_item_header">
+									Entree: <%= @item.name %>
+								</div>
+								<div class="menu_item_description">
+									<%= @item.description %>
+								</div>
+							<% end %>
+						<% end %>
+					</td>
+				</tr>
+				<tr>
+					<td valign="top">
+						<% @menu_items.each do |menu_item| %>
+							<% @item = Item.find(menu_item.item_id) %>
+							<% if @item.item_type.upcase == "SIDE" %>
+								<div class="menu_image">
+									<%= image_tag(@item.photo.url) %>
+								</div>
+					</td>
+					<td valign="top">
+								<div class="menu_item_header">
+									Side: <%= @item.name %>
+								</div>
+								<div class="menu_item_description">
+									<%= @item.description %>
+								</div>
+							<% end %>
+						<% end %>
+					</td>
+				</tr>
+			</table>
+		<% else %>
+			<div class="no_menu">
+				<%= image_tag("no_menu.png") %>
+			</div>
+		<% end %>
+	<% else %>
+		<div class="no_menu">
+			<%= image_tag("no_menu.png") %>
+		</div>	
+	<% end %>
+	<div class="clearboth"></div>
+</div>

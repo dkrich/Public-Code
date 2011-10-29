@@ -1,0 +1,86 @@
+<div class="user_admin_header">
+    <%= "Registered User Count: #{@users.count}" %>
+</div>
+<div class="user_admin_subheader">
+    Showing All Users:
+</div>
+<table class="admin_user_table" border="1">
+  <tr>
+      <th>
+          User ID
+      </th>
+      <th>
+          Name
+      </th>
+      <th>
+          Email
+      </th>
+      <th>
+          Credits Remaining
+      </th>
+      <th>
+          Total Credits Purchased
+      </th>
+      <th>
+          Total Credits Used
+      </th>
+      <th>
+          Balanced?
+      </th>
+      <th>
+          Joined
+      </th>
+      <th>
+          Last Order Placed
+      </th>
+  </tr>
+  </tr>
+    <% @users.each do |user| %>
+        <tr>
+            <td>
+                <%= user.id %>
+            </td>
+            <td nowrap="true">
+                <%= user.first_name + " " + user.last_name %>
+            </td>
+            <td>
+                <%= user.email %>
+            </td>
+            <td>
+                <%= user.meals_remaining %>
+            </td>
+            <td>
+                <%= user.total_credits_purchased %>
+            </td>
+            <td>
+                <%= user.total_credits_used %>
+            </td>
+            <td>
+                <% @balance = user.total_credits_purchased - user.total_credits_used - user.meals_remaining %>
+                <% if @balance == 0 %>
+                    <div class="balanced">
+                        Yes
+                    </div>
+                <% else %>
+                    <div class="unbalanced">
+                        No
+                    </div>
+                <% end %>
+            </td>
+            <td>
+                <%= user.created_at.strftime("%A, %B %e, %Y") %>
+            </td>
+            <td>
+                <% @last_order = UserOrderConfirmation.where(:user_id => user.id, :confirmed => true).last %>
+                <% if !@last_order.blank? %>
+                    <%= @last_order.created_at.strftime("%A, %B %e, %Y") %>
+                <% else %>
+                    No orders found.
+                <% end %>
+            </td>
+            <td>
+                <%= link_to "View Orders", :controller => "users", :action => "view_user_orders", :id => user.id %>
+            </td>
+        </tr>
+    <% end %>
+</table>

@@ -1,0 +1,14 @@
+<div id="admin_home_container">
+	<div class="admin_header">
+		Welcome, <%= current_user.first_name %>
+	</div>
+	<div class="quick_stats_header">
+		Quick Stats:
+	</div>
+	<div class="registered_users">
+		Number of registered customers: <%= @registered_customer_count %>
+	</div>
+	<div class="registered_users">
+		Number of drop-off locations: <%= @drop_off_location_count %>
+	</div>
+</div>

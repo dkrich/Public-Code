@@ -1,0 +1,3 @@
+$(".header_container").after('<div id="flash_notice"><%= escape_javascript(flash.delete(:notice)) %></div>')
+$(".header_container").after('<div id="header_error_messages_container"><div class="error_message_header"><%= flash.delete(:error_header) %></div><div class="error_message_body"><%= flash.delete(:error_subheader) %></div></div>')
+$(".login_image").show();

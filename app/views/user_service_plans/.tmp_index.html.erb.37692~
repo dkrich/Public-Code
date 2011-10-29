@@ -1,0 +1,18 @@
+<h1>Listing user_service_plans</h1>
+
+<table>
+  <tr>
+  </tr>
+
+<% @user_service_plans.each do |user_service_plan| %>
+  <tr>
+    <td><%= link_to 'Show', user_service_plan %></td>
+    <td><%= link_to 'Edit', edit_user_service_plan_path(user_service_plan) %></td>
+    <td><%= link_to 'Destroy', user_service_plan, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New user_service_plan', new_user_service_plan_path %>

@@ -1,0 +1,170 @@
+html {
+	background-image: -webkit-gradient(
+            linear,
+            left bottom,
+            right bottom,
+            color-stop(0.5, rgb(255,255,255)),
+            color-stop(0.5, rgb(3,133,232))
+        );
+        background-image: -webkit-gradient(
+            linear,
+            left bottom,
+            right bottom,
+            color-stop(0.5, rgb(44,44,44)),
+            color-stop(0.5, rgb(64,166,255))
+        );
+        background-image: -moz-linear-gradient(
+            left center,
+            rgb(44,44,44) 50%,
+            rgb(3,133,232) 50%
+        );
+}
+
+body {
+	
+}
+
+#footer {
+    margin-top: 10px;
+    color: #BBB;
+}
+
+.front_page_logo {
+	width: 440px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 30px;
+        position: relative;
+        left: 6px;
+        /*background: #508097;*/
+        padding: 5px;
+        /*border: 3px solid #FFF;*/
+}
+
+.front_page_logo img {
+	width: 440px;
+}
+
+#home_page_container {
+        width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	background: #FFF;
+}
+
+.front_page_explanations {
+	font: 40px Josefin Slab, Didot, Georgia, Garamond, Goudy Old Style, Georgia;
+	text-align: center;
+	color: #1883e6;
+        background: #FFF;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 5px solid #888;
+}
+
+.front_page_explanations_subheader {
+	font: 30px Georgia, Garamond, Goudy Old Style, Georgia;
+	width: 1000px;
+	text-align: center;
+	color: #555;
+	padding-top: 10px;
+}
+
+#contrast_container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.no {
+    float: left;
+    width: 50%;
+}
+
+.no_header {
+    font: bold 40px Josefin Slab;
+    color: #a56262;
+    text-align: left;
+    width: 370px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.no_body {
+    text-align: left;
+    font: 40px Josefin Slab;
+    color: #888;
+    padding-top: 10px;
+}
+
+.yes {
+    float: right;
+    width: 50%;
+}
+
+.yes_header {
+    text-align: left;
+    font: bold 40px Josefin Slab;
+    color: #96ff00;
+    width: 460px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.yes_body {
+    text-align: left;
+    font: 40px Josefin Slab;
+    color: #FFF;
+    padding-top: 10px;
+}
+
+.no_more {
+	margin-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 380px;	
+}
+
+.no_more img {
+	width: 380px;
+}
+
+.index_links {
+    text-align: center;
+    float: right;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.index_links a {
+    font: 16px Didot, Lucida Grande, Arial, Georgia;
+    color: #FFF;
+    text-decoration: none;
+    margin-right: 30px;
+}
+
+.index_header_table {
+    width: 80%px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login_link {
+    background: #FFF;
+    width: 100px;
+    padding: 5px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border: 3px solid #AAA;
+    text-align: center;
+    float: right;
+}
+
+.login_link a {
+	text-decoration: none;
+	font: 20px Didot, Myriad Pro, Lucida Grande;
+	color: #177fff;
+}

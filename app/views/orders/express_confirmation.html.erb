@@ -1,0 +1,48 @@
+<div id="order_container">
+    <div class="new_order_title">
+        PayPal Express Confirmation
+    </div>
+    <div class="order_details_title">
+        Order Details
+    </div>
+    <hr class="order_detail_separtor"/>
+    <div class="order_details_container">
+        <table cellpadding="5" class="order_table">
+            <tr>
+                <td>
+                    <div class="order_detail">
+                        Plan Type:
+                    </div>
+                </td>
+                <td>
+                    <span class="order_detail_color"><%= @service_plan.service_name_proper %></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="order_detail">
+                        Meals Credits:
+                    </div>
+                </td>
+                <td>
+                    <span class="order_detail_color"><%= @service_plan.meals_included %></span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="order_detail">
+                        Price:
+                    </div>
+                </td>
+                <td>
+                    <span class="order_detail_color"><%= number_to_currency(@service_plan.price, :unit => "$") %></span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <%= form_for(@order, :url => {:controller => "orders", :action => "create", :id => @service_plan.id}) do |f| %>
+        <div class="actions">
+            <%= image_submit_tag("complete_purchase.png") %>
+        </div>
+    <% end %>
+</div>

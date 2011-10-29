@@ -1,0 +1,17 @@
+Hello, <%= @user.first_name %>,
+
+Thanks for choosing us!
+
+Here's a summary of your order:
+
+Plan Type: <%= @service_plan.service_name_proper %>
+
+Credits Included: <%= @service_plan.meals_included %>
+
+Price: <%= number_to_currency(@service_plan.price, :unit => "$") %>
+
+As always, if you have any questions, please let us know.
+
+Thanks!
+
+-Bakery Market

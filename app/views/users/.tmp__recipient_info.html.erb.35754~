@@ -1,0 +1,213 @@
+<% @location_recipients = LocationRecipient.find_all_by_user_id(current_user.id) %>
+<% if !@location_recipients.blank? %>
+	<% @location_recipients.each do |recipient| %>
+		<% if recipient.drop_off_location_id %>
+			<% @recipient_location = DropOffLocation.find(recipient.drop_off_location_id) %>
+		<% else %>
+			<% @recipient_location = nil %>
+		<% end %>
+		<% @temp_schedule = RecipientTemporarySchedule.find_last_by_location_recipient_id(recipient.id) %>
+		<table class="account_recipient_table">
+			<tr>
+				<td>
+					<% @location_recipient = recipient %>
+					<div class="recipient_name">
+						<%= recipient.recipient_first_name %>
+						<%= recipient.recipient_last_name %>
+					</div>
+					<div class="remove_recipient">
+						<%= link_to_remote "Remove Recipient", :url => { :controller => "users", :action => "destroy_location_recipient", :id => recipient.id }, :confirm => "Are you sure you want to remove #{recipient.recipient_first_name}? This CANNOT be undone." %>
+					</div>
+					<div class="remove_recipient">
+						<%= link_to "Edit Info", { :controller => "users", :action => "edit_recipient", :id => recipient.id } %>
+					</div>
+					<% @recipient_plan = UserServicePlan.find_by_location_recipient_id(recipient.id) %>
+					<div class="plan_header">
+						Current Plan: 
+						<% if @recipient_plan %>
+							<span class="recipient_stat"><%= get_service_plan(@recipient_plan.service_plan_id) %></span>
+						<% else %>
+							<span class="recipient_stat"><%= recipient.recipient_first_name %> doesn't have an active plan right now.</span>
+						<% end %>
+					</div>
+					<div class="plan_header">
+						Meals Remaining Before the Next Renewal: <span class="recipient_stat"><%= recipient.meals_remaining %></span>
+					</div>
+					<% @next_five_days = get_weekdays %>
+					<div class="plan_header">
+						<div id=<%= "next_delivery_#{recipient.id}" %>>
+							<%= render :partial => "next_delivery" %>
+						</div>
+					</div>
+					<div class="weekly_header">
+						This Week's Plan for <%= recipient.recipient_first_name %>
+					</div>
+					<table class="recipient_schedule_table">
+						<!--<tr>
+							<td colspan=5>
+								<hr class="weekly_header_line">
+							</td>
+						</tr>-->
+						<tr>
+							<td class="border_right" width="20%" nowrap=true>
+								<div class="date_header">
+									<% @date1 = @next_five_days[0].strftime("%A, %B %e") %>
+									<%= @date1 %>
+								</div>
+							</td>
+							<td class="border_right" width="20%" nowrap=true>
+								<div class="date_header">
+									<% @date2 = @next_five_days[1].strftime("%A, %B %e") %>
+									<%= @date2 %>
+								</div>
+							</td>
+							<td class="border_right" width="20%" nowrap=true>
+								<div class="date_header">
+									<% @date3 = @next_five_days[2].strftime("%A, %B %e") %>
+									<%= @date3 %>
+								</div>
+							</td>
+							<td class="border_right" width="20%" nowrap=true>
+								<div class="date_header">
+									<% @date4 = @next_five_days[3].strftime("%A, %B %e") %>
+									<%= @date4 %>
+								</div>
+							</td>
+							<td>
+								<div class="date_header" width="20%" nowrap=true>
+									<% @date5 = @next_five_days[4].strftime("%A, %B %e") %>
+									<%= @date5 %>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<% if @temp_schedule %>	
+									<% @date = @next_five_days[0] %>
+									<% @day = @next_five_days[0].strftime("%A").downcase %>
+									<% @scheduled_today = scheduled?(@temp_schedule, @day) %>
+									<div id=<%= "recipient_schedule_#{recipient.id}_#{@day}" %> >
+										<%= render :partial => "deliver_today" %>
+									</div>
+								<% end %>
+							</td>
+							<td>
+								<% if @temp_schedule %>	
+									<% @date = @next_five_days[1] %>
+									<% @day = @next_five_days[1].strftime("%A").downcase %>
+									<% @scheduled_today = scheduled?(@temp_schedule, @day) %>
+									<div id=<%= "recipient_schedule_#{recipient.id}_#{@day}" %> >
+										<%= render :partial => "deliver_today" %>
+									</div>
+								<% end %>
+							</td>
+							<td>
+								<% if @temp_schedule %>
+									<% @date = @next_five_days[2] %>
+									<% @day = @next_five_days[2].strftime("%A").downcase %>
+									<% @scheduled_today = scheduled?(@temp_schedule, @day) %>
+									<div id=<%= "recipient_schedule_#{recipient.id}_#{@day}" %> >
+										<%= render :partial => "deliver_today" %>
+									</div>
+								<% end %>
+							</td>
+							<td>
+								<% if @temp_schedule %>
+									<% @date = @next_five_days[3] %>
+									<% @day = @next_five_days[3].strftime("%A").downcase %>
+									<% @scheduled_today = scheduled?(@temp_schedule, @day) %>
+									<div id=<%= "recipient_schedule_#{recipient.id}_#{@day}" %> >
+										<%= render :partial => "deliver_today" %>
+									</div>
+								<% end %>
+							</td>
+							<td>
+								<% if @temp_schedule %>
+									<% @date = @next_five_days[4] %>
+									<% @day = @next_five_days[4].strftime("%A").downcase %>
+									<% @scheduled_today = scheduled?(@temp_schedule, @day) %>
+									<div id=<%= "recipient_schedule_#{recipient.id}_#{@day}" %> >
+										<%= render :partial => "deliver_today" %>
+									</div>
+								<% end %>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="view_daily_menu">
+									<% @daily_menu = DailyMenu.find_by_date(@next_five_days[0].strftime("%d%m%Y")) %>
+									<% if !@daily_menu.blank? %>
+										<%= link_to "View Daily Menu", { :controller => "menus", :action => "show", :id => @daily_menu.menu_id, :date => @next_five_days[0] } %>
+									<% end %>
+								</div>
+							</td>
+							<td>
+								<div class="view_daily_menu">
+									<% @daily_menu = DailyMenu.find_by_date(@next_five_days[1].strftime("%d%m%Y")) %>
+									<% if !@daily_menu.blank? %>
+										<%= link_to "View Daily Menu", { :controller => "menus", :action => "show", :id => @daily_menu.menu_id, :date => @next_five_days[1] } %>
+									<% end %>
+								</div>
+							</td>
+							<td>
+								<div class="view_daily_menu">
+									<% @daily_menu = DailyMenu.find_by_date(@next_five_days[2].strftime("%d%m%Y")) %>
+									<% if !@daily_menu.blank? %>
+										<%= link_to "View Daily Menu", { :controller => "menus", :action => "show", :id => @daily_menu.menu_id, :date => @next_five_days[2] } %>
+									<% end %>
+								</div>
+							</td>
+							<td>
+								<div class="view_daily_menu">
+									<% @daily_menu = DailyMenu.find_by_date(@next_five_days[3].strftime("%d%m%Y")) %>
+									<% if !@daily_menu.blank? %>
+										<%= link_to "View Daily Menu", { :controller => "menus", :action => "show", :id => @daily_menu.menu_id, :date => @next_five_days[3] } %>
+									<% end %>
+								</div>
+							</td>
+							<td>
+								<div class="view_daily_menu">
+									<% @daily_menu = DailyMenu.find_by_date(@next_five_days[4].strftime("%d%m%Y")) %>
+									<% if !@daily_menu.blank? %>
+										<%= link_to "View Daily Menu", { :controller => "menus", :action => "show", :id => @daily_menu.menu_id, :date => @next_five_days[4] } %>
+									<% end %>
+								</div>
+							</td>
+						</tr>
+					</table>
+					<div class="delivery_note">
+						Please Remember: Deliveries can be added or canceled until 8am eastern time the day of delivery.
+					</div>
+				</td>
+				<td align="center" rowspan="2" width="20%">
+					<% if @recipient_location %>
+						<div class="recipient_location_container">
+							<div class="recipient_location_header">
+								<span class="recipient_location_name">Drop-Off Location</span>
+								<hr class="recipient_location_line">
+								<span class="inline_location_name"><%= @recipient_location.name %></span><br>
+								<%= @recipient_location.street_address %><br>
+								<%= @recipient_location.city %>, <%= @recipient_location.state %>
+							</div>
+						</div>
+						<div class="google_map">
+							<%= image_tag(@recipient_location.map_url) %>
+						</div>
+					<% else %>
+						<div class="no_location_text">
+							No Location Selected
+						</div>
+					<% end %>
+				</td>
+			</tr>
+		</table>
+		<hr class="recipient_green_line">
+	<% end %>
+<% else %>
+	<div class="no_recipients">
+		You don't currently have any recipients. 
+	</div>
+	<div class="add_a_recipient">
+		To add one, click <%= link_to "here.", { :controller => "users", :action => "create_location_recipient" } %>
+	</div>
+<% end %>

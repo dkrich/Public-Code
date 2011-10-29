@@ -1,0 +1,298 @@
+body {
+        background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(255,255,255)),
+        color-stop(1, rgb(64,166,255))
+    );
+    background-image: -moz-linear-gradient(
+        center bottom,
+        rgb(255,255,255) 0%,
+        rgb(64,166,255) 69%
+    );
+    background-repeat: repeat-x;
+    height: 100%;
+    margin-top: -10px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+html {
+
+}
+
+#header_error_messages_container {
+	position: relative;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	background: #9f4848;
+}
+
+.error_message_header {
+	font: 24px 'Josefin Slab', Didot, Georgia, Helvetica, American Typewriter, Georgia;
+	color: #b51414;
+	color: #FFF;
+	text-align: center;
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+
+.error_message_body {
+	font: 18px 'Josefin Slab', Didot, Georgia, Helvetica, American Typewriter, Georgia;
+	color: #b51414;
+	color: #FFF;
+	text-align: center;
+	padding-bottom: 5px;
+}
+
+.main_container {
+	width: 1000px;
+	/*float: left;*/
+        background: #FFF;
+	-webkit-border-radius: 10px;
+	-webkit-box-shadow: 5px 5px 5px #888;
+        -moz-border-radius: 10px;
+        -moz-box-shadow: 5px 5px 5px #888;
+	margin-top: 0px;
+	padding-bottom: 10px;
+        margin-left: auto;
+        margin-right: auto;
+}
+
+#whole_new_user_container {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+}
+
+.user_service_plan_logo {
+	width: 200px;
+}
+
+.new_user_service_plan {
+	font: 32px 'Josefin Slab', Garamond, Georgia;
+	color: #FFF;
+	text-align: left;
+	padding-top: 20px;
+	padding-bottom: 20px;
+        padding-left: 15px;
+	background-color: #313131;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+        -moz-border-radius: 10px 10px 0px 0px;
+	background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0.2, rgb(59,170,255)),
+	    color-stop(0.6, rgb(44,106,199))
+	);
+        background-image: -moz-linear-gradient(
+            center bottom,
+            rgb(59,170,255) 20%,
+            rgb(44,106,199) 60%
+        );
+}
+
+.new_user_location_header {
+	font: 24px 'Josefin Slab', Garamond, Georgia;
+	text-align: left;
+	padding-left: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	color: #FFF;
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+        -moz-border-radius: 10px 10px 0px 0px;
+	background-image: -webkit-gradient(
+	    linear,
+	    left bottom,
+	    left top,
+	    color-stop(0.2, rgb(59,170,255)),
+	    color-stop(0.6, rgb(44,106,199))
+	);
+        background-image: -moz-linear-gradient(
+            center bottom,
+            rgb(59,170,255) 20%,
+            rgb(44,106,199) 60%
+        );
+}
+
+input.new_service_plan_input {
+	height: 40px;
+	width: 400px;
+	font: 28px Arvo, 'Josefin Slab', Didot, Georgia;
+	border: 2px solid #BBB;
+	color: #2565AC;
+}
+
+#new_user_form {
+	padding-top: 10px;
+	width: 405px;
+	/*margin-left: auto;
+	margin-right: auto;*/
+        float: left;
+        margin-left: 20px;
+}
+
+.new_service_plan_label {
+	font: 16px Arvo, 'Josefin Slab', Didot, Georgia;
+	padding-top: 15px;
+	color: #555;
+}
+
+.new_service_plan_required {
+	font: 12px 'Josefin Slab', Didot, Georgia;
+	color: #a42121;
+	float: right;
+	padding-top: 5px;
+}
+
+#new_user_error_container {
+     background: #c2705e;
+     color: #FFF;
+     font: 30px 'Josefin Slab', Didot, Georgia;
+     text-align: center;
+     padding-top: 10px;
+     padding-bottom: 10px;
+     margin-bottom: 30px;
+     margin-left: auto;
+     margin-right: auto;
+     width: 100%;
+}
+
+.new_user_error_header {
+   font: 30px 'Josefin Slab', Didot;
+   color: #FFF;
+   padding-top: 10px;
+   padding-bottom: 5px;
+}
+
+.error {
+   font: 20px 'Josefin Slab', Didot, Georgia;
+   color: #FFF;
+}
+
+.thanks {
+  font: 20px 'Rock Salt';
+  color: #8a00ff;
+  float: right;
+  margin-top: 30px;
+  width: 500px;
+}
+
+#registration_errors {
+	background: #9f4848;
+}
+
+.errors_header {
+	font: 24px Georgia, Helvetica, American Typewriter, Georgia;
+	color: #b51414;
+	color: #FFF;
+	text-align: center;
+	padding-bottom: 5px;
+	padding-top: 10px;
+}
+
+.error_message {
+	font: 16px Georgia, Helvetica, American Typewriter, Georgia;
+	color: #b51414;
+	color: #FFF;
+	text-align: center;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.registration_header_table {
+	width: 500px;
+}
+
+.header_table_text {
+	padding-left: 10px;
+        font: 30px 'Josefin Slab';
+}
+
+#select_location {
+	width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+}
+
+.new_user_location_table {
+	width: 950px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.new_user_drop_off_location_name {
+	font: 20px Arvo, 'Josefin Slab', Goudy Old Style, Garamond, Georgia;
+	color: #222;
+	color: #66aec5;
+        color: #e85700;
+        color: #9600ff;
+	padding-top: 5px;
+        margin-right: 5px;
+}
+
+.new_user_drop_off_location_address {
+	font: 19px Arvo, 'Josefin Slab', Goudy Old Style, Garamond, Georgia;
+	color: #444;
+        margin-right: 5px;
+}
+
+.new_user_drop_off_location_type {
+	font: 19px Arvo, 'Josefin Slab', Goudy Old Style, Garamond, Georgia;
+	color: #AAA;
+        margin-right: 5px;
+}
+
+.new_user_select_location_button img {
+	width: 250px;
+}
+
+.new_user_location_selection_container {
+	-webkit-border-radius: 10px;
+	background: #FFF;
+	-webkit-box-shadow: 5px 5px 5px #888;
+        -moz-border-radius: 10px;
+        -moz-box-shadow: 5px 5px 5px #888;
+        padding-bottom: 10px;
+}
+
+.user_google_map img {
+    border: 3px solid #31ace5;
+}
+
+.skip_step_link a {
+	font: 22px Garamond, Georgia;
+	color: #fffa6c;
+	text-decoration: none;
+}
+
+.register_button {
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.sign_up_button {
+    width: 280px;
+}
+
+#loading {
+  width: 45px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 35px;
+  padding-bottom: 35px;
+}
+
+.devise_links_container {
+   text-align: center;
+   padding-top: 20px;
+   padding-bottom: 10px;
+}

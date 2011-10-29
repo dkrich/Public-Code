@@ -1,0 +1,23 @@
+<h1>Editing Times for <%= @location.name %></h1>
+
+<%= form_for(@drop_off_location_time) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :delivery_time %><br />
+    <%= f.time_select :delivery_time %>
+  </p>
+  <p>
+    <%= f.label :last_order_time %><br />
+    <%= f.time_select :last_order_time %>
+  </p>
+  <p>
+    <%= f.label :meal_service %><br />
+    <%= f.text_field :meal_service %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @drop_off_location_time %> |
+<%= link_to 'Back', drop_off_location_times_path %>

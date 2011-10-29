@@ -1,0 +1,40 @@
+<div id="menu_container">
+	<div class="admin_menu_date">
+		<%= Time.now.strftime("%A, %B %e, %Y") %>
+	</div>
+	<div class="admin_menu_title">
+		<%= @menu.name %>
+	</div>
+	<% @menu_items = MenuItem.find_all_by_menu_id(@menu.id) %>
+	<div class="entree_title">
+		Entree
+	</div>
+	<% @menu_items.each do |menu_item| %>
+		<% @item = Item.find(menu_item.item_id) %>
+		<% if @item.item_type.upcase == "ENTREE" %>
+			<div class="admin_menu_item_title">
+				<%= @item.name %>
+			</div>
+			<div class="admin_menu_item_description">
+				<%= @item.description %>
+			</div>
+		<% end %>
+	<% end %>
+	<div class="entree_title">
+		Dessert
+	</div>
+	<% @menu_items.each do |menu_item| %>
+		<% @item = Item.find(menu_item.item_id) %>
+		<% if @item.item_type.upcase == "DESSERT" %>
+			<div class="admin_menu_item_title">
+				<%= @item.name %>
+			</div>
+			<div class="admin_menu_item_description">
+				<%= @item.description %>
+			</div>
+		<% end %>
+	<% end %>
+	<div class="edit_menu_link">
+		<%= link_to 'Edit Menu', edit_menu_path(@menu) %>
+	</div>
+</div>

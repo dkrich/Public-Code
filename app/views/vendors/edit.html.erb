@@ -1,0 +1,8 @@
+<div class="vendors_header">
+    Editing <%= Vendor.find(params[:id]).name %>
+</div>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @vendor %> |
+<%= link_to 'Back', vendors_path %>

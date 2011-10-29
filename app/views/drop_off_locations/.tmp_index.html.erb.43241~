@@ -1,0 +1,32 @@
+<h1>Listing drop_off_locations</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Street address</th>
+    <th>City</th>
+    <th>Map url</th>
+    <th>State</th>
+    <th>Occupancy</th>
+    <th>Square feet</th>
+  </tr>
+
+<% @drop_off_locations.each do |drop_off_location| %>
+  <tr>
+    <td><%=h drop_off_location.name %></td>
+    <td><%=h drop_off_location.street_address %></td>
+    <td><%=h drop_off_location.city %></td>
+    <td><%=h drop_off_location.map_url %></td>
+    <td><%=h drop_off_location.state %></td>
+    <td><%=h drop_off_location.occupancy %></td>
+    <td><%=h drop_off_location.square_feet %></td>
+    <td><%= link_to 'Show', drop_off_location %></td>
+    <td><%= link_to 'Edit', edit_drop_off_location_path(drop_off_location) %></td>
+    <td><%= link_to 'Destroy', drop_off_location, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New drop_off_location', new_drop_off_location_path %>

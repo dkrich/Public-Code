@@ -1,0 +1,80 @@
+<div id="vendor_profile_container">
+    <div class="vendor_profile_top">
+        Restaurant Profile
+    </div>
+    <table class="vendor_profile_table">
+        <tr>
+            <td rowspan="2" valign="top">
+                <div class="vendor_profile_logo">
+                    <%= image_tag(@vendor.logo.url(:medium)) %>
+                </div>
+            </td>
+            <td valign="top">
+                <div class="vendor_profile_header">
+                    <%= @vendor.name %>
+                </div>
+                <div class="vendor_profile_intro">
+                    <%= @vendor_profile.intro %>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <table class="vendor_image_table">
+        <tr>
+            <td width="25%">
+                <div class="vendor_store_image">
+                    <%= image_tag("merc1.jpeg") %>
+                </div>
+            </td>
+            <td width="25%">
+                <div class="vendor_store_image">
+                    <%= image_tag("merc2.jpeg") %>
+                </div>
+            </td>
+            <td width="25%">
+                <div class="vendor_store_image">
+                    <%= image_tag("merc3.jpeg") %>
+                </div>
+            </td>
+            <td width="25%">
+                <div class="vendor_store_image">
+                    <%= image_tag("sandwich.jpg") %>
+                </div>
+            </td>
+        </tr>
+    </table>
+   
+    <div class="vendor_description">
+        <div class="vendor_profile_subheader">
+            About <%= @vendor.name %>
+        </div>
+        <%= @vendor_profile.description.html_safe %>
+    </div>
+    <div class="vendor_location">
+      <table>
+          <tr>
+              <td valign="top">
+                  <span class="map_marker">
+                      <%= image_tag("red_marker.png") %>
+                  </span>
+              </td>
+              <td>
+                  <div class="vendor_location_subheader">
+                      <%= @vendor.name %>
+                  </div>
+                  <div class="vendor_address">
+                      <%= @vendor.address %>
+                  </div>
+                  <div class="vendor_address">
+                      <% @city = City.find(@vendor.city_id) %>
+                      <%= @city.name + ", " + State.find(@city.state_id).name %>
+                  </div>
+                  <div class="vendor_profile_map">
+                      <%= image_tag(@vendor_profile.map_url) %>
+                  </div>
+              </td>
+          </tr>
+      </table>
+    </div>
+    <div class="clearboth"/>
+</div>

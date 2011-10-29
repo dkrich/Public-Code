@@ -1,0 +1,35 @@
+<!--<div class="new_service_plan_step">
+	<table>
+		<tr>
+			<td>
+				<%= image_tag("step_one.png", :class => "new_service_plan_step_image") %>
+			</td>
+			<td>
+				Create Your Account
+			</td>
+		</tr>
+	</table>
+</div>-->
+<div id="registration_info">
+	<div id="new_user_form">
+		<%= render :partial => "users/new_user_form" %>
+	</div>
+	<!--<div class="new_service_plan_step_two">
+		<table>
+			<tr>
+				<td>
+					<%= image_tag("step_two.png", :class => "new_service_plan_step_image") %>
+				</td>
+				<td>
+					Select Your Plan
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="select_plan">
+		<%= render :partial => 'service_plans' %>
+	</div>
+</div>-->
+<div class="register_button">
+	<%= link_to image_tag("create_your_account.png", :class => "sign_up_button"), :url => { :controller => "users", :action => "create" }, :submit => "registration_info", :remote => true %>
+</div>

@@ -1,0 +1,32 @@
+<html>
+  <head>
+
+  </head>
+  <body>
+    Hello, <%= @user.first_name %>,
+    <p>
+      Thanks for choosing us!
+    </p>
+    <p>
+      Here's a summary of your order:
+    </p>
+    <p>
+      Plan Type: <%= @service_plan.service_name_proper %>
+    </p>
+    <p>
+      Credits Included: <%= @service_plan.meals_included %>
+    </p>
+    <p>
+      Price: <%= number_to_currency(@service_plan.price, :unit => "$") %>
+    </p>
+    <p>
+      As always, if you have any questions, please let us know.
+    </p>
+    <p>
+      Thanks!
+    </p>
+    <p>
+      -Bakery Market
+    </p>
+  </body>
+</html>

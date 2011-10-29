@@ -1,0 +1,44 @@
+<div class="drop_off_times_header">
+	Add a Drop Off Time to <%= @drop_off_location.name %>
+</div>
+<%= form_for(@drop_off_location_time) do |f| %>
+    <%= f.error_messages %>
+	<div id="drop_off_form">
+	  	<table class="drop_off_times_table" cellpadding="20">
+		    <tr>
+		    	<td class="table_header">
+		    		Delivery Time
+		    	</td>
+				<td>
+					<%= f.time_select :delivery_time %>
+				</td>
+		    </tr>
+                    <tr>
+		    	<td class="table_header">
+		    		Last Order Time<br/>(Time last order can be placed)
+		    	</td>
+				<td>
+					<%= f.time_select :last_order_time %>
+				</td>
+		    </tr>
+		    <tr>
+		    	<td class="table_header">
+		    		Meal Service:
+				</td>
+				<td>
+					<select name="drop_off_location_time[meal_service]">
+						<option value="Lunch">Lunch</option>
+						<option value="Dinner">Dinner</option>
+					</select>
+				</td>
+			</tr>
+		    <tr>
+		    	<td colspan="2">
+                           <%= f.hidden_field :drop_off_location_id, :value => @drop_off_location.id %>
+		    		<center><%= f.submit %></center>
+				</td>
+			</tr>
+		</table>
+	</div>
+<% end %>
+

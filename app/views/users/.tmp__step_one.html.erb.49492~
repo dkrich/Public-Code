@@ -1,0 +1,78 @@
+<div class="step_one_subtext">
+	<table class="step_table">
+		<tr>
+			<td width="1%">
+				<%= image_tag("step_one.png", :class => "step_image") %>
+			</td>
+			<td nowrap="true">
+				To whom will we be delivering?
+			</td>
+		</tr>
+	</table>
+</div>
+<div id="recipient_create_errors">
+	
+</div>
+<% form_remote_for @location_recipient, :url => { :controller => "users", :action => "add_recipient_name" } do |f| %>
+	<div id="new_recipient_data">
+		<table class="add_recipient_table" cellspacing=10>
+			<tr>
+				<td nowrap=true colspan="3">
+					<div class="new_recipient_label">
+						1. First Name:
+						<div class="required">(Required Field)</div>
+					</div>
+					<%= f.text_field :recipient_first_name, :maxlength => 50, :class => "new_service_plan_input" %>
+				</td>
+			</tr>
+			<tr>
+				<td nowrap=true colspan="3">
+					<div class="new_recipient_label">
+						2. Last Name:
+						<div class="required">(Required Field)</div>
+					</div>
+					<%= f.text_field :recipient_last_name, :maxlength => 50, :class => "new_service_plan_input" %>
+				</td>
+			</tr>
+			<tr>
+				<td nowrap=true colspan="3">
+					<div class="new_recipient_label">
+						3. Phone Number:
+					</div>
+					<div class="new_recipient_subtext">
+						(a number we can call if any problems arise during delivery)
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<span class="area_code_paren">( <%= f.text_field :phone_number_area_code, :maxlength => 3, :class => "new_service_plan_prefix" %> )
+					<%= f.text_field :phone_number_prefix, :maxlength => 3, :class => "new_service_plan_prefix" %> - </span>
+					<%= f.text_field :phone_number_suffix, :maxlength => 4, :class => "new_service_plan_suffix" %>
+				</td>
+			</tr>
+			<tr>
+				<td width="30%">
+					<div class="new_recipient_label">
+						4. This recipient is:
+					</div>
+				</td>
+				<td width="30%">
+					<div class="new_recipient_label">
+						<%= radio_button("location_recipient", "customer_type", "adult", :checked => true) %><span class="adult_text"> an adult.</span>
+					</div>
+				</td>
+				<td width="30%">
+					<div class="new_recipient_label">
+						<%= radio_button("location_recipient", "customer_type", "child") %><span class="child_text"> a child.</span>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center">
+					<%= link_to_remote image_tag("where.png"), :url => { :controller => "users", :action => "create_recipient_record" }, :submit => "new_recipient_data" %>
+				</td>
+			</tr>
+		</table>
+	</div>
+<% end %>

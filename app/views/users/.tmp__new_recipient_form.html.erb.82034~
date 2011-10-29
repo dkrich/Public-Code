@@ -1,0 +1,19 @@
+<div id= <%= "add_recipient_form_#{@location.id}" %> style="display:none">
+	<div id="create_recipient_container">
+		<% form_remote_for @location_recipient, :url => { :controller => "users", :action => "create_location_recipient", :id => @location.id } do |e| %>
+			<div id=<%= "recipient_info_#{@location.id}" %>>
+				<div class="new_recipient_label">
+					First Name:
+				</div>
+				<%= e.text_field :recipient_first_name, :maxlength => 50, :class => "new_recipient_input" %>
+				<div class="new_recipient_label">
+					Last Name:
+				</div>
+				<%= e.text_field :recipient_last_name, :maxlength => 50, :class => "new_recipient_input" %>
+			<div class="create_recipient_link">
+				<%= link_to_remote "Create Recipient", :url => { :controller => "users", :action => "create_location_recipient", :id => @location.id }, :submit => "recipient_info_#{@location.id}" %>
+			</div>
+			</div>
+		<% end %>
+	</div>
+</div>

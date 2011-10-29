@@ -1,0 +1,66 @@
+<!--<div id="explanations_container">
+  <div class="explanations_major_header">
+    You're just seconds away from getting your lunch hour back.
+  </div>-->
+  <div class="explanations_major_header">
+    Here's how it works:
+  </div>
+  <div class="explanations_container">
+    <div class="explanations_subheader">
+      The Menu
+    </div>
+    <div class="explanations_body">
+      We delivery top-quality lunches to select locations at set times. Every day, we
+      offer three interesting meal choices, each with a different classification. Each meal
+      consists of a handmade entree paired with an agreeable side item.
+      <div class="meal_type_one_header">
+        <%= MealType.where(:meal_type_id => 1).last.meal_type_name %>
+      </div>
+      <div class="meal_type_body">
+        This is your classic American fare. Typically these selections will include a
+        sandwich made with homemade bread, top-quality meats and cheeses, and a side item
+        that is sure to please you.
+      </div>
+      <div class="meal_type_two_header">
+        <%= MealType.where(:meal_type_id => 2).last.meal_type_name %>
+      </div>
+      <div class="meal_type_body">
+        Here you will find a salad option every day. Some days it will be a Cobb, others
+        a Caesar, others, well who knows? You'll just have to wait and see.
+      </div>
+      <div class="meal_type_three_header">
+        <%= MealType.where(:meal_type_id => 3).last.meal_type_name %>
+      </div>
+      <div class="meal_type_body">
+        Are you craving Chinese? Or perhaps Mexican? Or Indian?
+        Then this is your spot. Every day we will offer something that is a bit off the beaten path
+        from what you would typically find among the other classifications.
+      </div>
+    </div>
+  </div>
+  <div class="explanations_container">
+    <div class="explanations_subheader">
+      The Locations
+    </div>
+    <div class="explanations_body">
+      In order to ensure that your lunch arrives in a condition that meets our standards for quality,
+      we only offer deliveries to preselected spots that are within a short distance to the kitchen
+      in which it is prepared.<br/><br/>
+      Upon registering a new account, you will be prompted to select your preferred location for delivery.
+      From then on, when you place an order, your delivery location will be defaulted to that spot. If you
+      find yourself in a different location that we deliver to, you can easily change the location for that
+      meal by clicking the "Change Location" link under your meal summary.<br/><br/>
+      If we don't currently offer delivery service to a spot that you would like, don't worry. We are
+      actively working to expand our service to accommodate everybody who wants it. If you would like
+      Bakery Market deliveries at your location, just tell us.
+    </div>
+  </div>
+</div>
+<% if !current_user %>
+  <div class="explanations_sign_up">
+          <%= link_to image_tag("sign_up_didot.png"), new_user_path %>
+  </div>
+<% else %>
+  <div class="explanations_spacer"></div>
+<% end %>
+-->

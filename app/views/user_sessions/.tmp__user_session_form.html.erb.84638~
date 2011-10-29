@@ -1,0 +1,42 @@
+<div class="credentials_text">
+	<div class="member_sign_in">
+		Sign In To Your Account
+	</div>
+	<table class="front_page_header_login_table" cellspacing="10">
+		<tr>
+			<td>
+				<div class="login_text">
+					<%= user_session_form.label :email, "Email:" %>
+				</div>
+			</td>
+			<td>
+				<%= user_session_form.text_field :email, :class => "email_text_box" %>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div class="login_text">
+					<%= user_session_form.label :password, "Password:" %>
+				</div>
+			</td>
+			<td>
+				<%= user_session_form.password_field :password, :class => "email_text_box" %>
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 align="center">
+				<div class="remember_me_text">
+					<%= user_session_form.check_box :remember_me %>
+				   	<%= user_session_form.label :remember_me, "Remember Me" %>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan=2 align="center">
+				<div class="front_page_header_login_image">
+					<%= link_to_remote image_tag("littlejaw_sign_in.png", :class => "sign_in_button"), create_user_sessions_url, :submit => "login_credentials" %>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>

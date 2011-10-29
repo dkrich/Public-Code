@@ -1,0 +1,22 @@
+<div class="password_reset_box">
+	<div class="password_reset_header">
+		Forgot your password?
+	</div>
+	<div id="reset_password_errors">
+	
+	</div>
+	<div class="password_reset_subheader">
+		No worries, just give us the email address you registered with, and we'll send you instructions for setting a new password.
+	</div>
+	<%= form_tag password_resets_path, :method => "post", :id => "tool-form", :remote => true do %>
+		  <div id="password_reset_text_container">
+		  	  Your Email: <%= text_field_tag "email", nil, :class => "reset_password_text" %>
+			  <div class="submit_button">
+                            <%= image_submit_tag("submit.png", :class => "login_image") %>
+		  	  </div>
+                          <div id="loading" style="display:none">
+                            <%= image_tag("email_loader.gif") %>
+                          </div>
+		  </div>
+	<% end %>
+</div>

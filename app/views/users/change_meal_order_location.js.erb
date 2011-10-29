@@ -1,0 +1,5 @@
+$("#selection_drop_off_location").replaceWith('<div id="selection_drop_off_location"><%= escape_javascript(render(:partial => "selections_meal_order_drop_off_location")) %></div>');
+$("#meal_order_drop_off_location_container").fadeOut(500);
+$("#meal_order_drop_off_location_container").replaceWith('<div id="meal_order_drop_off_location_container"><%= escape_javascript(render(:partial => "meal_order_drop_off_location")) %></div>');
+$("#selection_drop_off_location").effect('highlight', {color: '#ff7200', mode: 'show'}, 1000);
+$("#menu_today").delay(500).fadeIn(500);

@@ -1,0 +1,67 @@
+<div class="step_one_subtext">
+	<table class="step_table">
+		<tr>
+			<td width="1%">
+				<%= image_tag("step_three.png", :class => "step_image") %>
+			</td>
+			<td nowrap="true">
+				Set the weekly delivery schedule for <%= @location_recipient.recipient_first_name %>. (This can be changed at any time.)
+			</td>
+		</tr>
+	</table>
+</div>
+<div class="service_plan_image">
+	<table class="service_plan_table">
+		<tr>
+			<td>
+				Monday
+			</td>
+			<td>
+				Tuesday
+			</td>
+			<td>
+				Wednesday
+			</td>
+			<td>
+				Thursday
+			</td>
+			<td>
+				Friday
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<div id="monday">
+					<% @day = "monday" %>
+					<%= render :partial => 'monday' %>
+				</div>
+			</td>
+			<td>
+				<div id="tuesday">
+					<% @day = "tuesday" %>
+					<%= render :partial => 'monday' %>
+				</div>
+			</td>
+			<td>
+				<div id="wednesday">
+					<% @day = "wednesday" %>
+					<%= render :partial => 'monday' %>
+				</div>
+			</td>
+			<td>
+				<div id="thursday">
+					<% @day = "thursday" %>
+					<%= render :partial => 'monday' %>
+				</div>
+			</td>
+			<td>
+				<div id="friday">
+					<% @day = "friday" %>
+					<%= render :partial => 'monday' %>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<%= link_to_remote image_tag("where.png"), :url => { :controller => "users", :action => "advance_to_plans", :id => @location_recipient.id } %>

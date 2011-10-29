@@ -1,0 +1,96 @@
+<div class="plans_container">
+	<div class="plan_header">
+		Select Your Plan
+	</div>
+        <table class="plan_table">
+            <tr>
+              <td>
+                  <div id="plan_container">
+                      <% @service_plan = ServicePlan.find(1) %>
+                      <div class="plan_title">
+                          <%= @service_plan.service_name_proper %>
+                      </div>
+                      <div class="plan_price">
+                          <%= number_to_currency(@service_plan.price) %>
+                      </div>
+                      <div class="plan_band_one">
+                          <%= @service_plan.meals_included %> Meal Credit
+                      </div>
+                      <div class="plan_subheader">
+                          As Always:
+                      </div>
+                      <div class="plan_detail">
+                          No Tips.
+                      </div>
+                      <div class="plan_detail">
+                          No Delivery Charges.
+                      </div>
+                      <div class="plan_detail">
+                          No Hidden Fees.
+                      </div>
+                      <div class="select_plan_button">
+                          <%= link_to image_tag("select_plan.png", :mouseover => "select_plan_illuminated.png"), :controller => "orders", :action => "new", :id => 1 %>
+                      </div>
+                  </div>
+              </td>
+              <td>
+                  <div id="plan_container">
+                      <% @service_plan = ServicePlan.find(2) %>
+                      <div class="plan_title">
+                          <%= @service_plan.service_name_proper %>
+                      </div>
+                      <div class="plan_price">
+                          <%= number_to_currency(@service_plan.price) %>
+                      </div>
+                    <div class="plan_band_two">
+                        <%= @service_plan.meals_included %> Meal Credits
+                    </div>
+                    <div class="plan_subheader">
+                        As Always:
+                    </div>
+                    <div class="plan_detail">
+                        No Tips.
+                    </div>
+                    <div class="plan_detail">
+                        No Delivery Charges.
+                    </div>
+                    <div class="plan_detail">
+                        No Hidden Fees.
+                    </div>
+                    <div class="select_plan_button">
+                        <%= link_to image_tag("select_plan.png", :mouseover => "select_plan_illuminated.png"), :controller => "orders", :action => "new", :id => 2 %>
+                    </div>
+                  </div>
+              </td>
+              <td>
+                  <div id="plan_container">
+                      <% @service_plan = ServicePlan.find(3) %>
+                      <div class="plan_title">
+                          <%= @service_plan.service_name_proper %>
+                      </div>
+                      <div class="plan_price">
+                          <%= number_to_currency(@service_plan.price) %>
+                      </div>
+                      <div class="plan_band_three">
+                          <%= @service_plan.meals_included %> Meal Credits
+                      </div>
+                      <div class="plan_subheader">
+                          As Always:
+                      </div>
+                      <div class="plan_detail">
+                          No Tips.
+                      </div>
+                      <div class="plan_detail">
+                          No Delivery Charges.
+                      </div>
+                      <div class="plan_detail">
+                          No Hidden Fees.
+                      </div>
+                      <div class="select_plan_button">
+                          <%= link_to image_tag("select_plan.png", :mouseover => "select_plan_illuminated.png"), :controller => "orders", :action => "new", :id => 3 %>
+                      </div>
+                  </div>
+              </td>
+            </tr>
+        </table>
+</div>

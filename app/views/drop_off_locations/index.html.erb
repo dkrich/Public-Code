@@ -1,0 +1,72 @@
+<div id="drop_off_container">
+	<div class="drop_off_header">
+		Drop-Off Locations
+	</div>
+	<div class="new_location">
+		<%= link_to "Create Drop-Off Location", new_drop_off_location_path %>
+	</div>
+	<table class="drop_off_table" cellspacing="12">
+	  <tr>
+	    <th class="drop_off_table_header" width="12%">Name</th>
+		<th class="drop_off_table_header">Type</th>
+	    <th class="drop_off_table_header" width="15%">Address</th>
+	    <th class="drop_off_table_header">City</th>
+		<th class="drop_off_table_header">State</th>
+	    <th class="drop_off_table_header" width="30%">Map URL</th>
+	  </tr>
+	  <% @drop_off_locations.each do |drop_off_location| %>
+		  <tr>
+		    <td class="drop_off_table_text_major" width="20%"><%=h drop_off_location.name %></td>
+			<td class="drop_off_table_text"><%=h drop_off_location.location_type %></td>
+		    <td class="drop_off_table_text"><%=h drop_off_location.street_address %></td>
+		    <td class="drop_off_table_text"><%=h drop_off_location.city %></td>
+			<td class="drop_off_table_text"><%=h drop_off_location.state %></td>
+		    <td class="drop_off_table_url_text" max-width="20%">
+		    	<%=h drop_off_location.map_url %>
+				<div class="preview_map">
+					<%= link_to_function "Preview Map", "$('#locations_container_#{drop_off_location.id}').toggle()" %>
+				</div>
+				<div id=<%= "locations_container_#{drop_off_location.id}" %> style="display:none">
+					<div class="map_container">
+						<%= image_tag(drop_off_location.map_url) %>
+					</div>
+				</div>
+			</td>
+		    <td class="drop_off_table_text" width="3%"><%= link_to 'Edit', edit_drop_off_location_path(drop_off_location) %></td>
+		    <td class="drop_off_table_text" width="3%"><%= link_to 'Destroy', drop_off_location, :confirm => 'Are you sure?', :method => :delete %></td>
+		  </tr>
+		  <% @lunch_delivery_times = DropOffLocationTime.where(:drop_off_location_id => drop_off_location.id, :meal_service => "Lunch").all %>
+		  <% @lunch_delivery_times.sort! { |a,b| a.delivery_time <=> b.delivery_time } %>
+		  <tr>
+			<td class="drop_off_table_text" colspan="6">
+				<b>Lunch Service Delivery Times</b>
+				<% @lunch_delivery_times.each do |service_time| %>
+					<span class="delivery_time_text">
+						<%= service_time.delivery_time.strftime("%I:%M %p") %>
+					</span>
+				<% end %>
+			</td>
+		  </tr>
+		  <% @dinner_delivery_times = DropOffLocationTime.where(:drop_off_location_id => drop_off_location.id, :meal_service => "Dinner").all %>
+		  <% @dinner_delivery_times.sort! { |a,b| a.delivery_time <=> b.delivery_time } %>
+		  <tr>
+			<td class="drop_off_table_text" colspan="6">
+				<b>Dinner Service Delivery Times</b>
+				<% @dinner_delivery_times.each do |service_time| %>
+					<span class="delivery_time_text">
+						<%= service_time.delivery_time.strftime("%I:%M %p") %>
+					</span>
+				<% end %>
+			</td>
+		  </tr>
+		  <tr>
+		  	<td class="drop_off_table_text">
+		  		<%= link_to "Edit Times", :controller => "drop_off_locations", :action => "edit_times", :id => drop_off_location.id %>
+			</td>
+                        <td class="drop_off_table_text">
+		  		<%= link_to "Set Schedule", :controller => "drop_off_locations", :action => "schedule", :id => drop_off_location.id %>
+			</td>
+		  </tr>
+		<% end %>
+	</table>
+</div>

@@ -1,0 +1,65 @@
+<div class="account_container">
+	<div class="account_summary_header">
+		Hey <%= current_user.first_name %>,  here's your account summary.
+	</div>
+	<div class="drop_off_location">
+		<div class="account_summary_subtext">
+			<table class="account_summary_header_table">
+				<tr>
+					<td>
+						<div class="drop_off_text">
+							Your Drop-Off Locations
+						</div>
+					</td>
+					<td width="5%">
+						<div class="drop_off_button_container">
+							<%= link_to_function image_tag("add_a_drop_off.png", :class => "drop_off_button"), "new Effect.toggle('locations_container', 'appear')" %>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<% if !@user_service_plans.blank? %>
+	
+	<% else %>
+		<div class="account_summary_body">
+			You don't have any drop-off locations selected.
+		</div>
+	<% end %>
+	<div id="locations_container" style="display:none">
+		<% @drop_off_locations = DropOffLocation.find :all %>
+		<% @drop_off_locations.each_with_index do |location, index| %>
+			<hr class="location_separator">
+			<table class="location_table">
+				<tr>
+					<td valign="top"  width="40%">
+						<div class="drop_off_location_name">
+							<%= location.name %>
+						</div>
+						<div class="drop_off_location_address">
+							<%= location.street_address %>
+						</div>
+						<div class="drop_off_location_address">
+							<%= "#{location.city}, #{location.state}" %>
+						</div>
+						<div class="drop_off_location_type">
+							Location Type: <%= location.location_type %>
+						</div>
+					</td>
+					<td width="10%">
+						<div class="google_map">
+							<%= image_tag(location.map_url) %>
+						</div>
+					</td>
+					<td width="40%" valign="top" align="right">
+						<div class="add_location_button">
+							<%= link_to image_tag("add_this_location.png"), { :controller => "drop_off_locations", :action => "add_drop_off_location", :id => location.id } %>
+						</div>
+					</td>
+				</tr>
+			</table>
+		<% end %>
+	</div>
+	<div class="location_table_spacer"></div>
+</div>

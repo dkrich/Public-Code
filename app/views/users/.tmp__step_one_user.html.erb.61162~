@@ -1,0 +1,50 @@
+<div class="step_one_container_user">
+	<div class="step_one_subtext">
+		<table class="step_table">
+			<tr>
+				<td width="1%">
+					<%= image_tag("step_one.png", :class => "step_image") %>
+				</td>
+				<td nowrap="true">
+					Okay, first, where would you like us to deliver your meals?
+				</td>
+			</tr>
+		</table>
+	</div>
+	<% @locations = DropOffLocation.find :all %>
+	<% @locations.each_with_index do |location, index| %>
+		<table class="location_table">
+			<tr>
+				<td valign="top" width="25%">
+					<div class="drop_off_location_name">
+						<%= location.name %>
+					</div>
+					<div class="drop_off_location_address">
+						<%= location.street_address %>
+					</div>
+					<div class="drop_off_location_address">
+						<%= "#{location.city}, #{location.state}" %>
+					</div>
+					<div class="drop_off_location_type_user">
+						Location Type: <%= location.location_type %>
+					</div>
+				</td>
+				<td valign="top" width="20%">
+					<div class="user_google_map">
+						<%= image_tag(location.map_url) %>
+					</div>
+				</td>
+				<td width="1%" valign="top">
+					<div class="add_recipient_link">
+						<%= link_to_remote image_tag("select_and_set_schedule.png"), :url => { :controller => "users", :action => "create_user_location", :id => location.id } %>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<% if index < @locations.length - 1 %>
+			<hr class="location_separator">
+		<% else %>
+			<div class="five_spacer"></div>
+		<% end %>
+	<% end %>
+</div>

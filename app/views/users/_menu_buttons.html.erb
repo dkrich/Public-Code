@@ -1,0 +1,52 @@
+<table class="menu_button_table">
+	<tr>
+		<td align="center">
+			<% if @current_menu == "standard" %>
+				<%= image_tag("standard_fare_illuminated.png") %>
+			<% else %>
+				<%= link_to image_tag("standard_fare.png"), { :controller => "users", :action => "switch_to_standard", :order_started => @order_started.to_s }, :remote => true %>
+			<% end %>
+		</td>
+		<td align="center">
+			<% if @current_menu == "salad" %>
+				<%= image_tag("garden_illuminated.png") %>
+			<% else %>
+				<%= link_to image_tag("garden.png"), { :controller => "users", :action => "switch_to_salad", :order_started => @order_started.to_s }, :remote => true %>
+			<% end %>
+		</td>
+		<td align="center">
+			<% if @current_menu == "different" %>
+				<%= image_tag("something_different_illuminated.png") %>
+			<% else %>
+				<%= link_to image_tag("something_different.png"), { :controller => "users", :action => "switch_to_different", :order_started => @order_started.to_s }, :remote => true %>
+			<% end %>
+		</td>
+	</tr>
+	<% if !@outstanding_order.blank? %>
+		<% if !@outstanding_order.confirmed %>
+			<tr>
+				<td id="add_to_order" align="center">
+					<% if @current_menu == "standard" %>
+						<%= link_to image_tag("add_to_order_active.png"), { :controller => "users", :action => "add_meal_to_order", :id => 1 }, :remote => true %>
+					<% else %>
+						<%= image_tag("add_to_order_inactive.png") %>
+					<% end %>
+				</td>
+				<td id="add_to_order" align="center">
+					<% if @current_menu == "salad" %>
+						<%= link_to image_tag("add_to_order_active.png"), { :controller => "users", :action => "add_meal_to_order", :id => 2 }, :remote => true %>
+					<% else %>
+						<%= image_tag("add_to_order_inactive.png") %>
+					<% end %>
+				</td>
+				<td id="add_to_order" align="center">
+					<% if @current_menu == "different" %>
+						<%= link_to image_tag("add_to_order_active.png"), { :controller => "users", :action => "add_meal_to_order", :id => 3 }, :remote => true %>
+					<% else %>
+						<%= image_tag("add_to_order_inactive.png") %>
+					<% end %>
+				</td>
+			</tr>
+		<% end %>
+	<% end %>
+</table>

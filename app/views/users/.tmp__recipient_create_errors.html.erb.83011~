@@ -1,0 +1,14 @@
+<% @errors.each do |error| %>
+	<% if error == "Recipient first name can't be blank" %>
+		<div id="error_messages_container">
+			<div class="recipient_error_message_header">
+				Whoops!
+			</div>
+			<div class="recipient_error_message_body">
+				You seem to have forgotten the recipient's first name.
+			</div>
+		</div>
+	<% else %>
+		<%= error %>
+	<% end %>
+<% end %>

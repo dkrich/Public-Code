@@ -1,0 +1,7 @@
+<% if @errors %>
+  $("#meal_summary_errors").replaceWith('<div id="meal_summary_errors"><%= escape_javascript(render(:partial => "meal_summary_errors")) %></div>');
+<% else %>
+  $("#meal_summary").replaceWith('<div id="meal_summary"><%= escape_javascript(render(:partial => "meal_summary")) %></div>');
+  $("#add_to_order_three").replaceWith('<div id="add_to_order_three"><%= escape_javascript(render(:partial => "add_to_order_three")) %></div>');
+  $("#credits_remaining").replaceWith('<div id="credits_remaining"><%= escape_javascript(render(:partial => "credits_remaining")) %></div>');
+<% end %>

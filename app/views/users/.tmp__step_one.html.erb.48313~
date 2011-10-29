@@ -1,0 +1,41 @@
+<div class="step_one_subtext">
+	<table class="step_table">
+		<tr>
+			<td width="1%">
+				<%= image_tag("step_one.png", :class => "step_image") %>
+			</td>
+			<td nowrap="true">
+				Who's the lucky person we'll be delivering to?
+			</td>
+		</tr>
+	</table>
+</div>
+<% form_remote_for @location_recipient, :url => { :controller => "users", :action => "add_recipient_name" } do |f| %>
+	<table class="add_recipient_table" cellspacing=10>
+		<tr>
+			<td nowrap=true>
+				<div class="new_recipient_label">
+					First Name:
+				</div>
+			</td>
+			<td>
+				<%= f.text_field :recipient_first_name, :maxlength => 50, :class => "new_service_plan_input" %>
+			</td>
+		</tr>
+		<tr>
+			<td nowrap=true>
+				<div class="new_recipient_label">
+					Last Name:
+				</div>
+			</td>
+			<td>
+				<%= f.text_field :recipient_last_name, :maxlength => 50, :class => "new_service_plan_input" %>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center">
+				<%= link_to_remote image_tag("where.png"), :url => { :controller => "users", :action => "create_recipient_record" } %>
+			</td>
+		</tr>
+	</table>
+<% end %>

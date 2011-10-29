@@ -1,0 +1,12 @@
+<div class="step_one_container_user">
+	<div class="welcome">
+		Welcome <%= current_user.first_name %>!
+	</div>
+	<div class="welcome_subtext">
+		Thanks for choosing Littlejaw- you're about a minute away from getting your lunch hour back.
+		<br/><br/>Before we begin, there are just a few bits of info we need in order to get you your meals.
+	</div>
+	<div class="get_started">
+		<%= link_to image_tag("get_started.png"), :url => { :controller => "users", :action => "start_setup" }, :remote => true %>
+	</div>
+</div>

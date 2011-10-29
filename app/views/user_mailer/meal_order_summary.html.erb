@@ -1,0 +1,55 @@
+<html>
+  <head>
+
+  </head>
+  <body>
+    Hello <%= @user.first_name %>,
+    <p>
+      We wanted to let you know that we have received your order, and the team at <%= @vendor.name.html_safe %> is busy putting it together for you.
+    </p>
+    <p>
+      Here's what we have for you:
+    </p>
+    <p>
+      Delivery Time: <%= @delivery_time %>
+    </p>
+    <p>
+      Delivery Location: <%= @drop_off_location.name %>
+    </p>
+    <p>
+      <b>Meal Summary:</b>
+    </p>
+    <% @location_selections.each do |location_selection| %>
+        <% @menu = Menu.find(location_selection.menu_id) %>
+        <% @vendor = Vendor.find(@menu.vendor_id) %>
+        <% @menu_items = MenuItem.find_all_by_menu_id(@menu.id) %>
+        <% @menu_items.each do |menu_item| %>
+            <% @item = Item.find(menu_item.item_id) %>
+            <% if @item.item_type.upcase == "ENTREE" %>
+               <% @item_one_entree = @item %>
+            <% elsif @item.item_type.upcase == "SIDE" %>
+               <% @item_one_side = @item %>
+            <% end %>
+        <% end %>
+        <% if !@item_one_entree.blank? %>
+          <p>
+            <b>Entree: <%= @item_one_entree.name %></b>
+          </p>
+        <% end %>
+        <% if !@item_one_side.blank? %>
+          <p>
+            <b>Side: <%= @item_one_side.name %></b>
+          </p>
+        <% end %>
+      <% end %>
+      <p>
+        <b>Total Credits Charged: <%= @quantity %></b>
+      </p>
+    <p>
+      Thanks!
+    </p>
+    <p>
+      -Delivery Way
+    </p>
+  </body>
+</html>
